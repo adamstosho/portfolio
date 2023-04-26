@@ -1,0 +1,14 @@
+
+.Nav {
+        @apply flex px-8 w-full text-white justify-center items-center sticky
+  }
+
+  .Nav .grow{
+    flex-grow: 1;
+  }
+  .Nav .navR{
+      @apply flex gap-10
+  }
+  .navR .each{
+    @apply flex gap-1.5
+  }

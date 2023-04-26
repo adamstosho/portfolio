@@ -12,14 +12,10 @@ export default function Home() {
   return (
  <div className="body">
 <Nav/>
-
-<Image
-src={''}
-width={400}
-height={400}
-/>
-
-
+<main>
+  <div></div>
+  <div></div>
+</main>
  </div>
         
 

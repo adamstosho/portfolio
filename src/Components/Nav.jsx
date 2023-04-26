@@ -1,20 +1,46 @@
 import React from 'react'
 import Image from 'next/image'
+import styles from "../styles/Nav.module.css"
+
 const Nav = () => {
+const data =[
+  {
+    num:'01.',
+    nav:'About',
+  },
+  {
+    num:'02.',
+    nav:'Experience',
+  },
+  {
+    num:'03.',
+    nav:'Work',
+  },
+  {
+    num:'04.',
+    nav:'Contact',
+  }
+]
   return (
-   <div className="">
-{/* <img src="/media/logo.svg"
+   <div className={styles.Nav}>
+<Image
+src={'next.svg'}
+width={100}
+height={300}
+/>
 
-alt=""
+<span className={styles.grow}></span>
 
-/> */}
-{/* <Image 
-src='favicon.ico'
-className=''
-/> */}
-<span></span>
-<div className="navs">
-
+<div className={styles.navR}>
+  {data.map((d)=>(
+    <div className={`${styles.each}`}>
+  <span>{d.num}</span>
+  <p>{d.nav}</p>
+</div>
+  ))}
+<div className="resume">
+  Resume
+</div>
 </div>
 
    </div>

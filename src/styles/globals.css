@@ -3,5 +3,17 @@
 @tailwind utilities;
 
 .body{
-    @apply bg-white text-black h-screen w-screen
+    grid-template-rows: 5rem 1fr;
+    @apply text-black h-screen w-screen bg-primary_bg grid  overflow-hidden 
+}
+
+main{
+    @apply bg-blue-300 overflow-auto
+}
+main div {
+    @apply h-screen bg-yellow-600 
+}
+
+main div:first-of-type{
+    @apply bg-red-400
 }
