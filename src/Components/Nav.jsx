@@ -19,10 +19,11 @@ const data =[
   {
     num:'04.',
     nav:'Contact',
-  }
+  },
+ 
 ]
   return (
-   <div className={styles.Nav}>
+   <div className={styles.navW}>
 <Image
 src={'next.svg'}
 width={100}
@@ -38,8 +39,7 @@ height={300}
   <p>{d.nav}</p>
 </div>
   ))}
-<div className="resume">
-  Resume
+<div className={`${styles.resume}`}>
 </div>
 </div>
 

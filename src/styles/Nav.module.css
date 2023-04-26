@@ -1,14 +1,27 @@
 
-.Nav {
-        @apply flex px-8 w-full text-white justify-center items-center sticky
+.navW {
+        @apply flex px-20 w-full justify-center items-center 
   }
 
-  .Nav .grow{
+  .navW .grow{
     flex-grow: 1;
   }
-  .Nav .navR{
+  .navW .navR{
       @apply flex gap-10
   }
   .navR .each{
     @apply flex gap-1.5
+  }
+  .navR .each{
+    @apply text-blur_texts hover:text-primary1 cursor-pointer
+  }
+  .navR .each span{
+    @apply text-primary1
+  }
+
+  .navW .resume{
+    @apply  bg-primary1 flex justify-center items-center px-2 py-1.5 cursor-pointer w-[5rem] h-[2.3rem] rounded-md relative
+  }
+  .navW .resume::before{
+    @apply  content-['Resume'] w-[5rem] h-[2.3rem] absolute bg-primary_bg border-[1px] border-primary1 rounded-md bottom-0 right-0 hover:bottom-1 hover:right-1  grid place-items-center transition-all duration-300 ease-in-out text-primary1
   }

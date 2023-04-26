@@ -11,7 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary_bg:'#0a192f'
+        primary_bg:'#0a192f',
+        primary1:'#64ffda',
+        blur_texts:'#8892b0',
       }
     },
   },
