@@ -2,18 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-family: 'SF Mono', monospace;
+    @apply p-0 m-0 box-border 
+}
 .body{
     grid-template-rows: 5rem 1fr;
-    @apply text-black h-screen w-screen bg-primary_bg grid  overflow-hidden 
+    @apply bg-primary_bg h-screen w-screen bg-primary_bg grid  overflow-hidden 
 }
 
 main{
-    @apply bg-blue-300 overflow-auto
-}
-main div {
-    @apply h-screen bg-yellow-600 
+    @apply overflow-auto w-screen
 }
 
-main div:first-of-type{
-    @apply bg-red-400
+.Wrapper{
+    @apply w-[75%] h-auto m-auto
 }

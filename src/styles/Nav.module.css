@@ -1,10 +1,10 @@
 
 .navW {
-        @apply flex px-20 w-full justify-center items-center 
+        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-50
   }
 
   .navW .grow{
-    flex-grow: 1;
+    @apply flex-grow-[1]
   }
   .navW .navR{
       @apply flex gap-10
@@ -18,9 +18,13 @@
   .navR .each span{
     @apply text-primary1
   }
-
+  .navR .each span,
+   .navR .each p{
+    font-family: 'SF Mono', monospace;;
+    @apply text-[13px]
+   }
   .navW .resume{
-    @apply  bg-primary1 flex justify-center items-center px-2 py-1.5 cursor-pointer w-[5rem] h-[2.3rem] rounded-md relative
+    @apply  bg-primary1 flex justify-center items-center px-2 py-1.5 cursor-pointer w-[5rem] h-[2.3rem] rounded-md relative text-[13px] leading-[20px]
   }
   .navW .resume::before{
     @apply  content-['Resume'] w-[5rem] h-[2.3rem] absolute bg-primary_bg border-[1px] border-primary1 rounded-md bottom-0 right-0 hover:bottom-1 hover:right-1  grid place-items-center transition-all duration-300 ease-in-out text-primary1
