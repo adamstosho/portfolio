@@ -4,11 +4,14 @@
 
 *{
     font-family: 'SF Mono', monospace;
-    @apply p-0 m-0 box-border 
+    @apply p-0 m-0 box-border text-blur_texts
 }
+*::selection{
+    @apply bg-blur_texts text-var_color bg-opacity-30
+    }
 .body{
     grid-template-rows: 5rem 1fr;
-    @apply bg-primary_bg h-screen w-screen bg-primary_bg grid  overflow-hidden 
+    @apply h-screen w-screen bg-primary_bg grid overflow-hidden 
 }
 
 main{

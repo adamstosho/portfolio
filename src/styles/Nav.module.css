@@ -1,6 +1,6 @@
 
-.navW {
-        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-50
+div.navW {
+        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-5
   }
 
   .navW .grow{

@@ -1,0 +1,20 @@
+.soicioAccounts{
+    @apply w-screen
+}
+.soicioAccounts .soicioAccountsL{
+    @apply absolute bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
+}
+.soicioAccounts .soicioAccountsR{
+    @apply absolute bottom-0 flex flex-col items-center gap-[10.05rem] right-[4%] w-8
+}
+.soicioAccounts .soicioAccountsL a{
+    @apply hover:animate-spin
+}
+.soicioAccounts .soicioAccountsL p,
+.soicioAccounts .soicioAccountsR p:last-child{
+    @apply h-[6rem] w-[1px]  bg-blur_texts
+}
+
+.soicioAccounts .soicioAccountsR a{
+    @apply rotate-[90deg] origin-center 
+}
