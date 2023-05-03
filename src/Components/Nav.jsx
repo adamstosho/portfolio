@@ -28,13 +28,15 @@ const data =[
 src={'next.svg'}
 width={100}
 height={300}
+alt={"My Logo"}
 />
 
 <span className={styles.grow}></span>
 
 <div className={styles.navR}>
-  {data.map((d)=>(
-    <div className={`${styles.each}`}>
+  {data.map((d, i)=>(
+    <div className={`${styles.each}`}
+    key={i} >
   <span>{d.num}</span>
   <p>{d.nav}</p>
 </div>

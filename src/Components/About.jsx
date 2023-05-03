@@ -27,7 +27,11 @@ const About = () => {
         </div>
         <div className={styles.aboutR}>
           <div className={styles.imgwrapper}>
-          <img src="/media/myPassport.jpeg" alt="My Profile" />
+          <Image
+           src="/media/myPassport.jpeg" 
+           width={300}
+           height={400}
+           alt="My Profile" />
           </div>
         </div>
     </div>
