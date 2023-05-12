@@ -7,18 +7,25 @@ const data =[
   {
     num:'01.',
     nav:'About',
+    navigator:'#aboutwrapper'
   },
   {
     num:'02.',
     nav:'Experience',
+    navigator:'#aboutW'
+
   },
   {
     num:'03.',
     nav:'Work',
+    navigator:'#aboutW'
+
   },
   {
     num:'04.',
     nav:'Contact',
+    navigator:'#aboutW'
+
   },
  
 ]
@@ -37,7 +44,7 @@ alt={"My Logo"}
   {data.map((d, i)=>(
     <div className={`${styles.each}`}
     key={i} >
-  <span>{d.num}</span>
+  <span><a href={d.navigator}>{d.num}</a></span>
   <p>{d.nav}</p>
 </div>
   ))}
