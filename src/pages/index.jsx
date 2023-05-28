@@ -16,9 +16,11 @@ export default function Home() {
   const [load, setload] = useState('')
   return (
  <div className="body">
-  {/* <Head>
+  <Head>
+  {/* <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" /> */}
+  {/* <link rel="stylesheet" href="path/to/custom.css"/> */}
 
-  </Head> */}
+  </Head>
 <Nav/>
 <main>
   <div className="Wrapper">
