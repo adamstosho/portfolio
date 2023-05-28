@@ -1,26 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import styles from "../styles/Nav.module.css"
+import Image from 'next/image'
+
 
 const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
-  // useEffect(() => {
-  //  const handleScroll = () =>{
-  //   const currentScrollPos = window.pageYOffset;
-  //   setVisible(prevScrollPos > currentScrollPos)
-  //   console.log(currentScrollPos)
-  //   setPrevScrollPos(currentScrollPos)
-  //  }
-  //  window.addEventListener('scroll', handleScroll);
-  //  return ()=> window.removeEventListener('scroll', handleScroll);
-  // }, [prevScrollPos]);
-  // useEffect(() => {
-  //   window.addEventListener('scroll', ()=>{
-  //     console.log(scrollY)
-      
-  //   })
-  // }, []);
+
 
 const data =[
   {
@@ -49,7 +35,7 @@ const data =[
  
 ]
   return (
-   <div className={`${styles.navW} ${visible?styles.visisble:styles.hide}`
+   <div className={`${styles.navW}`
    
    }>
 <Image
@@ -69,7 +55,7 @@ alt={"My Logo"}
   <p>{d.nav}</p>
 </div>
   ))}
-<div className={`${visible?styles.resume : styles.hide}`}>
+<div className={styles.resume}>
 </div>
 </div>
 

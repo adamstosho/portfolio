@@ -27,3 +27,10 @@ main{
 .Wrapper{
     @apply w-[75%] h-auto m-auto
 }
+
+@font-face {
+    font-family: sf mono;
+    font-style: normal;
+    font-weight: 500;
+    src: local('SF Mono'),url(https://fonts.cdnfonts.com/s/22256/SFMonoRegular.woff) format('woff')
+}

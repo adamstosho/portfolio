@@ -18,7 +18,6 @@ export default function Home() {
  <div className="body">
   <Head>
   <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" />
-  <link rel="stylesheet" href="path/to/custom.css"/>
 
   </Head>
 <Nav/>

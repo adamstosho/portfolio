@@ -2,6 +2,10 @@
 div.navW {
         @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-5 h-[5rem]
   }
+
+  .navW img{
+    @apply w-[3rem] h-[3rem]
+  }
 div.visisble{
   @apply h-[5rem]
 }
