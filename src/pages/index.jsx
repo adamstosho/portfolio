@@ -16,10 +16,9 @@ export default function Home() {
   const [load, setload] = useState('')
   return (
  <div className="body">
-  <Head>
-  <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" />
+  {/* <Head>
 
-  </Head>
+  </Head> */}
 <Nav/>
 <main>
   <div className="Wrapper">
