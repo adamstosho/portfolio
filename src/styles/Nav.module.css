@@ -1,8 +1,14 @@
 
 div.navW {
-        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-5
+        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-5 h-[5rem]
   }
+div.visisble{
+  @apply h-[5rem]
+}
 
+div.hide{
+  @apply h-[0rem] overflow-hidden
+}
   .navW .grow{
     @apply flex-grow-[1]
   }
