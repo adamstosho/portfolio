@@ -53,7 +53,7 @@ const data =[
    
    }>
 <Image
-src={'next.svg'}
+src={'vercel.svg'}
 width={100}
 height={300}
 alt={"My Logo"}
