@@ -15,12 +15,12 @@ const Nav = () => {
   //  window.addEventListener('scroll', handleScroll);
   //  return ()=> window.removeEventListener('scroll', handleScroll);
   // }, [prevScrollPos]);
-  useEffect(() => {
-    window.addEventListener('scroll', ()=>{
-      console.log(scrollY)
+  // useEffect(() => {
+  //   window.addEventListener('scroll', ()=>{
+  //     console.log(scrollY)
       
-    })
-  }, []);
+  //   })
+  // }, []);
 
 const data =[
   {
