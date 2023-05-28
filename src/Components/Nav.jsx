@@ -4,7 +4,7 @@ import styles from "../styles/Nav.module.css"
 
 const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
   // useEffect(() => {
   //  const handleScroll = () =>{
   //   const currentScrollPos = window.pageYOffset;

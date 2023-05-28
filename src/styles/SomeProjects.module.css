@@ -5,10 +5,17 @@
     @apply w-full h-full
 }
 
-.somprojectW p.learnMore{
+.somprojectW p.learnMore,
+.otherProjectW p.showMore{
     @apply bg-primary1 relative w-[7rem] h-[2.5rem] rounded-md grid place-items-center mt-14 cursor-pointer
 }
-.somprojectW .learnMore::after{
+.somprojectW .learnMore::after,
+.otherProjectW p.showMore::after{
     content: 'Learn More';
     @apply absolute w-[7rem] h-[2.5rem] bg-primary_bg border-primary1 border-[1px] rounded-md text-[13px] transition-all duration-300 ease-in-out grid place-items-center text-primary1 right-0 bottom-0 hover:bottom-1 hover:right-1  
+}
+
+.otherProjectW p.showMore::after{
+    content: "Show More";
+    @apply h-[3rem]
 }

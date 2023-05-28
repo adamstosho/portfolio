@@ -38,7 +38,7 @@ const EachOtherProjects = ({
         </div>
     <div className='flex flex-col gap-3'>
         <h1 className='text-var_color font-[700] '>Integration of Algolia Search width Wordpress Multisite</h1>
-        <p className='text-[13px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quas, labore repellat atque facilis voluptatibus dolorem totam rem omnis quasi magnam iusto quidem neque voluptates </p>
+        <p className='text-[13px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quas, </p>
         <div className="materialUsed text-[13px] flex justify-around">
                     <p>{'lang1'}</p>
                     <p>{'lang2'}</p>
