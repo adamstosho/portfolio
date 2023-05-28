@@ -15,6 +15,7 @@ module.exports = {
         primary1:'#64ffda',
         blur_texts:'#8892b0',
         var_color:'#ccd6f6',
+        primary_bg2: "#112240",
       }
     },
   },

@@ -8,7 +8,6 @@ const Headings = (props) => {
         <p className="text text-var_color text-4xl font-[700]">{props.text}</p>
         </div>
       <p className='w-[18rem] h-[1px] bg-blur_texts'></p>
-
     </div>
   )
 }

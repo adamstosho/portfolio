@@ -1,0 +1,6 @@
+.projectImg{
+    @apply w-[55%] h-[25rem] grid place-items-center
+}
+.projectImg img{
+    @apply w-full h-full
+}
