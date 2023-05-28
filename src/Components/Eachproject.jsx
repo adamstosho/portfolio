@@ -31,7 +31,7 @@ const Eachproject = ({
                 <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>Feautured Project</p>
                 <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem]`}>{name}</h1>
                 </div>
-                <div className={`description w-[110%] bg-primary_bg2 absolute ${abs_pos} top-[30%] text-[14px] p-4 rounded-lg `}> {description}    
+                <div className={`description w-[110%] bg-primary_bg2 absolute ${abs_pos} top-[30%] text-[15px] p-4 rounded-lg `}> {description}    
                 </div>
                 <div className='flex flex-col gap-4'>
                 <div className="materialUsed text-[13px] flex justify-between">
