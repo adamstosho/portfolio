@@ -31,9 +31,8 @@ const SomeProjects = () => {
           description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio alias, est dolore non rerum commodi, doloremque ullam minima corrupti consequuntur officiis cum! Sint error optio in dignissimos velit voluptas eaque.'}
           text_pos={'text-left'}
           lang1={'React'}
-          lang2={'TailWind'}
           lang3={'Chart.js'}
-          lang4={"Weather API"}
+          lang4={"API"}
           lang5={"Netlify"}
           flex_Dir={'flex-row-reverse'}
 

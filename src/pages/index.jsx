@@ -30,6 +30,10 @@ export default function Home() {
   <SomeProjects/>
   <OtherProject/>
   <Contact/>
+  <footer className='w-full text-center mt-40 mb-6'>
+    <p
+     className='hover:text-primary1 text-[13px] cursor-pointer'>Designed & Built by Usman Abdullahi</p>
+  </footer>
   </div>
 </main>
  </div>

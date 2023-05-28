@@ -10,7 +10,7 @@
     @apply bg-blur_texts text-var_color bg-opacity-30
     }
 .body{
-    @apply h-screen w-screen grid bg-repeat bg-primary_bg
+    @apply h-screen max-w-full grid bg-repeat bg-primary_bg
 }
 main::-webkit-scrollbar{
     @apply lg:w-[6px] bg-blur_texts 
@@ -20,8 +20,8 @@ main::-webkit-scrollbar-thumb{
 }
 main{
     background-image: linear-gradient(115deg, rgba(17, 34, 64, 0.5),rgba(17, 34, 64, 0.6), url("/arrowdown2.png"));
-    @apply overflow-scroll w-screen 
-    /* bg-[url("/arrowdown2.png")] */
+    @apply overflow-auto w-full 
+    bg-[url("/arrowdown2.png")]
 }
 
 .Wrapper{
