@@ -18,7 +18,7 @@ const OtherProject = () => {
         <h1 className='text-[1.5rem] text-var_color font-bold '>Other Noteworthy Projects</h1>
         <p className='text-primary1 cursor-pointer'><a href="">View the archive</a></p>
         </div>
-        <div className={` ${styles.Otherprojects} flex justify-between flex-wrap gap-5`}>
+        <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap gap-5`}>
         <EachOtherProjects/>
         <EachOtherProjects/>
         <EachOtherProjects/>

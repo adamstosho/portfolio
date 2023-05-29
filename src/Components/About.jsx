@@ -9,6 +9,7 @@ const About = () => {
         num={'01.'}
         text={'About Me'}
         position={'start'}
+        width = {"w-[7rem]"}
         />
     <div id={styles.aboutW}>
 <div className={styles.aboutL}>

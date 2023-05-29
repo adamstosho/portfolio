@@ -1,5 +1,5 @@
 #aboutW{
-    @apply mt-10 grid grid-cols-5 w-full pb-20
+    @apply mt-10 flex lg:flex-row flex-col w-full pb-20 lg:gap-8  gap-12
 }
 #aboutW .aboutL{
     @apply col-span-3 flex flex-col gap-6
@@ -10,20 +10,19 @@
 #aboutW .aboutR .imgwrapper img{
     will-change: opacity;
     transition: opacity 0.3s;
-    @apply w-80 h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear
+    @apply lg:w-80 lg:h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear
 }
 #aboutW .aboutR .imgwrapper:hover img{
-    opacity: 0.8;
     @apply -translate-x-2 -translate-y-2
 }
 #aboutW .aboutR .imgwrapper:hover{
     @apply translate-x-[2px] translate-y-[2px]
 }
 #aboutW .aboutR .imgwrapper{
-    @apply border-2 border-primary1 w-80 h-80 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear 
+    @apply border-2 border-primary1 lg:w-80 lg:h-80 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[80%] 
 }
 #aboutW .techs{
-    @apply w-[25rem] grid grid-cols-2 gap-2 
+    @apply lg:w-[25rem] w-full grid grid-cols-2 gap-2 
 }
 #aboutW .techs p{
     @apply col-span-1 text-[13px] 

@@ -7,7 +7,7 @@ const EachOtherProjects = ({
     lang4,
 }) => {
   return (
-    <div className='max-w-[32%] flex flex-col gap-4 p-6 bg-primary_bg2 shadow-lg rounded-lg'>
+    <div className='lg:max-w-[32%] max-w-full flex flex-col gap-4 p-6 bg-primary_bg2 shadow-lg rounded-lg'>
         <div className='flex items-center justify-between'>
             <div>
             <Image

@@ -16,7 +16,7 @@ const Eachproject = ({
     img,
 }) => {
   return (
-            <div className={`projectW flex justify-between w-full gap-10 h-[26rem] items-center p-4 rounded-lg ${flex_Dir}`}>
+            <div className={`projectW flex lg:justify-between w-full lg:gap-10 gap-4 lg:h-[26rem] lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
             <div className={styles.projectImg}>
                 <Image 
                 src={img}
@@ -26,12 +26,12 @@ const Eachproject = ({
                 />
             </div>
 
-            <div className='w-[45%] relative h-full flex flex-col justify-between p-10 '>
+            <div className='lg:w-[45%] w-full relative h-full flex flex-col justify-between lg:p-10 p-0 '>
                 <div className="projectTitle">
                 <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>Feautured Project</p>
                 <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem]`}>{name}</h1>
                 </div>
-                <div className={`description w-[110%] bg-primary_bg2 absolute ${abs_pos} top-[30%] text-[15px] p-4 rounded-lg `}> {description}    
+                <div className={`description lg:w-[110%] w-full bg-primary_bg2 lg:absolute ${abs_pos} top-[30%] text-[15px] p-4 rounded-lg `}> {description}    
                 </div>
                 <div className='flex flex-col gap-4'>
                 <div className="materialUsed text-[13px] flex justify-between">

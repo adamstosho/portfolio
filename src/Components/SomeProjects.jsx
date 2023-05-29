@@ -9,9 +9,11 @@ const SomeProjects = () => {
     <div className={styles.somprojectW}>
         <Headings
           num={'03.'}
-          text={'Some Things I\'ve built'}
-          position={'start'}/>
-          <div className='h-auto w-ful flex flex-col gap-20 '>
+          text={'Some of my projects'}
+          position={'start'}
+          width={"w-2"}
+          />
+          <div className='h-auto w-full flex flex-col gap-20 '>
           <Eachproject
           img={"/media/rolex.png"}
           name={"Rolex Wristwatch"}
@@ -23,7 +25,8 @@ const SomeProjects = () => {
           lang3={'Vanilla Js'}
           lang4={"Netlify"}
           lang5={""}
-        end={'justify-end'}
+          end={'justify-end'}
+          flex_Dir={'lg:flex-row flex-col-reverse'}
           />
             <Eachproject
             img={"/media/Short3.png"}
@@ -34,7 +37,7 @@ const SomeProjects = () => {
           lang3={'Chart.js'}
           lang4={"API"}
           lang5={"Netlify"}
-          flex_Dir={'flex-row-reverse'}
+          flex_Dir={'lg:flex-row-reverse flex-col-reverse '}
 
           />
 
@@ -50,6 +53,7 @@ const SomeProjects = () => {
           lang4={"Netlify"}
           lang5={""}
         end={'justify-end'}
+        flex_Dir={'lg:flex-row flex-col-reverse'}
           />
        
           </div>

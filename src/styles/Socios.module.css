@@ -1,5 +1,5 @@
 .soicioAccounts{
-    @apply w-screen
+    @apply w-screen lg:block hidden
 }
 .soicioAccounts .soicioAccountsL{
     @apply fixed bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
