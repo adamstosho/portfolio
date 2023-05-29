@@ -15,7 +15,7 @@ const OtherProject = () => {
   return (
     <div className={`w-full flex flex-col gap-8 items-center mt-40 ${styles.otherProjectW}`}>
         <div className='flex flex-col gap-6 items-center'>
-        <h1 className='text-[1.5rem] text-var_color font-bold '>Other Noteworthy Projects</h1>
+        <h1 className='text-[1.5rem] text-var_color font-bold text-center'>Other Noteworthy Projects</h1>
         <p className='text-primary1 cursor-pointer'><a href="">View the archive</a></p>
         </div>
         <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap gap-5`}>
