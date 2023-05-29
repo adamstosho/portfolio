@@ -29,7 +29,7 @@ const Eachproject = ({
             <div className='lg:w-[45%] w-full relative h-full flex flex-col justify-between lg:p-10 p-0 '>
                 <div className="projectTitle">
                 <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>Feautured Project</p>
-                <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem]`}>{name}</h1>
+                <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem] lg:mb-0 mb-4`}>{name}</h1>
                 </div>
                 <div className={`description lg:w-[110%] w-full bg-primary_bg2 lg:absolute ${abs_pos} top-[30%] text-[15px] p-4 rounded-lg `}> {description}    
                 </div>

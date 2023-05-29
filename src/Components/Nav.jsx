@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
-
+const [toggle, setToggle] = useState(true)
 
 const data =[
   {
@@ -47,7 +47,7 @@ alt={"My Logo"}
 
 <span className={styles.grow}></span>
 
-<div className={styles.navR}>
+<div className={`${styles.navR} ${toggle && styles.active}`}>
   {data.map((d, i)=>(
     <div className={`${styles.each}`}
     key={i} >
@@ -57,7 +57,9 @@ alt={"My Logo"}
   ))}
 <div className={styles.resume}>
 </div>
-<div className={styles.navHarmburger}>Harmbur</div>
+<div className={`${styles.navHarmburger}`}
+onClick={()=>setToggle(!toggle)}
+>Harmbur</div>
 </div>
 
    </div>
