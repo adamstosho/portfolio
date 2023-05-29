@@ -1,6 +1,6 @@
 
 div.navW {
-        @apply flex px-20 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-5 h-[5rem]
+        @apply flex lg:px-20 px-4 w-full justify-center items-center shadow-black shadow-md bg-primary_bg bg-opacity-90 h-[5rem] fixed top-0 z-10 
   }
 
   .navW img{
@@ -17,7 +17,7 @@ div.hide{
     @apply flex-grow-[1]
   }
   .navW .navR{
-      @apply flex gap-10
+      @apply flex gap-10 lg:flex-row flex-col items-center
   }
   .navR .each{
     @apply flex gap-1.5
@@ -38,4 +38,8 @@ div.hide{
   }
   .navW .resume::before{
     @apply  content-['Resume'] w-[5rem] h-[2.3rem] absolute bg-primary_bg border-[1px] border-primary1 rounded-md bottom-0 right-0 hover:bottom-1 hover:right-1  grid place-items-center transition-all duration-300 ease-in-out text-primary1
+  }
+
+  .navW .navR .navHarmburger{
+    @apply lg:hidden block absolute
   }

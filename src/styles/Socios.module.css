@@ -2,10 +2,10 @@
     @apply w-screen
 }
 .soicioAccounts .soicioAccountsL{
-    @apply absolute bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
+    @apply fixed bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
 }
 .soicioAccounts .soicioAccountsR{
-    @apply absolute bottom-0 flex flex-col items-center gap-[8.35rem] right-[4%] w-8
+    @apply fixed bottom-0 flex flex-col items-center gap-[8.35rem] right-[4%] w-8
 }
 .soicioAccounts .soicioAccountsL a{
     @apply hover:animate-spin

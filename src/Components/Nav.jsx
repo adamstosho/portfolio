@@ -35,7 +35,7 @@ const data =[
  
 ]
   return (
-   <div className={`${styles.navW}`
+   <div className={`${styles.navW} bg-red-300`
    
    }>
 <Image
@@ -57,6 +57,7 @@ alt={"My Logo"}
   ))}
 <div className={styles.resume}>
 </div>
+<div className={styles.navHarmburger}>Harmbur</div>
 </div>
 
    </div>

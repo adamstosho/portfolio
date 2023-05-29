@@ -16,7 +16,7 @@ const Eachproject = ({
     img,
 }) => {
   return (
-            <div className={`projectW flex justify-between w-full gap-10 h-[26rem] items-center ${flex_Dir}`}>
+            <div className={`projectW flex justify-between w-full gap-10 h-[26rem] items-center p-4 rounded-lg ${flex_Dir}`}>
             <div className={styles.projectImg}>
                 <Image 
                 src={img}
