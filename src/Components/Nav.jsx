@@ -57,11 +57,13 @@ alt={"My Logo"}
   ))}
 <div className={styles.resume}>
 </div>
-<div className={`${styles.navHarmburger}`}
-onClick={()=>setToggle(!toggle)}
->Harmbur</div>
-</div>
 
+</div>
+<div className={`${styles.navHarmburger} ${!toggle && styles.activeHarmburger}`}
+onClick={()=>setToggle(!toggle)}
+><p></p>
+<p></p>
+<p></p></div>
    </div>
   )
 }
