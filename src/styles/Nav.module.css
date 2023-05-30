@@ -82,3 +82,12 @@ div.hide{
 @apply rotate-[-135deg] hidden h-0
 
 } 
+
+.overlay{
+  @apply fixed h-screen w-[30%] bg-primary_bg2 top-0 shadow-black shadow-lg lg:hidden bg-opacity-30 backdrop-blur-[5px] -z-10 right-[70%]
+
+}
+
+.activeOverlay{
+  @apply right-full 
+}

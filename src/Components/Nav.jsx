@@ -64,6 +64,7 @@ onClick={()=>setToggle(!toggle)}
 ><p></p>
 <p></p>
 <p></p></div>
+<div className={`${styles.overlay} ${toggle && styles.activeOverlay}`}></div>
    </div>
   )
 }
