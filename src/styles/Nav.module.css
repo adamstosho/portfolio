@@ -84,10 +84,10 @@ div.hide{
 } 
 
 .overlay{
-  @apply fixed h-screen w-[30%] bg-primary_bg2 top-0 shadow-black shadow-lg lg:hidden bg-opacity-30 backdrop-blur-[5px] -z-10 right-[70%]
+  @apply fixed lg:hidden h-screen w-[30%] bg-primary_bg2 top-0 shadow-black shadow-lg bg-opacity-30 backdrop-blur-[5px] -z-10 right-[70%] duration-300
 
 }
 
 .activeOverlay{
-  @apply right-full 
+  @apply right-full duration-100
 }

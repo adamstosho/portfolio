@@ -50,12 +50,15 @@ alt={"My Logo"}
 <div className={`${styles.navR} ${toggle && styles.active}`}>
   {data.map((d, i)=>(
     <div className={`${styles.each}`}
+    onClick={()=>setToggle(!toggle)}
     key={i} >
   <span><a href={d.navigator}>{d.num}</a></span>
   <p>{d.nav}</p>
 </div>
   ))}
-<div className={styles.resume}>
+<div className={styles.resume}
+onClick={()=> setToggle(!toggle)}
+>
 </div>
 
 </div>
@@ -64,7 +67,9 @@ onClick={()=>setToggle(!toggle)}
 ><p></p>
 <p></p>
 <p></p></div>
-<div className={`${styles.overlay} ${toggle && styles.activeOverlay}`}></div>
+<div className={`${styles.overlay} ${toggle && styles.activeOverlay}`}
+onClick={()=> setToggle(!toggle)}
+></div>
    </div>
   )
 }
