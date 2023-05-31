@@ -4,13 +4,14 @@
 
 *{
     font-family: 'SF Mono', monospace;
+    /* --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace; */
     @apply p-0 m-0 box-border text-blur_texts transition-all ease-linear duration-300
 }
 *::selection{
     @apply bg-blur_texts text-var_color bg-opacity-30
     }
 .body{
-    @apply min-h-[100vh] w-full bg-repeat bg-primary_bg bg-opacity-100 hidden
+    @apply min-h-[100vh] w-full bg-repeat bg-primary_bg bg-opacity-100
 }
 body::-webkit-scrollbar{
     @apply lg:w-[6px] bg-blur_texts 
