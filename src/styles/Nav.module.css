@@ -22,7 +22,7 @@ div.hide{
   .navW .active{
     @apply lg:left-0 left-full 
   }
-  .navR .each{
+  .navR .each a{
     @apply flex gap-1.5
   }
   .navR .each{

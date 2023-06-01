@@ -12,7 +12,7 @@
     @apply lg:text-[5rem] text-[2.5rem] font-[700] lg:leading-[5rem] leading-[3rem]  font-[calibre] font-[700] text-blur_texts animate-pulse
 }
 .introW .desc{
-    @apply lg:first-line:w-[60%] mt-4 text-blur_texts
+    @apply lg:w-[60%] w-full mt-4 text-blur_texts
 }
 
 .introW p:last-child{

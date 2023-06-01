@@ -6,26 +6,30 @@ const Socios = () => {
    
         <div className={styles.soicioAccounts}>
             <div className={styles.soicioAccountsL}>
-            <a href=""><Image
+            <a href="https://github.com/intelligence247" target='blank'>
+              <Image
             width={200}
             height={200}
-             src="/twitter-fill.png" alt="Github gill image" /></a>
-            <a href=""><Image
+             src="/github-line.png" alt="Github image" /></a>
+            <a href="https://twitter.com/I_n_telligence" target='blank'><Image
             width={200}
             height={200}
-             src="/github-fill.png" alt="Github gill image" /></a>
-            <a href=""><Image
+             src="/twitter-line.png" alt="Twitter image" /></a>
+            <a href="https://www.linkedin.com/in/usman-abdullahi-125a3a23b/" target='blank'>
+              <Image
             width={200}
             height={200}
-             src="/twitter-fill.png" alt="Github gill image" /></a>
-            <a href=""><Image
+             src="/linkedin-fill.png" alt="LinkedIN image" /></a>
+            <a href="" target='blank'>
+              <Image
             width={200}
             height={200}
-             src="/github-fill.png" alt="Github gill image" /></a>
-            <a href=""><Image
+             src="/instagram-line.png" alt="Instagram image" /></a>
+            <a href="">
+              <Image
             width={200}
             height={200}
-             src="/github-fill.png" alt="Github gill image" /></a>
+             src="/codepen-line.png" alt="Codepen image" /></a>
             <p></p>
             </div>
             <div className={styles.soicioAccountsR}>

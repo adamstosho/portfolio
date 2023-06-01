@@ -17,19 +17,19 @@ const data =[
   {
     num:'02.',
     nav:'Experience',
-    navigator:'#aboutW'
+    navigator:'#experience'
 
   },
   {
     num:'03.',
     nav:'Work',
-    navigator:'#aboutW'
+    navigator:'#work'
 
   },
   {
     num:'04.',
     nav:'Contact',
-    navigator:'#aboutW'
+    navigator:'#contact'
 
   },
  
@@ -52,8 +52,8 @@ alt={"My Logo"}
     <div className={`${styles.each}`}
     onClick={()=>setToggle(!toggle)}
     key={i} >
-  <span><a href={d.navigator}>{d.num}</a></span>
-  <p>{d.nav}</p>
+  <a href={d.navigator}><span>{d.num}</span>
+  <p>{d.nav}</p></a>
 </div>
   ))}
 <div className={styles.resume}

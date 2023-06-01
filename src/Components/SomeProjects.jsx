@@ -6,7 +6,7 @@ import Eachproject from './Eachproject'
 
 const SomeProjects = () => {
   return (
-    <div className={styles.somprojectW}>
+    <div className={styles.somprojectW} id='work'>
         <Headings
           num={'03.'}
           text={'Some of my projects'}
