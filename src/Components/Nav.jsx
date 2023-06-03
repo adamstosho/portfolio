@@ -37,7 +37,7 @@ const data =[
   return (
    <div className={`${styles.navW}`}>
 <Image
-src={'/media/logo3.png'}
+src={'/logo3.png'}
 width={300}
 height={300}
 alt={"My Logo"}
