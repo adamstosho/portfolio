@@ -11,7 +11,7 @@ const EachOtherProjects = ({
         <div className='flex items-center justify-between'>
             <div>
             <Image
-            src={"/github-fill.png"}
+            src={"/github-line.png"}
             height={50}
             width={50}
             alt={'File'}
@@ -20,7 +20,7 @@ const EachOtherProjects = ({
             <div className={`clickales flex gap-4`}>
                     <a href="">
                     <Image
-                    src={"/github-fill.png"}
+                    src={"/live2.png"}
                     height={25}
                     width={25}
                     alt='icon1'
@@ -28,7 +28,7 @@ const EachOtherProjects = ({
                     </a>
                     <a href="">
                      <Image
-                    src={"/github-fill.png"}
+                    src={"/github-line.png"}
                     height={25}
                     width={25}
                     alt='icon2'

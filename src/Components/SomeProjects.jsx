@@ -15,7 +15,7 @@ const SomeProjects = () => {
           />
           <div className='h-auto w-full flex flex-col gap-20 '>
           <Eachproject
-          img={"/media/rolex.png"}
+          img={"/rolex.png"}
           name={"Rolex Wristwatch"}
           description={'I used this project to practice my frontEnd skills, I built the whole structure with HTML/CSS and JavaScript, Using JavaScript loop to create multiple element in HTML, and reduces the HTML code a lot.'}
           abs_pos={'right-[2rem]'}
@@ -31,7 +31,7 @@ const SomeProjects = () => {
           github={"https://github.com/Intelligence247/rolexWristWatch"}
           />
             <Eachproject
-            img={"/media/Short3.png"}
+            img={"/Short3.png"}
           name={"Weather App"}
           description={'This is a weather app that gives users the opportunity to search for any city or country in the world and get the forcast for the next five days. The interval can be daily or 3hours. It can also access the location of the user and give the forcast of that city.'}
           text_pos={'text-left'}
@@ -47,7 +47,7 @@ const SomeProjects = () => {
           />
 
 <Eachproject
-          img={"/media/rolex.png"}
+          img={"/rolex.png"}
           name={"Rolex Wristwatch"}
           description={'WebOpt is a dynamic web application developed for Startup to enhance user experience and engagement. By leveraging modern front-end technologies and responsive design, the project aimed to provide seamless access and optimal usability across devices. This project was Implemented in collaboration with other developers, but I worked on the whole FrontEnd'}
           abs_pos={'right-[2rem]'}
