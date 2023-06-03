@@ -13,23 +13,22 @@ const About = () => {
         />
     <div id={styles.aboutW}>
 <div className={styles.aboutL}>
-        <p>Hello! My name is <b><i>Abdullahi</i></b> and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
-        <p>Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.</p>
-        <p>I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.</p>
-        <p>Here are a few technologies I’ve been working with recently:</p>
+        <p>Hello! My name is <b><i>Abdullahi</i></b> and I enjoy creating things that live on the internet. With a keen eye for detail and a love for clean and efficient code, I specialize in translating design concepts into high-quality, responsive websites and web applications. I have a solid command of HTML, CSS, and JavaScript, as well as experience with front-end frameworks such as [mention relevant frameworks or libraries].</p>
+        <p>Collaboration is at the heart of my work. I thrive in interdisciplinary teams, working closely with designers, back-end developers, and stakeholders to bring projects to life. I excel at understanding project requirements and transforming them into intuitive user interfaces that prioritize usability and accessibility</p>
+        <p>{"Here are a few technologies I’ve been working with recently:"}</p>
         <div className={styles.techs}>
           <p>JavaScript (ES6+)</p>
           <p>React.js</p>
           <p>Next.js</p>
           <p>Redux toolkit</p>
-          <p>TypeScript</p>
+          {/* <p>TypeScript</p> */}
           <p>TaliWind CSS</p>
         </div>
         </div>
         <div className={styles.aboutR}>
           <div className={styles.imgwrapper}>
           <Image
-           src="/media/profiles.jpg" 
+           src="/profiles.jpg" 
            width={300}
            height={400}
            alt="My Profile" />
@@ -41,3 +40,8 @@ const About = () => {
 }
 
 export default About
+
+
+// With a keen eye for detail and a love for clean and efficient code, I specialize in translating design concepts into high-quality, responsive websites and web applications. I have a solid command of HTML, CSS, and JavaScript, as well as experience with front-end frameworks such as [mention relevant frameworks or libraries].
+
+// Collaboration is at the heart of my work. I thrive in interdisciplinary teams, working closely with designers, back-end developers, and stakeholders to bring projects to life. I excel at understanding project requirements and transforming them into intuitive user interfaces that prioritize usability and accessibility

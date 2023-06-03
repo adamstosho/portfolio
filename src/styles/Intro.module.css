@@ -9,10 +9,10 @@
     @apply lg:text-[5rem] text-[3rem] font-[700] lg:leading-[5rem] leading-[3rem] font-[calibre] hover:animate-bounce text-var_color mt-4 lg:w-max w-full bg-clip-text text-transparent 
 }
 .introW h2{
-    @apply lg:text-[5rem] text-[2.5rem] font-[700] lg:leading-[5rem] leading-[3rem]  font-[calibre] font-[700] text-blur_texts animate-pulse
+    @apply lg:text-[5rem] text-[2.5rem] font-[700] lg:leading-[5rem] leading-[3rem]  font-[calibre] text-blur_texts animate-pulse
 }
 .introW .desc{
-    @apply lg:w-[60%] w-full mt-4 text-blur_texts
+    @apply lg:w-[70%] w-full mt-4 text-blur_texts
 }
 
 .introW p:last-child{

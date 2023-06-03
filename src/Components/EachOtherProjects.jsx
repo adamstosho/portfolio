@@ -18,7 +18,7 @@ const EachOtherProjects = ({
             />
             </div>
             <div className={`clickales flex gap-4`}>
-                    <a href="">
+                    <a href="" target='blank'>
                     <Image
                     src={"/live2.png"}
                     height={25}
@@ -26,7 +26,7 @@ const EachOtherProjects = ({
                     alt='icon1'
                     />
                     </a>
-                    <a href="">
+                    <a href="" target='blank'>
                      <Image
                     src={"/github-line.png"}
                     height={25}

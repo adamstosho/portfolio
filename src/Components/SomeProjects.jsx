@@ -11,7 +11,7 @@ const SomeProjects = () => {
           num={'03.'}
           text={'Some of my projects'}
           position={'start'}
-          width={"w-2"}
+          width={"w-0"}
           />
           <div className='h-auto w-full flex flex-col gap-20 '>
           <Eachproject
@@ -29,6 +29,8 @@ const SomeProjects = () => {
           flex_Dir={'lg:flex-row flex-col-reverse'}
           live={"https://visionary-cactus-89f6e7.netlify.app/"}
           github={"https://github.com/Intelligence247/rolexWristWatch"}
+          top={'top-[28%]'}
+
           />
             <Eachproject
             img={"/Short3.png"}
@@ -39,17 +41,17 @@ const SomeProjects = () => {
           lang3={'Chart.js'}
           lang4={"API"}
           lang5={"TailWindCss"}
-
           flex_Dir={'lg:flex-row-reverse flex-col-reverse'}
           live={"https://phenomenal-sunshine-547717.netlify.app/"}
           github={"https://github.com/Intelligence247/Weather_Forcast_App"}
+          top={'top-[28%]'}
 
           />
 
 <Eachproject
-          img={"/rolex.png"}
+          img={"/webOpt.png"}
           name={"Rolex Wristwatch"}
-          description={'WebOpt is a dynamic web application developed for Startup to enhance user experience and engagement. By leveraging modern front-end technologies and responsive design, the project aimed to provide seamless access and optimal usability across devices. This project was Implemented in collaboration with other developers, but I worked on the whole FrontEnd'}
+          description={'WebOpt is a dynamic web application developed for Startup to enhance user experience and engagement. By leveraging modern front-end technologies and responsive design, the project aimed to provide seamless access and optimal usability across devices. This project was Implemented in collaboration with other developers, which I worked on the whole FrontEnd'}
           abs_pos={'right-[2rem]'}
           text_pos={'text-right'}
           lang1={'Html'}
@@ -59,10 +61,14 @@ const SomeProjects = () => {
           lang5={""}
         end={'justify-end'}
         flex_Dir={'lg:flex-row flex-col-reverse'}
+        live={"https://webopt.netlify.app/"}
+        github={"https://github.com/Intelligence247/webopt"}
+        top={'top-[18%]'}
+        
           />
        
           </div>
-    <p className={styles.learnMore}></p>
+    {/* <p className={styles.learnMore}></p> */}
     </div>
   )
 }
