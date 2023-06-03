@@ -4,7 +4,7 @@ div.navW {
   }
 
  .navW img{
-    @apply w-[3rem] h-[3rem]
+    @apply w-[4rem] h-[4rem]
   }
 div.visisble{
   @apply h-[5rem]

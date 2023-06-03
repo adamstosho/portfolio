@@ -35,12 +35,10 @@ const data =[
  
 ]
   return (
-   <div className={`${styles.navW} bg-red-300`
-   
-   }>
+   <div className={`${styles.navW}`}>
 <Image
-src={'vercel.svg'}
-width={100}
+src={'/media/logo3.png'}
+width={300}
 height={300}
 alt={"My Logo"}
 />

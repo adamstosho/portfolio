@@ -5,6 +5,8 @@
 *{
     font-family: 'SF Mono', monospace;
     /* --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace; */
+    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace; 
+
     @apply p-0 m-0 box-border text-blur_texts transition-all ease-linear duration-300 scroll-smooth
 }
 *::selection{
