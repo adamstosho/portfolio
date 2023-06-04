@@ -15,18 +15,21 @@ const Eachproject = ({
     text_pos,
     img,
     live,
+    live2,
     github,
     top,
 }) => {
   return (
             <div className={`projectW flex lg:justify-between w-full lg:gap-10 gap-4 lg:h-[26rem] lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
             <div className={styles.projectImg}>
+                <a href={live2} className='w-full h-full'>
                 <Image 
                 src={img}
                 width={400}
                 height={300}
                 alt={'Project view'}
                 />
+                </a>
             </div>
 
             <div className='lg:w-[45%] w-full relative h-full flex flex-col justify-between lg:px-8 lg:py-0 p-0 '>

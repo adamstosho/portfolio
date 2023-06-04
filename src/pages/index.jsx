@@ -10,6 +10,7 @@ import Socios from '@/Components/Socios'
 import SomeProjects from '@/Components/SomeProjects'
 import OtherProject from '@/Components/OtherProject'
 import Contact from '@/Components/Contact'
+import Logo from '@/Components/Logo'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
   </Head>
 <Nav/>
 <main>
+  <Logo/>
   <div className="Wrapper">
   <Intro/>
   <About/>
@@ -33,7 +35,7 @@ export default function Home() {
   <Socios/>
 
     <p
-     className='hover:text-primary1 text-[13px] cursor-pointer'>Designed & Built by Usman Abdullahi</p>
+     className='hover:text-primary1 text-[13px] cursor-pointer'> <a href="https://github.com/intelligence247" target='_blank'>Designed & Built by Usman Abdullahi</a></p>
   </footer>
   </div>
 </main>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/Nav.module.css"
 import Image from 'next/image'
+import Logo from './Logo'
 
 
 const Nav = () => {
@@ -36,12 +37,13 @@ const data =[
 ]
   return (
    <div className={`${styles.navW}`}>
-<Image
+{/* <Image
 src={'/logo3.png'}
 width={300}
 height={300}
 alt={"My Logo"}
-/>
+/> */}
+<Logo/>
 
 <span className={styles.grow}></span>
 

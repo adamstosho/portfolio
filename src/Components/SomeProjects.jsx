@@ -27,8 +27,10 @@ const SomeProjects = () => {
           lang5={""}
           end={'justify-end'}
           flex_Dir={'lg:flex-row flex-col-reverse'}
-          live={"https://visionary-cactus-89f6e7.netlify.app/"}
-          github={"https://github.com/Intelligence247/rolexWristWatch"}
+          live={"https://visionary-cactus-89f6e7.netlify.app/"}  
+          live2={"https://visionary-cactus-89f6e7.netlify.app/"}         
+
+            github={"https://github.com/Intelligence247/rolexWristWatch"}
           top={'top-[28%]'}
 
           />
@@ -43,7 +45,9 @@ const SomeProjects = () => {
           lang5={"TailWindCss"}
           flex_Dir={'lg:flex-row-reverse flex-col-reverse'}
           live={"https://phenomenal-sunshine-547717.netlify.app/"}
-          github={"https://github.com/Intelligence247/Weather_Forcast_App"}
+          live2={"https://phenomenal-sunshine-547717.netlify.app/"}         
+
+                github={"https://github.com/Intelligence247/Weather_Forcast_App"}
           top={'top-[28%]'}
 
           />
@@ -61,9 +65,10 @@ const SomeProjects = () => {
           lang5={""}
         end={'justify-end'}
         flex_Dir={'lg:flex-row flex-col-reverse'}
-        live={"https://webopt.netlify.app/"}
-        github={"https://github.com/Intelligence247/webopt"}
-        top={'top-[18%]'}
+        live={"https://webopt.netlify.app/"}  
+              live2={"https://webopt.netlify.app/"}   
+                   github={"https://github.com/Intelligence247/webopt"}
+        top={'top-[20%]'}
         
           />
        
