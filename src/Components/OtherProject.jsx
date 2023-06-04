@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EachOtherProjects from './EachOtherProjects'
 import styles from "../styles/SomeProjects.module.css"
 const OtherProject = () => {
+  const [lessMore, setLessMore] = useState(false)
+  console.log(lessMore)
     const otherProjectArr = [
         {
             lang1:'React-Redux',
@@ -33,6 +35,7 @@ const OtherProject = () => {
                 github:'https://github.com/Intelligence247/TemperatureConverter',
                 live:'https://cute-meerkat-9c5153.netlify.app/',
                 },
+                
                 {
                   lang1:'Reactjs',
                   lang2:'',
@@ -43,7 +46,30 @@ const OtherProject = () => {
                   github:'https://github.com/Intelligence247/asabeneh-world-countries-data-project',
                   live:'https://stately-kataifi-5e13a1.netlify.app/',
                   },
+                  {
+                    lang1:'Reactjs',
+                    lang2:'Bitly API',
+                    lang3:'TailwindCSS',
+                    lang4:'',
+                    title:'URL Shortener',
+                    desc:'A web App for Shortening URL. Built with Bitly API, Reactjs, and Tailwind CSS ',
+                    github:'',
+                    live:'https://tranquil-sunburst-a4ee59.netlify.app/',
+                    },
+                    {
+                      lang1:'HTML/CSS',
+                      lang2:'Vanilla.js',
+                      lang3:'Netlify',
+                      lang4:'',
+                      title:'Analog Clock',
+                      desc:'This App was built with HTML/CSS and JavaScript. It displays an Analog and digital clock with an astonishing look',
+                      github:'',
+                      live:'https://tranquil-sunburst-a4ee59.netlify.app/',
+                      },
+                   
     ]
+    let sliced = lessMore? otherProjectArr.slice(0,3) :otherProjectArr
+    console.log(sliced)
   return (
     <div className={`w-full flex flex-col gap-8 items-center mt-40 ${styles.otherProjectW}`}>
         <div className='flex flex-col gap-6 items-center'>
@@ -52,8 +78,9 @@ const OtherProject = () => {
         </div>
         <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap gap-5`}>
           {
-            otherProjectArr.map((other)=>(
+            sliced.map((other,i)=>(
               <EachOtherProjects
+              key={i}
               lang1={other.lang1}
               lang2={other.lang2}
               lang3={other.lang3}
@@ -66,7 +93,11 @@ const OtherProject = () => {
             ))
           }
         </div>
-        <p className={styles.showMore}></p>
+        {/* <p className={lessMore ? styles.showLess: styles.showMore} */}
+        <p className={`${lessMore? `after:content-['Show_More']`: 'after:content-["Show_Less"]'} ${styles.showMore}`}
+
+        onClick={()=>setLessMore(!lessMore)}
+        ></p>
     </div>
   )
 }
