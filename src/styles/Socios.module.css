@@ -5,14 +5,14 @@
     @apply fixed bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
 }
 .soicioAccounts .soicioAccountsR{
-    @apply fixed bottom-0 flex flex-col items-center gap-[8.35rem] right-[4%] w-8
+    @apply lg:fixed absolute bottom-0 flex flex-col items-center gap-[8.35rem] lg:right-[4%] w-8
 }
 .soicioAccounts .soicioAccountsL a{
     @apply hover:animate-spin
 }
 .soicioAccounts .soicioAccountsL p,
 .soicioAccounts .soicioAccountsR p:last-child{
-    @apply h-[6rem] w-[1px]  bg-blur_texts 
+    @apply h-[6rem] w-[1px]  bg-blur_texts lg:block hidden
 }
 .soicioAccounts .soicioAccountsR span{
     @apply hover:text-primary1 hover:right-2 relative block duration-300 transition-all ease-linear right-0 text-[13px]

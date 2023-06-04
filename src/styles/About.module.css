@@ -10,7 +10,7 @@
 #aboutW .aboutR .imgwrapper img{
     /* will-change: opacity; */
     /* transition: opacity 0.3s; */
-    @apply lg:w-80 lg:h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2 rotate-90
+    @apply lg:w-80 lg:h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
 }
 
 #aboutW .aboutR .imgwrapper:hover img{
@@ -20,7 +20,7 @@
     @apply translate-x-[2px] translate-y-[2px]
 }
 #aboutW .aboutR .imgwrapper{
-    @apply border-2 border-primary1 lg:w-80 lg:h-80 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[80%] 
+    @apply border-2 border-primary1 md:w-80 lg:w-80 lg:h-80 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[80%] 
 }
 #aboutW .techs{
     @apply lg:w-[25rem] w-full grid grid-cols-2 gap-2 

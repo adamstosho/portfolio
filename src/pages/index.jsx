@@ -24,12 +24,13 @@ export default function Home() {
 <Nav/>
 <main>
   <div className="Wrapper">
-  <Socios/>
   <Intro/>
   <About/>
   <SomeProjects/>
   <OtherProject/>
   <Contact/>
+  <Socios/>
+
   <footer className='w-full text-center mt-40 mb-6'>
     <p
      className='hover:text-primary1 text-[13px] cursor-pointer'>Designed & Built by Usman Abdullahi</p>
