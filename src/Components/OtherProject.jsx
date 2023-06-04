@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import EachOtherProjects from './EachOtherProjects'
 import styles from "../styles/SomeProjects.module.css"
 const OtherProject = () => {
-  const [lessMore, setLessMore] = useState(false)
+  const [lessMore, setLessMore] = useState(true)
   console.log(lessMore)
     const otherProjectArr = [
         {

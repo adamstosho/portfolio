@@ -29,9 +29,9 @@ export default function Home() {
   <SomeProjects/>
   <OtherProject/>
   <Contact/>
+  <footer className='w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0 gap-10'>
   <Socios/>
 
-  <footer className='w-full text-center mt-40 mb-6'>
     <p
      className='hover:text-primary1 text-[13px] cursor-pointer'>Designed & Built by Usman Abdullahi</p>
   </footer>

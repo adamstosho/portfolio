@@ -1,11 +1,12 @@
 .soicioAccounts{
-    @apply w-screen lg:block hidden
+    @apply lg:w-screen w-full lg:block 
 }
 .soicioAccounts .soicioAccountsL{
-    @apply fixed bottom-0 flex flex-col left-[4%] items-center gap-7 w-8
+    @apply lg:fixed relative bottom-0 flex lg:flex-col flex-row lg:left-[4%] left-0 items-center lg:gap-7 gap-0 lg:w-8 w-full lg:justify-start justify-around 
 }
 .soicioAccounts .soicioAccountsR{
-    @apply lg:fixed absolute bottom-0 flex flex-col items-center gap-[8.35rem] lg:right-[4%] w-8
+    @apply lg:fixed bottom-0 right-[4%] lg:w-8 lg:flex flex-col items-center gap-[8.35rem] lg:block hidden
+    /* lg:fixed bottom-0 flex flex-col items-center gap-[8.35rem]  lg:right-[4%] lg:w-8 w-full lg:block hidden */
 }
 .soicioAccounts .soicioAccountsL a{
     @apply hover:animate-spin
@@ -19,4 +20,8 @@
 }
 .soicioAccounts .soicioAccountsR a{
     @apply rotate-[90deg] origin-center 
+}
+
+.soicioAccountsL img{
+    @apply lg:w-8 w-7
 }
