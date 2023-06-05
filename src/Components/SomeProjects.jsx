@@ -54,7 +54,7 @@ const SomeProjects = () => {
 
 <Eachproject
           img={"/webOpt.png"}
-          name={"Rolex Wristwatch"}
+          name={"Web Optimization"}
           description={'WebOpt is a dynamic web application developed for Startup to enhance user experience and engagement. By leveraging modern front-end technologies and responsive design, the project aimed to provide seamless access and optimal usability across devices. This project was Implemented in collaboration with other developers, which I worked on the whole FrontEnd'}
           abs_pos={'right-[2rem]'}
           text_pos={'text-right'}

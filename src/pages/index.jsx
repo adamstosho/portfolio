@@ -24,7 +24,6 @@ export default function Home() {
   </Head>
 <Nav/>
 <main>
-  <Logo/>
   <div className="Wrapper">
   <Intro/>
   <About/>

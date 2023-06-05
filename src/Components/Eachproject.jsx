@@ -40,7 +40,7 @@ const Eachproject = ({
                 <div className={`description lg:w-[110%] w-full bg-primary_bg2 lg:absolute ${abs_pos} ${top} text-[15px] p-4 rounded-lg `}> {description}    
                 </div>
                 <div className='flex flex-col gap-4'>
-                <div className="materialUsed text-[13px] flex justify-between">
+                <div className="materialUsed text-[13px] flex justify-around lg:mt-0 mt-2">
                     <p>{lang1}</p>
                     <p>{lang2}</p>
                     <p>{lang3}</p>

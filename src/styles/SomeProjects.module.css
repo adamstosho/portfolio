@@ -28,3 +28,8 @@
     @apply h-[3rem]
 }
 
+
+
+.EachOtherProjects:hover h1{
+    @apply text-primary1
+}

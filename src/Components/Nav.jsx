@@ -17,7 +17,7 @@ const data =[
   },
   {
     num:'02.',
-    nav:'Experience',
+    nav:'Expertise',
     navigator:'#experience'
 
   },
@@ -43,7 +43,8 @@ width={300}
 height={300}
 alt={"My Logo"}
 /> */}
-<Logo/>
+<a href=""><Logo/></a>
+
 
 <span className={styles.grow}></span>
 

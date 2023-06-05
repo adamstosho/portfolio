@@ -10,26 +10,26 @@ const Socios = () => {
               <Image
             width={200}
             height={200}
-             src="/github-line.png" alt="Github image" /></a>
+             src="/github-line.png" alt="Github icon" /></a>
             <a href="https://twitter.com/I_n_telligence" target='blank'><Image
             width={200}
             height={200}
-             src="/twitter-line.png" alt="Twitter image" /></a>
+             src="/twitter-line.png" alt="Twitter icon" /></a>
             <a href="https://www.linkedin.com/in/usman-abdullahi-125a3a23b/" target='blank'>
               <Image
             width={200}
             height={200}
-             src="/linkedin-fill.png" alt="LinkedIN image" /></a>
-            <a href="" target='blank'>
+             src="/linkedin-fill.png" alt="LinkedIN icon" /></a>
+            <a href="https://instagram.com/abdul_lahi246?igshid=MzNlNGNkZWQ4Mg==" target='blank'>
               <Image
             width={200}
             height={200}
-             src="/instagram-line.png" alt="Instagram image" /></a>
+             src="/instagram-line.png" alt="Instagram icon" /></a>
             <a href="">
               <Image
             width={200}
             height={200}
-             src="/codepen-line.png" alt="Codepen image" /></a>
+             src="/codepen-line.png" alt="Codepen icon" /></a>
             <p></p>
             </div>
             <div className={styles.soicioAccountsR}>
