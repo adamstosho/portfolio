@@ -30,7 +30,7 @@ export default function Home() {
   <SomeProjects/>
   <OtherProject/>
   <Contact/>
-  <footer className='w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0 gap-10'>
+  <footer className='w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10'>
   <Socios/>
 
     <p

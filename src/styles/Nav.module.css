@@ -17,7 +17,7 @@ div.hide{
     @apply flex-grow-[1]
   }
   .navW .navR{
-      @apply flex lg:gap-10 gap-12 lg:flex-row flex-col items-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 pt-20 h-screen lg:w-max w-[70%] 
+      @apply flex lg:space-x-12 space-x-0 lg:space-y-0 space-y-12 lg:flex-row flex-col items-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 pt-20 h-screen lg:w-max w-[70%] 
   }
   .navW .active{
     @apply lg:left-0 left-full 
@@ -44,7 +44,7 @@ div.hide{
   }
 
  .navHarmburger{
-    @apply lg:hidden block relative right-4 flex flex-col  gap-2 items-end z-10 
+    @apply lg:hidden block relative right-4 flex flex-col  space-y-2  items-end z-10 
   }
 
   .navHarmburger p{
@@ -65,7 +65,7 @@ div.hide{
 }
 
 .activeHarmburger{
-  @apply gap-0
+  @apply gap-0 space-y-0
 }
   .activeHarmburger p{
     @apply absolute

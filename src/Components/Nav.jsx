@@ -37,13 +37,8 @@ const data =[
 ]
   return (
    <div className={`${styles.navW}`}>
-{/* <Image
-src={'/logo3.png'}
-width={300}
-height={300}
-alt={"My Logo"}
-/> */}
-<a href=""><Logo/></a>
+
+<Logo/>
 
 
 <span className={styles.grow}></span>

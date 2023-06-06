@@ -20,7 +20,7 @@ const Eachproject = ({
     top,
 }) => {
   return (
-            <div className={`projectW flex lg:justify-between w-full lg:gap-10 gap-4 lg:h-[26rem] lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
+            <div className={`projectW flex lg:justify-between w-full lg:gap-10 space-y-4 gap-4 lg:h-[26rem] h-[40rem] lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
             <div className={styles.projectImg}>
                 <a href={live2} className='w-full h-full'>
                 <Image 
