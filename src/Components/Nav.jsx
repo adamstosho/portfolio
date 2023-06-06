@@ -7,6 +7,8 @@ import Logo from './Logo'
 const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
+
+
 const [toggle, setToggle] = useState(true)
 
 const data =[
@@ -58,11 +60,16 @@ onClick={()=> setToggle(!toggle)}
 </div>
 
 </div>
+
+
 <div className={`${styles.navHarmburger} ${!toggle && styles.activeHarmburger}`}
 onClick={()=>setToggle(!toggle)}
 ><p></p>
 <p></p>
-<p></p></div>
+<p></p>
+</div>
+
+
 <div className={`${styles.overlay} ${toggle && styles.activeOverlay}`}
 onClick={()=> setToggle(!toggle)}
 ></div>

@@ -69,14 +69,13 @@ const OtherProject = () => {
                    
     ]
     let sliced = lessMore? otherProjectArr.slice(0,3) :otherProjectArr
-    console.log(sliced)
   return (
-    <div className={`w-full flex flex-col gap-8 items-center mt-40 ${styles.otherProjectW}`}>
+    <div className={`w-full flex flex-col justify-between space-y-8 items-center mt-40 ${styles.otherProjectW}`}>
         <div className='flex flex-col gap-6 items-center'>
         <h1 className='text-[1.5rem] text-var_color font-bold text-center'>Other Noteworthy Projects</h1>
-        <p className='text-primary1 cursor-pointer'><a href="">View the archive</a></p>
+        <p className='text-primary1 cursor-pointer'><a href="">Feel free to Explore!!!</a></p>
         </div>
-        <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap gap-5`}>
+        <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap space-y-5`}>
           {
             sliced.map((other,i)=>(
               <EachOtherProjects
@@ -93,9 +92,7 @@ const OtherProject = () => {
             ))
           }
         </div>
-        {/* <p className={lessMore ? styles.showLess: styles.showMore} */}
         <p className={`${lessMore? `after:content-['Show_More']`: 'after:content-["Show_Less"]'} ${styles.showMore}`}
-
         onClick={()=>setLessMore(!lessMore)}
         ></p>
     </div>
