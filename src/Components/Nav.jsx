@@ -8,6 +8,18 @@ const Nav = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
 
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos === currentScrollPos)
+    setPrevScrollPos(currentScrollPos)
+    console.log(currentScrollPos)   
+    console.log(prevScrollPos)
+    console.log(visible)
+  }
+  
+  useEffect(() => {
+  handleScroll()    
+  }, [])
 
 const [toggle, setToggle] = useState(true)
 
@@ -38,7 +50,7 @@ const data =[
  
 ]
   return (
-   <div className={`${styles.navW}`}>
+   <div className={`${styles.navW} ${visible ? styles.disappear:''}`}>
 
 <Logo/>
 
@@ -54,11 +66,11 @@ const data =[
   <p>{d.nav}</p></a>
 </div>
   ))}
+  <a href="https://resume.io/r/b1uoy61aX" target='blank'>
 <div className={styles.resume}
-onClick={()=> setToggle(!toggle)}
->
+onClick={()=> setToggle(!toggle)}>
 </div>
-
+</a>
 </div>
 
 
