@@ -5,21 +5,22 @@ import Logo from './Logo'
 
 
 const Nav = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    setVisible(prevScrollPos === currentScrollPos)
-    setPrevScrollPos(currentScrollPos)
-    console.log(currentScrollPos)   
-    console.log(prevScrollPos)
-    console.log(visible)
-  }
-  
-  useEffect(() => {
-  handleScroll()    
-  }, [])
+  console.log(visible)
+
+useEffect(() => {
+  let prevS = window.pageYOffset;
+  window.addEventListener('scroll', ()=>{
+let currenSc = pageYOffset;
+if (prevS > currenSc){
+  setVisible(false)
+}else{
+  setVisible(true)
+}
+prevS = currenSc;
+  })
+}, [])
 
 const [toggle, setToggle] = useState(true)
 
