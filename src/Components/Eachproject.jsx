@@ -20,9 +20,9 @@ const Eachproject = ({
     top,
 }) => {
   return (
-            <div className={`projectW flex lg:justify-between w-full lg:gap-10 space-y-4 gap-4 lg:h-[26rem] h-[40rem] lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
+            <div className={`projectW flex justify-between w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 lg:h-[26rem]  h-auto lg:items-center lg:p-4 p-0 rounded-lg  ${flex_Dir}`}>
             <div className={styles.projectImg}>
-                <a href={live2} className='w-full h-full'>
+                <a href={live2} className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
                 <Image 
                 src={img}
                 width={400}
@@ -32,7 +32,7 @@ const Eachproject = ({
                 </a>
             </div>
 
-            <div className='lg:w-[45%] w-full relative h-full flex flex-col justify-between lg:px-8 lg:py-0 p-0 '>
+            <div className='lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:px-8 lg:py-0 p-0 '>
                 <div className="projectTitle">
                 <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>Feautured Project</p>
                 <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem] lg:mb-0 mb-4`}>{name}</h1>

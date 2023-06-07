@@ -75,7 +75,7 @@ const OtherProject = () => {
         <h1 className='text-[1.5rem] text-var_color font-bold text-center'>Other Noteworthy Projects</h1>
         <p className='text-primary1 cursor-pointer'><a href="">Feel free to Explore!!!</a></p>
         </div>
-        <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap space-y-5`}>
+        <div className={` ${styles.Otherprojects} flex justify-between lg:flex-row flex-col flex-wrap lg:space-x-5 space-x-0 lg:space-y-0 space-y-5`}>
           {
             sliced.map((other,i)=>(
               <EachOtherProjects
