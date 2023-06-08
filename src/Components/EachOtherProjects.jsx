@@ -25,20 +25,12 @@ const EachOtherProjects = ({
             </div>
             <div className={`clickales flex gap-4`}>
                     <a href={live} target='blank'>
-                    <Image
-                    src={"/live2.png"}
-                    height={30}
-                    width={30}
-                    alt='icon1'
-                    />
+                    <div className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-6 h-6 gird place-content-center`}>
+                  </div>
                     </a>
                     <a href={github} target='blank'>
-                     <Image
-                    src={"/github-line.png"}
-                    height={25}
-                    width={30}
-                    alt='icon2'
-                    />
+                    <div className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-6 h-6 grid place-content-center `}>
+                  </div>
                     </a>
                 </div>
         </div>
