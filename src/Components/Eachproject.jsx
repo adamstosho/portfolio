@@ -20,7 +20,7 @@ const Eachproject = ({
     top,
 }) => {
   return (
-            <div className={`projectW flex justify-between w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 lg:h-[26rem]  h-auto lg:items-center lg:p-4 p-0 rounded-lg  ${flex_Dir}`}>
+            <div className={`projectW flex justify-between w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 lg:h-[26rem]  h-auto lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
             <div className={styles.projectImg}>
                 <a href={live2} className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
                 <Image 
@@ -28,6 +28,7 @@ const Eachproject = ({
                 width={400}
                 height={300}
                 alt={'Project view'}
+                className=''
                 />
                 </a>
             </div>
@@ -49,20 +50,12 @@ const Eachproject = ({
                 </div>
                 <div className={`clickales flex gap-4 ${end}`}>
                     <a href={live}>
-                    <Image
-                    src={"/live2.png"}
-                    height={30}
-                    width={30}
-                    alt='icon1'
-                    />
+                    <div className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-8 h-8 gird place-content-center bg-cover`}>
+                  </div>
                     </a>
                     <a href={github}>
-                     <Image
-                    src={"/github-line.png"}
-                    height={30}
-                    width={30}
-                    alt='icon2'
-                    />
+                    <div className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-8 h-8 gird place-content-center bg-cover`}>
+                  </div>
                     </a>
                 </div>
                 </div>

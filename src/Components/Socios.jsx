@@ -56,8 +56,10 @@ const Socios = () => {
            <div className={styles.soicioAccounts}>
             <div className={styles.soicioAccountsL}>
               {
-                socioArr.map((so)=>(
-             <a href={so.link} target='blank'>
+                socioArr.map((so,i)=>(
+             <a href={so.link} target='blank'
+             key={i}
+             >
             <div className={` ${so.ima1} ${so.ima2}  w-6 h-6 gird place-content-center`}>
                   </div>
                    </a>

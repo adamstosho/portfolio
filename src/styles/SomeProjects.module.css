@@ -6,7 +6,7 @@
         @apply lg:w-[55%] lg:h-[25rem] h-auto w-full grid place-items-center 
 }
 .projectImg img{
-    @apply w-full h-full
+    @apply w-full h-full border-[3px] rounded-lg border-primary_bg2 relative
 }
 
 .somprojectW p.learnMore,
