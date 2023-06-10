@@ -42,11 +42,13 @@ const data =[
 
   },
  
+ 
 ]
   return (
    <div className={`${styles.navW} ${visible ? styles.disappear:''}`}>
-
-<Logo/>
+<a href="https://github.com/intelligence247">
+  <Logo/>
+</a>
 
 
 <span className={styles.grow}></span>

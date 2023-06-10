@@ -11,6 +11,8 @@ import SomeProjects from '@/Components/SomeProjects'
 import OtherProject from '@/Components/OtherProject'
 import Contact from '@/Components/Contact'
 import Logo from '@/Components/Logo'
+import Expertise from '@/Components/Expertise'
+import PopUp from '@/Components/PopUp'
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -25,10 +27,12 @@ export default function Home() {
 
   </Head>
 <Nav/>
+<PopUp/>
 <main>
   <div className="Wrapper">
   <Intro/>
   <About/>
+  <Expertise/>
   <SomeProjects/>
   <OtherProject/>
   <Contact/>

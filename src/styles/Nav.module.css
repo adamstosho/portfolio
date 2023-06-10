@@ -95,5 +95,8 @@ div.hide{
 
 .logus p{
   /* font-family: Arial, sans-serif; */
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; 
+  
 }
+
+  /* transform: matrix(0,-1,-1,0,0,0); */

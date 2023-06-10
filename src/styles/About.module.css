@@ -8,8 +8,6 @@
     @apply col-span-2 flex justify-center items-start 
 }
 #aboutW .aboutR .imgwrapper img{
-    /* will-change: opacity; */
-    /* transition: opacity 0.3s; */
     @apply lg:w-80 lg:h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
 }
 
