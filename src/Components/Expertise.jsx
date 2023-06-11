@@ -9,7 +9,7 @@ const Expertise = () => {
         num={'02.'}
         text={"Some of my skills"}
         />
-        <h3>Here are a few technologies I’ve been working with recently:</h3>
+        <h3>{`Here are a few technologies I’ve been working with recently:`}</h3>
 
         <div className={styles.coreSkills}>
         <h1 className='text-primary1 text-center text-2xl mt-4'>_____ Core Skills</h1>

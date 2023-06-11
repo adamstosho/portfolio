@@ -69,7 +69,7 @@ const Socios = () => {
             <p></p>
             </div>
             <div className={styles.soicioAccountsR}>
-           <a href="mailto:Uthmanabdullahi2020@gnail.com?subject=Hi%20Abdullahi&body=" target='blank'><span>Uthmanabdullahi2020@gnail.com</span></a>
+           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='blank'><span>Uthmanabdullahi2020@gmail.com</span></a>
            <p></p>
         </div>
         </div>

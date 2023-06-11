@@ -6,23 +6,25 @@ const PopUp = () => {
     const [first, setfirst] = useState(true)
     setTimeout(() => {
       setPop(true) 
-    }, 60000);
+    }, 120000);
     const handleCancel = () => {
         setPop(false)
         setfirst(false)
     }
   return (
-    <div className={`fixed w-full h-full bg-opacity-20 bg-primary1 z-20 grid place-content-center cursor-pointer px-2 ${pop && first ? 'scale-1':'scale-0'}`}
+    <div className={`fixed w-full h-full bg-opacity-20 bg-primary1 z-20 grid place-content-center cursor-pointer px-2 duration-500 ${pop && first ? 'scale-1':'scale-0'}`}
     onClick={()=>handleCancel()}
     >
-        <div className="popW lg:w-80 w-full h-60 bg-primary_bg2 p-4 rounded-xl border-4 border-[#9959ee] border-dashed cursor-auto">
-            <h1 className='text-center text-xl cursor-auto text-[#99d9ee]'>{`Do you mind saying Hi?, Let's talk business.`}n</h1>
+        <div className="popW lg:w-80 w-full h-60 bg-primary_bg2 p-4 rounded-xl border-4 border-[#9959ee] border-dashed cursor-auto"
+        onClick={()=>setPop(true)}
+        >
+            <h1 className='text-center text-xl cursor-auto text-[#99d9ee]'>{`Do you mind saying Hi?, Let's talk business.`}</h1>
 <div>
 
 
 <div className="whatsapp flex gap-4 mt-8 justify-start items-center">
 
-<a href="mailto:Uthmanabdullahi2020@gnail.com?subject=Let%20do%20something%20together&body="
+<a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Let%20do%20something%20together&body="
 className=''
 >
 <div className={` bg-[url("/whatsapp-line.png")] hover:bg-[url("/whatsapp-lineh.png")] w-6 h-6 gird place-content-center`}>

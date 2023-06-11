@@ -46,7 +46,7 @@ const data =[
 ]
   return (
    <div className={`${styles.navW} ${visible ? styles.disappear:''}`}>
-<a href="https://github.com/intelligence247">
+<a href="https://github.com/intelligence247" target='_blank'>
   <Logo/>
 </a>
 

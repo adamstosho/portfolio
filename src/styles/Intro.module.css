@@ -1,5 +1,5 @@
 .introW{
-    @apply text-white py-40
+    @apply text-white pt-40
 }
 .introW p:first-child{
     @apply text-primary1
