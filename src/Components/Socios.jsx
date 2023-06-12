@@ -32,7 +32,7 @@ const Socios = () => {
       
     },
     {
-      link: "",
+      link: "https://codepen.io/Intelligence247-the-flexboxer",
       ima1 : `bg-[url("/codepen-line.png")]`,
       ima2 : `hover:bg-[url("/codepen-lineh.png")]`,
       alter : "Codepen icon"
