@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Email from './Email';
+import ContactForm from './ContactForm';
 
 
 const PopUp = () => {
@@ -15,7 +17,8 @@ const PopUp = () => {
     <div className={`fixed w-full h-full bg-opacity-20 bg-primary1 z-20 grid place-content-center cursor-pointer px-2 duration-500 ${pop && first ? 'scale-1':'scale-0'}`}
     onClick={()=>handleCancel()}
     >
-        <div className="popW lg:w-80 w-full h-60 bg-primary_bg2 p-4 rounded-xl border-4 border-[#9959ee] border-dashed cursor-auto"
+      {/* <ContactForm/> */}
+       <div className="popW lg:w-80 w-full h-60 bg-primary_bg2 p-4 rounded-xl border-4 border-[#9959ee] border-dashed cursor-auto"
         onClick={()=>setPop(true)}
         >
             <h1 className='text-center text-xl cursor-auto text-[#99d9ee]'>{`Do you mind saying Hi?, Let's talk business.`}</h1>
@@ -50,7 +53,7 @@ className='block w-[6.5rem] h-[2.5rem] bg-primary1 rounded-md relative '
 </div>
 
 </div>
-        </div>
+        </div> 
     </div>
   )
 }

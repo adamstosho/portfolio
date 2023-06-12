@@ -1,22 +1,18 @@
+import { useForm } from '@formspree/react';
 import React from 'react'
 
 const Email = () => {
-  return (
-    <div>
-        {/* <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    <label for="message">Message</label>
-    <textarea rows="5" name="message" id="message" placeholder="" required=""></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-  </fieldset>
-  <input type="submit" value="Submit">
-</form> */}
-    </div>
-  )
+    const [state, handleSubmit] = useForm('signupForm');
+    if (state.succeeded) {
+      return <div>Thank you for signing up!</div>;
+    }
+    return (
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" name="email" />
+        <button type="submit" disabled={state.submitting}>Sign up</button>
+      </form>
+    )
 }
 
 export default Email
