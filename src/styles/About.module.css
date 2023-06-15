@@ -1,5 +1,5 @@
 #aboutW{
-    @apply mt-10 flex lg:flex-row flex-col w-full pb-20 lg:gap-8 space-y-12 h-auto
+    @apply mt-10 flex lg:flex-row flex-col w-full lg:gap-8 space-y-12 h-auto
 }
 #aboutW .aboutL{
     @apply col-span-3 flex flex-col gap-6
@@ -7,16 +7,17 @@
 #aboutW .aboutR{
     @apply col-span-2 flex justify-center items-start 
 }
+#aboutW .aboutR .imgwrapper{
+    @apply border-2 border-primary1 md:w-80 lg:w-80 lg:h-96 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[90%] 
+}
 #aboutW .aboutR .imgwrapper img{
-    @apply lg:w-80 lg:h-80 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
+    @apply lg:w-80 lg:h-96 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
 }
 
  #aboutW .aboutR .imgwrapper:hover img{ 
      @apply -translate-x-2 -translate-y-2 
 } 
-#aboutW .aboutR .imgwrapper{
-    @apply border-2 border-primary1 md:w-80 lg:w-80 lg:h-80 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[80%] 
-}
+
 #aboutW .aboutR .imgwrapper:hover{
     @apply translate-x-[2px] translate-y-[2px]
 }

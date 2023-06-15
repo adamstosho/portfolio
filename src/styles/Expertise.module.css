@@ -1,5 +1,5 @@
 .ExpertiseW{
-    @apply block pt-[6rem] hidden
+    @apply pt-[6rem] hidden
 }
 .coreSkills{
     @apply lg:w-[20rem] w-full  h-[30rem] border-dotted border-primary1 border-2 rounded-xl 

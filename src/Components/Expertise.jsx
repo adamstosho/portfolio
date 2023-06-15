@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../styles/Expertise.module.css"
 import Headings from './Headings'
+
 const Expertise = () => {
   return (
     <div className={styles.ExpertiseW} id='experience'>
@@ -22,3 +23,6 @@ const Expertise = () => {
 }
 
 export default Expertise
+
+
+// https://flowbite.com/docs/components/progress/

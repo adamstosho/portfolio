@@ -8,13 +8,13 @@ const PopUp = () => {
     const [first, setfirst] = useState(true)
     setTimeout(() => {
       setPop(true) 
-    }, 120000);
+    }, 1000);
     const handleCancel = () => {
         setPop(false)
         setfirst(false)
     }
   return (
-    <div className={`fixed w-full h-full bg-opacity-20 bg-primary1 z-20 grid place-content-center cursor-pointer px-2 duration-500 ${pop && first ? 'scale-1':'scale-0'}`}
+    <div className={`fixed w-full h-full bg-opacity-30 bg-primary_bg2 z-20 grid place-content-center cursor-pointer px-2 duration-300 ${pop && first ? 'scale-1':'scale-0'}`}
     onClick={()=>handleCancel()}
     >
       {/* <ContactForm/> */}

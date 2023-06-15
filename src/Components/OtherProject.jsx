@@ -69,7 +69,7 @@ const OtherProject = () => {
     ]
     let sliced = lessMore? otherProjectArr.slice(0,3) :otherProjectArr
   return (
-    <div className={`w-full flex flex-col justify-between space-y-8 items-center mt-40 ${styles.otherProjectW}`}>
+    <div className={`${lessMore?'h-[90%]':'h-[100%]'} w-full flex flex-col justify-between space-y-8 items-center lg:mt-40 mt-[7rem] ${styles.otherProjectW}`}>
         <div className='flex flex-col gap-6 items-center'>
         <h1 className='text-[1.5rem] text-var_color font-bold text-center'>Other Noteworthy Projects</h1>
         <p className='text-primary1 cursor-pointer'><a href="">Feel free to Explore!!!</a></p>

@@ -17,6 +17,8 @@ const About = () => {
         <p>Collaboration is at the heart of my work. I thrive in interdisciplinary teams, working closely with designers, back-end developers, and stakeholders to bring projects to life. I excel at understanding project requirements and transforming them into intuitive user interfaces that prioritize usability and accessibility</p>
         <p>{"Here are a few technologies I’ve been working with recently:"}</p>
         <div className={styles.techs}>
+          <p>HTML</p>
+          <p>CSS</p>
           <p>JavaScript (ES6+)</p>
           <p>React.js</p>
           <p>Next.js</p>
