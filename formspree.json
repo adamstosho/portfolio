@@ -2,7 +2,7 @@
     "forms": {
       "contactForm": {
         "name": "Contact Form",
-        "actions": [{ "type": "email", "to": "{kehindeu13@gmail.com}" }]
+        "actions": [{ "type": "email", "to": "{21-52hl147@students.unilorin.edu.ng}" }]
       }
     }
   }
