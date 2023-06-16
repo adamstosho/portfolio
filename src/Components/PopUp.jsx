@@ -8,7 +8,7 @@ const PopUp = () => {
     const [first, setfirst] = useState(true)
     setTimeout(() => {
       setPop(true) 
-    }, 1000);
+    }, 120000);
     const handleCancel = () => {
         setPop(false)
         setfirst(false)
