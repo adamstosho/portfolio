@@ -1,6 +1,9 @@
 .ExpertiseW{
-    @apply pt-[6rem] 
+    @apply pt-[6rem] w-full grid place-items-center
 }
-/* .coreSkills{
-    @apply lg:w-[20rem] w-full  h-[30rem] border-dotted border-primary1 border-2 rounded-xl 
+.expertiseImages{
+       @apply grid place-items-center gap-y-8 lg:w-[50%] w-full lg:grid-cols-3 mt-20 grid-cols-2
+}
+/* .expertiseImages{
+    @apply w-[0rem]
 } */
