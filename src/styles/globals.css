@@ -29,14 +29,5 @@ main{
     @apply lg:w-[75%] w-full lg:px-0 px-5 h-auto m-auto 
 }
 
-/* @font-face {
-    font-family: sf mono;
-    font-style: normal;
-    font-weight: 500;
-    src: local('SF Mono'),url(https://fonts.cdnfonts.com/s/22256/SFMonoRegular.woff) format('woff')
-} */
+/* http://bit.ly/Intel-Abdul */
 
-/* @font-face {
-    font-family: 'Aldhabi' ;
-    src:url('fonts/aldhabi.ttf') format('truetype'),url('fonts/aldhabi.woff') format('woff');
-} */

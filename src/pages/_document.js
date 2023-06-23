@@ -5,7 +5,9 @@ export default function Document() {
     <Html lang="en">
       <Head>
       <link rel="icon" type="image/svg+xml" href="/logo3.png" />
+      <title>Abdullahi</title>
       </Head>
+      
       <body>
         <Main />
         <NextScript />
