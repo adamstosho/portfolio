@@ -31,11 +31,11 @@ const EachOtherProjects = ({
             />
             </div>
             <div className={`clickales flex gap-4`}>
-                    <a href={live} target='blank'>
+                    <a href={live} target='_blank' rel="noopener noreferrer">
                     <div className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-6 h-6 gird place-content-center`}>
                   </div>
                     </a>
-                    <a href={github} target='blank'>
+                    <a href={github} target='_blank' rel="noopener noreferrer">
                     <div className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-6 h-6 grid place-content-center `}>
                   </div>
                     </a>

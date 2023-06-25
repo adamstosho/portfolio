@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/Nav.module.css"
-import Image from 'next/image'
 import Logo from './Logo'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Nav = () => {
   const [visible, setVisible] = useState(false)
@@ -14,6 +14,7 @@ useEffect(() => {
 let currenSc = pageYOffset;
 prevS > currenSc ? setVisible(false) : setVisible(true)
 prevS = currenSc;
+AOS.init({duration:1000})
   })
 }, [])
 
@@ -45,8 +46,11 @@ const data =[
  
 ]
   return (
-   <div className={`${styles.navW} ${visible ? styles.disappear:''}`}>
-<a href="https://github.com/intelligence247" target='_blank'>
+   <div className={`${styles.navW} ${visible ? styles.disappear:''}`}
+   data-aos='fade-right'
+
+   >
+<a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer">
   <Logo/>
 </a>
 
@@ -57,12 +61,15 @@ const data =[
   {data.map((d, i)=>(
     <div className={`${styles.each}`}
     onClick={()=>setToggle(!toggle)}
-    key={i} >
+    key={i}
+     data-aos='fade-down'
+
+    >
   <a href={d.navigator}><span>{d.num}</span>
   <p>{d.nav}</p></a>
 </div>
   ))}
-  <a href="https://resume.io/r/b1uoy61aX" target='blank'>
+  <a href="https://resume.io/r/b1uoy61aX" target='_blank' rel="noopener noreferrer">
 <div className={styles.resume}
 onClick={()=> setToggle(!toggle)}>
 </div>

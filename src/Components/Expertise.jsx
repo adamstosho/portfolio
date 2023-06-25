@@ -7,7 +7,7 @@ import 'aos/dist/aos.css'
 
 const Expertise = () => {
   useEffect(()=> {
-    AOS.init({duration: 1500})
+    AOS.init({duration: 1000})
   },[])
   const expertiseObjArr = [
     {

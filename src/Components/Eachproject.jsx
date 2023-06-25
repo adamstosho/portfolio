@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/SomeProjects.module.css"
 import Image from 'next/image'
+import AOS from "aos"
 const Eachproject = ({
     name,
     description,
@@ -19,10 +20,14 @@ const Eachproject = ({
     github,
     top,
 }) => {
+  useEffect(() => {
+  AOS.init({duration:400})
+  }, [])
+  
   return (
             <div className={`projectW flex justify-between w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 lg:h-[26rem]  h-auto lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}>
-            <div className={styles.projectImg}>
-                <a href={live2} className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
+            <div className={styles.projectImg} data-aos='flip-left'>
+                <a href={live2} target='_blank' rel="noopener noreferrer" className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
                 <Image 
                 src={img}
                 width={400}
@@ -33,7 +38,7 @@ const Eachproject = ({
                 </a>
             </div>
 
-            <div className='lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:px-8 lg:py-0 p-0 '>
+            <div className='lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:px-8 lg:py-0 p-0' data-aos='fade-right'>
                 <div className="projectTitle">
                 <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>Feautured Project</p>
                 <h1 className={`text-var_color font-[700] ${text_pos} text-[1.5rem] lg:mb-0 mb-4`}>{name}</h1>

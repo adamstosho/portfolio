@@ -1,12 +1,12 @@
 .soicioAccounts{
-    @apply lg:w-screen w-full flex flex-col gap-6
+    @apply lg:w-screen w-full flex flex-col gap-6 
 }
 .soicioAccounts .soicioAccountsL{
-    @apply lg:fixed relative bottom-0 flex lg:flex-col flex-row lg:left-[4%] left-0 items-center lg:gap-7 gap-0 lg:w-8 w-full lg:justify-start justify-around 
+    @apply lg:fixed relative bottom-0 flex lg:flex-col flex-row lg:left-[4%] left-0 items-center lg:gap-7 gap-0 lg:w-8 w-full lg:justify-start justify-around lg:mb-0 mb-4
 }
 .soicioAccounts .soicioAccountsR{
-    @apply lg:fixed bottom-0 right-[4%] lg:w-8 lg:flex flex-col items-center gap-[8.35rem] relative
-    /* lg:fixed bottom-0 flex flex-col items-center gap-[8.35rem]  lg:right-[4%] lg:w-8 w-full lg:block hidden */
+    @apply lg:fixed bottom-0 right-[4%] lg:w-8 lg:flex flex-col items-center gap-[8.35rem] relative lg:mb-0 mb-4
+   
 }
 .soicioAccounts .soicioAccountsL a{
     @apply hover:animate-spin
@@ -16,7 +16,7 @@
     @apply h-[6rem] w-[1px]  bg-blur_texts lg:block hidden
 }
 .soicioAccounts .soicioAccountsR span{
-    @apply hover:text-primary1 hover:right-2 relative block duration-300 transition-all ease-linear right-0 text-[13px]
+    @apply hover:text-primary1 lg:hover:right-2 hover:right-0 bottom-0 lg:hover:bottom-0 hover:bottom-2 relative block duration-300 transition-all ease-linear right-0 text-[13px]
 }
 .soicioAccounts .soicioAccountsR a{
     @apply lg:rotate-90 rotate-0 origin-center 

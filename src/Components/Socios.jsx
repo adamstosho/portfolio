@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/Socios.module.css"
-import Image from 'next/image'
+import AOS from "aos"
 const Socios = () => {
   const socioArr = [
     {
@@ -40,27 +40,20 @@ const Socios = () => {
     },
   ]
   
-/*           
-         
-            <a href="" target='blank'>
-              <Image
-            width={200}
-            height={200}
-             src="/instagram-line.png" alt="Instagram icon" /></a>
-            <a href="">
-              <Image
-            width={200}
-            height={200}
-             src="/codepen-line.png" alt="Codepen icon" /></a>*/
+  useEffect(() => {
+   AOS.init({duration:1000})
+  }, [])
+  
   return (
            <div className={styles.soicioAccounts}>
             <div className={styles.soicioAccountsL}>
               {
                 socioArr.map((so,i)=>(
-             <a href={so.link} target='blank'
+             <a href={so.link} target='_blank' rel="noopener noreferrer"
              key={i}
+             data-aos={`${i%2===0?'fade-right':'flip-right'}`}
              >
-            <div className={` ${so.ima1} ${so.ima2}  w-6 h-6 gird place-content-center`}>
+            <div className={` ${so.ima1} ${so.ima2} w-6 h-6 gird place-content-center`}>
                   </div>
                    </a>
                 ))
@@ -68,8 +61,8 @@ const Socios = () => {
             
             <p></p>
             </div>
-            <div className={styles.soicioAccountsR}>
-           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='blank'><span>Uthmanabdullahi2020@gmail.com</span></a>
+            <div className={styles.soicioAccountsR} >
+           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='_blank' rel="noopener noreferrer"><span data-aos='fade-downn'>Uthmanabdullahi2020@gmail.com</span></a>
            <p></p>
         </div>
         </div>
