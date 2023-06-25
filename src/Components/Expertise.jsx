@@ -66,8 +66,7 @@ const Expertise = () => {
             key={i}
            data-aos={`${i%2===0?'fade-down-right':'flip-left'}`} 
             >
-            <Image
-        
+            <Image        
             src={expert.src} 
             width={100}
             height={100}

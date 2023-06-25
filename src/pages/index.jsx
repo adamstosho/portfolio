@@ -21,11 +21,7 @@ export default function Home() {
 
   return (
  <div className="body">
-  <Head>
-  {/* <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" /> */}
-  {/* <link rel="stylesheet" href="path/to/custom.css"/> */}
-
-  </Head>
+  
 <Nav/>
 <PopUp/>
 <main>
@@ -40,7 +36,7 @@ export default function Home() {
   <Socios/>
 
     <p
-     className='hover:text-primary1 text-[13px] cursor-pointer'> <a href="https://github.com/intelligence247" target='_blank'>Designed & Built by Usman Abdullahi</a></p>
+     className='hover:text-primary1 text-[13px] cursor-pointer'> <a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer">Designed & Built by Usman Abdullahi</a></p>
   </footer>
   </div>
 </main>

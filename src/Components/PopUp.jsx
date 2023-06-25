@@ -35,7 +35,7 @@ className=''
                   </a>
 
 <a href="https://api.whatsapp.com/send?phone=2349135619423&text=Hi%20Abdullahi!" 
-target='blank'
+target='blank' rel="noopener noreferrer"
 className='block w-[6.5rem] h-[2.5rem] bg-primary1 rounded-md relative '
 ><p className='text-primary1 bg-primary_bg2 border-[1px] rounded-md border-primary1 absolute w-full h-full grid place-content-center bottom-0 hover:bottom-1 right-0 hover:right-1'>Say Hello</p></a>
 </div>
