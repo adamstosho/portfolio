@@ -23,7 +23,6 @@ const About = () => {
           <p>React.js</p>
           <p>Next.js</p>
           <p>Redux toolkit</p>
-          {/* <p>TypeScript</p> */}
           <p>TaliWind CSS</p>
         </div>
         </div>

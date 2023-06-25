@@ -1,41 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/Expertise.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Expertise = () => {
+  useEffect(()=> {
+    AOS.init({duration: 1500})
+  },[])
   const expertiseObjArr = [
     {
-      src:'html5.svg',
+      src:'/html5.svg',
       alt: 'HTML5 Logo',
     },
     {
-      src:'css3.svg',
+      src:'/css3.svg',
       alt: 'css3 Logo',
     },
     {
-      src:'javascript.svg',
+      src:'/javascript.svg',
       alt: 'JavaScript Logo',
     },
     {
-      src:'tailwindcss.svg',
+      src:'/tailwindcss.svg',
       alt: 'tailwindcss Logo',
     },
     {
-      src:'reactjs.svg',
+      src:'/reactjs.svg',
       alt: 'reactjs Logo',
     },
     {
-      src:'redux.svg',
+      src:'/redux.svg',
       alt: 'redux Logo',
     },
     {
-      src:'vite.svg',
+      src:'/vite.svg',
       alt: 'vite Logo',
     },
     {
-      src:'npm.svg',
+      src:'/npm.svg',
       alt: 'vite Logo',
+    },
+    {
+      src:'/next.svg',
+      alt: 'Nextjs Logo',
     },
     
   ]
@@ -49,14 +58,21 @@ const Expertise = () => {
         <h3>{`Here are a few technologies I’ve been working with recently:`}</h3>
 
 
-<div className={styles.expertiseImages}>
+<div className={styles.expertiseImages} 
+>
          {
-          expertiseObjArr.map((expert)=>(
+          expertiseObjArr.map((expert, i)=>(
+            <div className={styles.eachExpertiseImg}
+            key={i}
+           data-aos={`${i%2===0?'fade-left':'flip-left'}`} 
+            >
             <Image
+        
             src={expert.src} 
             width={100}
             height={100}
             alt={expert.alt} />
+            </div>
           ))
          }
 </div>

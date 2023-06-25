@@ -12,7 +12,7 @@
     @apply bg-blur_texts text-var_color bg-opacity-30
     }
 .body{
-    @apply min-h-[100vh] w-full bg-repeat bg-primary_bg
+    @apply min-h-[100vh] w-full bg-repeat bg-primary_bg overflow-x-clip
 }
 body::-webkit-scrollbar{
     @apply lg:w-[6px] bg-primary_bg2 

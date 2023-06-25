@@ -2,8 +2,11 @@
     @apply pt-[6rem] w-full grid place-items-center
 }
 .expertiseImages{
-       @apply grid place-items-center gap-y-8 lg:w-[50%] w-full lg:grid-cols-3 mt-20 grid-cols-2
+       @apply lg:grid flex flex-col place-items-center gap-y-8 lg:w-[60%] w-full lg:grid-cols-2 mt-20 grid-cols-1
 }
-/* .expertiseImages{
-    @apply w-[0rem]
-} */
+.eachExpertiseImg{
+    @apply bg-primary_bg2 lg:w-[15rem] w-[90%]  h-[7rem] grid place-items-center rounded-lg shadow-sm shadow-black 
+}
+.eachExpertiseImg img{
+    @apply lg:w-[5rem] w-[3rem]
+}
