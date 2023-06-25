@@ -64,7 +64,7 @@ const Expertise = () => {
           expertiseObjArr.map((expert, i)=>(
             <div className={styles.eachExpertiseImg}
             key={i}
-           data-aos={`${i%2===0?'fade-left':'flip-left'}`} 
+           data-aos={`${i%2===0?'fade-down-right':'flip-left'}`} 
             >
             <Image
         
