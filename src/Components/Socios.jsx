@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styles from "../styles/Socios.module.css"
 import AOS from "aos"
+import 'aos/dist/aos.css'
 const Socios = () => {
   const socioArr = [
     {

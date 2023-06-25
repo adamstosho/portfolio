@@ -3,6 +3,8 @@ import styles from "../styles/About.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
 import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 const About = () => {
   useEffect(() => {
    AOS.init({duration:1000})

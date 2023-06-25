@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import Image from 'next/image'
 import styles from "../styles/SomeProjects.module.css"
 import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 const EachOtherProjects = ({
     lang1,
     lang2,

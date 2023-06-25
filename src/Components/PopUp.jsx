@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Email from './Email';
-import ContactForm from './ContactForm';
 
 
 const PopUp = () => {
