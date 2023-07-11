@@ -10,7 +10,6 @@ import Socios from '@/Components/Socios'
 import SomeProjects from '@/Components/SomeProjects'
 import OtherProject from '@/Components/OtherProject'
 import Contact from '@/Components/Contact'
-import Logo from '@/Components/Logo'
 import Expertise from '@/Components/Expertise'
 import PopUp from '@/Components/PopUp'
 const inter = Inter({ subsets: ['latin'] })
@@ -43,9 +42,6 @@ export default function Home() {
  </div>
         
 
-// npm install --save aos@next
   )
 }
 
-// "eslint": "8.37.0",
-    // "eslint-config-next": "^12.0.4",

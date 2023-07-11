@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import styles from "../styles/SomeProjects.module.css"
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const EachOtherProjects = ({
     lang1,
@@ -15,13 +13,10 @@ const EachOtherProjects = ({
     desc,
 
 }) => {
-  useEffect(() => {
-   AOS.init({duration:1000})
-  }, [])
+ 
   
   return (
     <div className={`${styles.EachOtherProjects} lg:max-w-[32%] max-w-full flex flex-col space-y-4 p-6 bg-primary_bg2 shadow-lg rounded-lg h-80 max-h-80 relative bottom-0 hover:bottom-2`}
-    data-aos='flip-right'
     >
         <div className='flex items-center justify-between'>
             <div>

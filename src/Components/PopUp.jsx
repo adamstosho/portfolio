@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const PopUp = () => {
     const [pop, setPop] = useState(false)
     const [first, setfirst] = useState(true)
-    setTimeout(() => {
-      setPop(true) 
-    }, 120000);
+     
+        setTimeout(() => {
+          setPop(true) 
+        }, 3000);
+    
     const handleCancel = () => {
         setPop(false)
         setfirst(false)

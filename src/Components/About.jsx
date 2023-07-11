@@ -2,14 +2,9 @@ import React, { useEffect } from 'react'
 import styles from "../styles/About.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const About = () => {
-  useEffect(() => {
-   AOS.init({duration:1000})
-  }, [])
-  
+
   return (
     <div id="aboutwrapper" className='pt-[10rem]'>
        <Headings
@@ -36,7 +31,6 @@ const About = () => {
         <div className={styles.aboutR}>
           <div className={styles.imgwrapper}>
           <Image
-          data-aos='fade-down'
            src="/profile3.png" 
            width={300}
            height={400}

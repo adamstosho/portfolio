@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import styles from "../styles/Socios.module.css"
-import AOS from "aos"
-import 'aos/dist/aos.css'
 const Socios = () => {
   const socioArr = [
     {
@@ -40,11 +38,7 @@ const Socios = () => {
       
     },
   ]
-  
-  useEffect(() => {
-   AOS.init({duration:1000})
-  }, [])
-  
+
   return (
            <div className={styles.soicioAccounts}>
             <div className={styles.soicioAccountsL}>
@@ -52,7 +46,7 @@ const Socios = () => {
                 socioArr.map((so,i)=>(
              <a href={so.link} target='_blank' rel="noopener noreferrer"
              key={i}
-             data-aos={`${i%2===0?'fade-right':'flip-right'}`}
+             
              >
             <div className={` ${so.ima1} ${so.ima2} w-6 h-6 gird place-content-center`}>
                   </div>
@@ -62,8 +56,8 @@ const Socios = () => {
             
             <p></p>
             </div>
-            <div className={styles.soicioAccountsR} >
-           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='_blank' rel="noopener noreferrer"><span data-aos='fade-down'>Uthmanabdullahi2020@gmail.com</span></a>
+            <div className={styles.soicioAccountsR}>
+           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='_blank' rel="noopener noreferrer"><span>Uthmanabdullahi2020@gmail.com</span></a>
            <p></p>
         </div>
         </div>

@@ -2,13 +2,9 @@ import React, { useEffect } from 'react'
 import styles from "../styles/Expertise.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const Expertise = () => {
-  useEffect(()=> {
-    AOS.init({duration: 1000})
-  },[])
+ 
   const expertiseObjArr = [
     {
       src:'/html5.svg',
@@ -48,8 +44,9 @@ const Expertise = () => {
     },
     
   ]
+  console.log(expertiseObjArr)
   return (
-    <div className={styles.ExpertiseW} id='experience'>
+    <div className={styles.ExpertiseW} id='expertise'>
         <Headings
         position={'center'}
         num={'02.'}
@@ -64,7 +61,6 @@ const Expertise = () => {
           expertiseObjArr.map((expert, i)=>(
             <div className={styles.eachExpertiseImg}
             key={i}
-           data-aos={`${i%2===0?'fade-down-right':'flip-left'}`} 
             >
             <Image        
             src={expert.src} 

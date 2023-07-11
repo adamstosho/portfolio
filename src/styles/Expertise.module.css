@@ -2,7 +2,7 @@
     @apply pt-[6rem] w-full grid place-items-center
 }
 .expertiseImages{
-       @apply lg:grid flex flex-col place-items-center gap-y-8 lg:w-[60%] w-full lg:grid-cols-2 mt-20 grid-cols-1
+       @apply lg:grid flex flex-col place-items-center gap-y-8 lg:w-[90%] w-full lg:grid-cols-3 mt-20 grid-cols-1
 }
 .eachExpertiseImg{
     @apply bg-primary_bg2 lg:w-[15rem] w-[90%]  h-[7rem] grid place-items-center rounded-lg shadow-sm shadow-black 

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/Nav.module.css"
 import Logo from './Logo'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const Nav = () => {
   const [visible, setVisible] = useState(false)
@@ -14,7 +12,6 @@ useEffect(() => {
 let currenSc = pageYOffset;
 prevS > currenSc ? setVisible(false) : setVisible(true)
 prevS = currenSc;
-AOS.init({duration:1000})
   })
 }, [])
 
@@ -27,7 +24,7 @@ const data =[
   {
     num:'02.',
     nav:'Expertise',
-    navigator:'#experience'
+    navigator:'#expertise'
 
   },
   {
@@ -47,7 +44,6 @@ const data =[
 ]
   return (
    <div className={`${styles.navW} ${visible ? styles.disappear:''}`}
-   data-aos='fade-right'
 
    >
 <a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer">
@@ -62,7 +58,6 @@ const data =[
     <div className={`${styles.each}`}
     onClick={()=>setToggle(!toggle)}
     key={i}
-     data-aos='fade-down'
 
     >
   <a href={d.navigator}><span>{d.num}</span>
