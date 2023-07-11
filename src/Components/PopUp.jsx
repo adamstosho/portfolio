@@ -7,7 +7,7 @@ const PopUp = () => {
      
         setTimeout(() => {
           setPop(true) 
-        }, 3000);
+        }, 180000);
     
     const handleCancel = () => {
         setPop(false)
