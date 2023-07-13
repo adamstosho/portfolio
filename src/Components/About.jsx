@@ -4,7 +4,13 @@ import Headings from './Headings'
 import Image from 'next/image'
 
 const About = () => {
-
+ const qualificationArr = [
+  'Demonstrated proficiency in building dynamic and interactive websites using HTML, CSS, and JavaScript(ES6+)',
+  'Strong experience in frontend frameworks like React, including state management with Redux.',
+'Solid understanding of responsive design principles and mobile-first development.',
+'Knowledge of version control systems, such as Git, for collaborative development.',
+'Ability to work collaboratively in a team environment, adapt to new technologies quickly, and meet project deadlines.'
+ ]
   return (
     <div id="aboutwrapper" className='pt-[10rem]'>
        <Headings
@@ -18,21 +24,20 @@ const About = () => {
         <p  
         data-aos="fade-up"
      data-aos-anchor-placement="center-bottom"
-     >Hello! My name is <b><i>Abdullahi.</i></b> I enjoy creating things that live on the internet. With a keen eye for detail and a love for clean and efficient code, I specialize in translating design concepts into high-quality, responsive websites and web applications. I have a solid command of HTML, CSS, and JavaScript, as well as experience with front-end frameworks such as [Next.js, React.js and TaliWindCSS].</p>
+     >Hello! My name is <b><i>Abdullahi.</i></b> I enjoy creating things that live on the internet. With a keen eye for detail and a love for clean and efficient code, I specialize in translating design concepts into high-quality, responsive websites and web applications. I have a solid command of HTML, CSS, and JavaScript, as well as experience with front-end frameworks such as Next.js, React.js and TaliWindCSS.</p>
         <p
          data-aos="fade-up"
          data-aos-anchor-placement="bottom-bottom"
         >Collaboration is at the heart of my work. I thrive in interdisciplinary teams, working closely with designers, back-end developers, and stakeholders to bring projects to life. I excel at understanding project requirements and transforming them into intuitive user interfaces that prioritize usability and accessibility</p>
-        {/* <p>{"Here are a few technologies I’ve been working with recently:"}</p> */}
-        {/* <div className={styles.techs} id='experience'>
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>JavaScript (ES6+)</p>
-          <p>React.js</p>
-          <p>Next.js</p>
-          <p>Redux toolkit</p>
-          <p>TaliWind CSS</p>
-        </div> */}
+        <p>{"Here are some highlights of my qualifications and achievements:"}</p>
+        <div className={styles.techs} id='experience'>
+          {
+            qualificationArr.map((q,i)=>(
+              <p key={i} data-aos={i%2==0?'fade-right':'flip-right'}>{q}</p>
+            ))
+          }
+          
+        </div>
         </div>
         <div className={styles.aboutR}>
           <div className={styles.imgwrapper}>
