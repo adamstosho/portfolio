@@ -18,13 +18,13 @@ div.hide{
     @apply flex-grow-[1]
   }
   .navW .navR{
-      @apply flex lg:space-x-12 space-x-0 lg:space-y-0 space-y-12 lg:flex-row flex-col items-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 pt-20 h-screen lg:w-max w-[70%] 
+      @apply flex lg:space-x-12 space-x-0 lg:space-y-0 space-y-8 lg:flex-row flex-col items-center justify-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 h-screen lg:w-max w-[70%] 
   }
   .navW .active{
     @apply lg:left-0 left-full 
   }
   .navR .each a{
-    @apply flex lg:flex-row md:flex-row flex-col gap-1.5 items-center
+    @apply flex lg:flex-row md:flex-row flex-col gap-1 items-center
   }
   .navR .each{
     @apply text-blur_texts hover:text-primary1 cursor-pointer
@@ -35,7 +35,7 @@ div.hide{
   .navR .each span,
    .navR .each p{
     font-family: 'SF Mono', monospace;;
-    @apply lg:text-[13px] hover:text-primary1
+    @apply text-[13px] hover:text-primary1
    }
   .navW .resume{
     @apply  bg-primary1 flex justify-center items-center px-2 py-1.5 cursor-pointer lg:lg:w-[5rem] lg:h-[2.3rem] h-[2.8rem] w-[8rem] rounded-md relative text-[13px] leading-[20px]

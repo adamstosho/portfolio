@@ -16,6 +16,11 @@ let currenSc = pageYOffset;
 prevS > currenSc ? setVisible(false) : setVisible(true)
 prevS = currenSc;
   })
+  Aos.init({
+    duration: 1000,
+    offset: 0,
+
+  })
 }, [])
 
 const data =[
@@ -62,6 +67,7 @@ const data =[
     onClick={()=>setToggle(!toggle)}
     key={i}
     data-aos="zoom-in-down"
+    offset={0}
     >
   <a href={d.navigator}><span>{d.num}</span>
   <p>{d.nav}</p></a>
