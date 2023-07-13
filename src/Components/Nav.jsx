@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+import Aos from "aos"
 import styles from "../styles/Nav.module.css"
 import Logo from './Logo'
-
-const Nav = () => {
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import 'aos/dist/aos.css';
+ 
+export default function Nav () {
   const [visible, setVisible] = useState(false)
 const [toggle, setToggle] = useState(true)
-
 useEffect(() => {
   let prevS = window.pageYOffset;
   window.addEventListener('scroll', ()=>{
@@ -29,7 +32,7 @@ const data =[
   },
   {
     num:'03.',
-    nav:'Work',
+    nav:'Project',
     navigator:'#work'
 
   },
@@ -46,7 +49,7 @@ const data =[
    <div className={`${styles.navW} ${visible ? styles.disappear:''}`}
 
    >
-<a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer">
+<a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer" data-aos="zoom-in-down">
   <Logo/>
 </a>
 
@@ -58,7 +61,7 @@ const data =[
     <div className={`${styles.each}`}
     onClick={()=>setToggle(!toggle)}
     key={i}
-
+    data-aos="zoom-in-down"
     >
   <a href={d.navigator}><span>{d.num}</span>
   <p>{d.nav}</p></a>
@@ -66,7 +69,7 @@ const data =[
   ))}
   <a href="https://resume.io/r/b1uoy61aX" target='_blank' rel="noopener noreferrer">
 <div className={styles.resume}
-onClick={()=> setToggle(!toggle)}>
+onClick={()=> setToggle(!toggle)} data-aos="zoom-in-down">
 </div>
 </a>
 </div>
@@ -87,4 +90,4 @@ onClick={()=> setToggle(!toggle)}
   )
 }
 
-export default Nav
+

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 
 
-const PopUp = () => {
+export default function PopUp (){
     const [pop, setPop] = useState(false)
     const [first, setfirst] = useState(true)
      
         setTimeout(() => {
           setPop(true) 
-        }, 180000);
+        }, 1000);
     
     const handleCancel = () => {
         setPop(false)
@@ -58,4 +60,3 @@ className='block w-[6.5rem] h-[2.5rem] bg-primary1 rounded-md relative '
   )
 }
 
-export default PopUp

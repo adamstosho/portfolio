@@ -1,9 +1,20 @@
+'use client'
 import React, { useEffect } from 'react'
 import styles from "../styles/Expertise.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
-
+import Aos from 'aos'
+import 'aos/dist/aos.css';
 const Expertise = () => {
+  useEffect(() => {
+    Aos.init({
+      disable:false,
+      duration: 1000,
+      offset: 135,
+
+    })
+  }, [])
+  
  
   const expertiseObjArr = [
     {
@@ -60,7 +71,10 @@ const Expertise = () => {
          {
           expertiseObjArr.map((expert, i)=>(
             <div className={styles.eachExpertiseImg}
-            key={i}
+            data-aos= {i%2===0?'fade-right':'fade-up'}
+            data-aos-anchor-placement="top-center"
+          
+           key={i}
             >
             <Image        
             src={expert.src} 
@@ -71,12 +85,6 @@ const Expertise = () => {
           ))
          }
 </div>
-        {/* <div className={styles.coreSkills}>
-        <h1 className='text-primary1 text-center text-2xl mt-4'>_____ Core Skills</h1>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>JavaScript</p>
-        </div> */}
     </div>
   )
 }

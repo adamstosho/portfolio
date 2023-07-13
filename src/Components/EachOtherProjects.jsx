@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import styles from "../styles/SomeProjects.module.css"
 
@@ -11,12 +11,14 @@ const EachOtherProjects = ({
     github,
     title,
     desc,
+    aos
 
 }) => {
  
   
   return (
     <div className={`${styles.EachOtherProjects} lg:max-w-[32%] max-w-full flex flex-col space-y-4 p-6 bg-primary_bg2 shadow-lg rounded-lg h-80 max-h-80 relative bottom-0 hover:bottom-2`}
+    data-aos={aos}
     >
         <div className='flex items-center justify-between'>
             <div>

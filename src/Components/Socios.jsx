@@ -1,5 +1,8 @@
+'use client'
 import React, { useEffect } from 'react'
 import styles from "../styles/Socios.module.css"
+import Aos from 'aos'
+import 'aos/dist/aos.css';
 const Socios = () => {
   const socioArr = [
     {
@@ -14,7 +17,6 @@ const Socios = () => {
       ima1 : `bg-[url("/twitter-line.png")]`,
       ima2 : `hover:bg-[url("/twitter-lineh.png")]`,
       alter : "Twitter icon"
-      
     },
     {
       link: "https://www.linkedin.com/in/usman-abdullahi-125a3a23b/",
@@ -57,7 +59,9 @@ const Socios = () => {
             <p></p>
             </div>
             <div className={styles.soicioAccountsR}>
-           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='_blank' rel="noopener noreferrer"><span>Uthmanabdullahi2020@gmail.com</span></a>
+           <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Hi%20Abdullahi&body=" target='_blank' rel="noopener noreferrer"><span
+          x
+           > Uthmanabdullahi2020@gmail.com</span></a>
            <p></p>
         </div>
         </div>

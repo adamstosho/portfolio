@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import EachOtherProjects from './EachOtherProjects'
 import styles from "../styles/SomeProjects.module.css"
@@ -87,6 +88,7 @@ const OtherProject = () => {
               desc={other.desc}
               github={other.github}
               live={other.live}
+              aos={i%2===0?'fade-up':'fade-down'}
               />
             ))
           }
