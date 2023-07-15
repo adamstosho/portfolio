@@ -1,3 +1,4 @@
+'use client'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import About from '@/Components/About'
@@ -9,11 +10,21 @@ import Expertise from '@/Components/Expertise'
 import PopUp from '@/Components/PopUp'
 import Nav from '@/Components/Nav'
 import Intro from '@/Components/Intro'
+import { useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
-
+import Aos from 'aos'
+import 'aos/dist/aos.css';
 
 export default function Home() {
 
+  useEffect(() => {
+    Aos.init({
+      disable:false,
+      duration: 600,
+      offset: 135,
+  
+    })
+  }, [])
 
   return (
  <div className="body">

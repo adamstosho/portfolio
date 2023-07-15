@@ -3,17 +3,8 @@ import React, { useEffect } from 'react'
 import styles from "../styles/Expertise.module.css"
 import Headings from './Headings'
 import Image from 'next/image'
-import Aos from 'aos'
-import 'aos/dist/aos.css';
-const Expertise = () => {
-  useEffect(() => {
-    Aos.init({
-      disable:false,
-      duration: 1000,
-      offset: 135,
 
-    })
-  }, [])
+const Expertise = () => {
   
  
   const expertiseObjArr = [

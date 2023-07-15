@@ -17,7 +17,7 @@ prevS > currenSc ? setVisible(false) : setVisible(true)
 prevS = currenSc;
   })
   Aos.init({
-    duration: 1000,
+    duration: 600,
     offset: 0,
 
   })

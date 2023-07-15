@@ -5,6 +5,16 @@ import styles from "../styles/SomeProjects.module.css"
 const OtherProject = () => {
   const [lessMore, setLessMore] = useState(true)
     const otherProjectArr = [
+      {
+        lang1:'Reactjs',
+        lang2:'TailwindCSS',
+        lang3:'Netlify',
+        lang4:'',
+        title:'E-commerce Website',
+        desc:'This is an E-commerce website, where you can go for Shopping, add to cart, and also delete a cart.',
+        github:'https://github.com/Intelligence247/e-commerce',
+        live:'https://harmonious-bavarois-1f640c.netlify.app',
+        },
         {
             lang1:'React-Redux',
             lang2:'',
@@ -66,6 +76,7 @@ const OtherProject = () => {
                       github:'',
                       live:'https://tranquil-sunburst-a4ee59.netlify.app/',
                       },
+                     
                    
     ]
     let sliced = lessMore? otherProjectArr.slice(0,3) :otherProjectArr
