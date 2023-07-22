@@ -1,5 +1,5 @@
 .ExpertiseW{
-    @apply pt-[6rem] w-full grid place-items-center
+    @apply pt-[6rem] w-full grid place-items-center 
 }
 .expertiseImages{
        @apply lg:grid flex flex-col place-items-center gap-y-8 lg:w-[90%] w-full lg:grid-cols-3 mt-20 grid-cols-1

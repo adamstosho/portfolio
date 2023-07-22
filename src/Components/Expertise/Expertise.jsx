@@ -1,9 +1,10 @@
 'use client'
 import React, { useEffect } from 'react'
-import styles from "../styles/Expertise.module.css"
-import Headings from './Headings'
+import Headings from '../Headings'
 import Image from 'next/image'
-
+import styles from "../../styles/Expertise.module.css"
+import ExpertiseCard from './ExpertiseCard'
+import DownloadResume from '../DownloadResume'
 const Expertise = () => {
   
  
@@ -55,7 +56,9 @@ const Expertise = () => {
         text={"Some of my skills"}
         />
         <h3>{`Here are a few technologies I’ve been working with recently:`}</h3>
-
+<div className="exp">
+  <ExpertiseCard/>
+</div>
 
 <div className={styles.expertiseImages} 
 >
@@ -63,8 +66,6 @@ const Expertise = () => {
           expertiseObjArr.map((expert, i)=>(
             <div className={styles.eachExpertiseImg}
             data-aos= {i%2===0?'fade-right':'fade-up'}
-            data-aos-anchor-placement="top-center"
-          
            key={i}
             >
             <Image        
