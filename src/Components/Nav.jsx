@@ -73,7 +73,7 @@ const data =[
   <p>{d.nav}</p></a>
 </div>
   ))}
-  <a href="https://resume.io/r/b1uoy61aX" target='_blank' rel="noopener noreferrer">
+  <a href="https://drive.google.com/file/d/1W5kvSID9Rll8Ye8dZWoA5Pa8SZijMTAE/view?usp=sharing" target='_blank' rel="noopener noreferrer">
 <div className={styles.resume}
 onClick={()=> setToggle(!toggle)} data-aos="zoom-in-down">
 </div>

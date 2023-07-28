@@ -13,7 +13,7 @@ const SomeProjects = () => {
           position={'start'}
           width={"w-0"}
           />
-          <div className='h-auto w-full flex flex-col space-y-20 '>
+          <div className='h-auto w-full flex flex-col lg:space-y-20 space-y-10 '>
           <Eachproject
           img={"/rolex.png"}
           name={"Rolex Wristwatch"}

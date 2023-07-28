@@ -1,5 +1,5 @@
 #aboutW{
-    @apply mt-10 flex lg:flex-row flex-col w-full lg:gap-8 space-y-12 h-auto
+    @apply flex lg:flex-row flex-col w-full lg:gap-8 space-y-12 h-auto
 }
 #aboutW .aboutL{
     @apply col-span-3 flex flex-col gap-6

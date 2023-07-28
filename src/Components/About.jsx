@@ -12,7 +12,7 @@ const About = () => {
 'Ability to work collaboratively in a team environment, adapt to new technologies quickly, and meet project deadlines.'
  ]
   return (
-    <div id="aboutwrapper" className='pt-[10rem]'>
+    <div id="aboutwrapper" className='pt-[5rem]'>
        <Headings
         num={'01.'}
         text={'About Me'}

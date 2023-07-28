@@ -30,7 +30,7 @@ export default function Home() {
  <div className="body">
   
   <Nav/>
-{/* <PopUp/> */}
+<PopUp/>
 <main>
   <div className="Wrapper">
     <Intro/>

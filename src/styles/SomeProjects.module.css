@@ -1,6 +1,6 @@
 
 .somprojectW{
-    @apply w-full h-auto pt-40
+    @apply w-full h-auto pt-20
 }
 .projectImg{
         @apply lg:w-[55%] lg:h-[25rem] h-auto w-full grid place-items-center 
