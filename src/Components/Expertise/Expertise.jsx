@@ -47,7 +47,6 @@ const Expertise = () => {
     },
     
   ]
-  console.log(expertiseObjArr)
   return (
     <div className={styles.ExpertiseW} id='expertise'>
         <Headings
@@ -57,7 +56,7 @@ const Expertise = () => {
         />
         <h3>{`Here are a few technologies I’ve been working with recently:`}</h3>
 <div className="exp">
-  <ExpertiseCard/>
+  {/* <ExpertiseCard/> */}
 </div>
 
 <div className={styles.expertiseImages} 
