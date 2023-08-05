@@ -4,7 +4,7 @@ import Headings from '../Headings'
 import Image from 'next/image'
 import styles from "../../styles/Expertise.module.css"
 import ExpertiseCard from './ExpertiseCard'
-import DownloadResume from '../DownloadResume'
+
 const Expertise = () => {
   
  
@@ -47,6 +47,49 @@ const Expertise = () => {
     },
     
   ]
+
+
+  const eachExperties = [
+    {
+      img: `/expMedia/html2.png`,
+      skillName:'HTML5',
+
+
+    },
+    {
+      img: `/expMedia/css2.png`,
+      skillName:'CSS3',
+    },
+    {
+      img: `/expMedia/js2.png`,
+      skillName:'JavaScript',
+    },
+    {
+      img: `/expMedia/ts2.png`,
+      skillName:'TypeScript',
+    },
+    {
+      img: `/expMedia/react2.png`,
+      skillName:'REACT',
+    },
+    {
+      img: `/expMedia/redux2.png`,
+      skillName:'REDUX',
+    },
+    {
+      img: `/expMedia/next2.png`,
+      skillName:'NEXTJS',
+    },
+    {
+      img: `/expMedia/tail2.png`,
+      skillName:'TAILWINDCSS',
+    },
+    {
+      img: `/expMedia/git.png`,
+      skillName:'GIT',
+    },
+  ]
+  // bg-[url("/expMedia/twitter-line.png")]
   return (
     <div className={styles.ExpertiseW} id='expertise'>
         <Headings
@@ -54,12 +97,22 @@ const Expertise = () => {
         num={'02.'}
         text={"Some of my skills"}
         />
-        <h3>{`Here are a few technologies I’ve been working with recently:`}</h3>
-<div className="exp">
-  {/* <ExpertiseCard/> */}
+        <h3 className='text-center'>{`Here are a few technologies I’ve been working with recently:`}</h3>
+<div className="exp flex lg:gap-8 mt-10 gap-4 flex-wrap w-full justify-center">
+{ eachExperties.map((e,i)=>(
+  <ExpertiseCard
+  key={i}
+  img={e.img}
+  skillName={e.skillName}
+ 
+ />
+))
+ 
+  }
+
 </div>
 
-<div className={styles.expertiseImages} 
+{/* <div className={styles.expertiseImages} 
 >
          {
           expertiseObjArr.map((expert, i)=>(
@@ -75,7 +128,7 @@ const Expertise = () => {
             </div>
           ))
          }
-</div>
+</div> */}
     </div>
   )
 }

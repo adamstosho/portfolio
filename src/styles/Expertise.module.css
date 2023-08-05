@@ -10,3 +10,7 @@
 .eachExpertiseImg img{
     @apply lg:w-[5rem] w-[3rem]
 }
+.expImg{
+   @apply w-20 h-20
+
+}
