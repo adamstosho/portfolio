@@ -5,8 +5,7 @@ const ExpertiseCard = ({img,skillName}) => {
  
   return (
     <div 
-    // key={i}
-    className='border-2 border-primary1 w-32 h-40 rounded-lg flex flex-col justify-center items-center gap-4 hover:scale-[1.03]'>
+    className='border-2 border-primary1 w-32 h-40 rounded-lg flex flex-col justify-center items-center gap-4 hover:scale-[1.05]'>
 
 <Image
 className={styles.expImg}

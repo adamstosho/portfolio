@@ -89,7 +89,6 @@ const Expertise = () => {
       skillName:'GIT',
     },
   ]
-  // bg-[url("/expMedia/twitter-line.png")]
   return (
     <div className={styles.ExpertiseW} id='expertise'>
         <Headings
@@ -100,12 +99,14 @@ const Expertise = () => {
         <h3 className='text-center'>{`Here are a few technologies I’ve been working with recently:`}</h3>
 <div className="exp flex lg:gap-8 mt-10 gap-4 flex-wrap w-full justify-center">
 { eachExperties.map((e,i)=>(
-  <ExpertiseCard
+  <div data-aos= {i%2===0?'fade-right':'fade-up'}
   key={i}
+  >
+  <ExpertiseCard
   img={e.img}
   skillName={e.skillName}
- 
  />
+ </div>
 ))
  
   }
