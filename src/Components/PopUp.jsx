@@ -8,7 +8,7 @@ export default function PopUp (){
      
         setTimeout(() => {
           setPop(true) 
-        }, 60000);
+        }, 120000);
     
     const handleCancel = () => {
         setPop(false)
