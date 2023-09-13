@@ -14,8 +14,11 @@ import { useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 import Aos from 'aos'
 import 'aos/dist/aos.css';
+import { motion, useAnimation, useScroll, useDragControls } from "framer-motion";
 
 export default function Home() {
+  const controls = useDragControls()
+
 
   useEffect(() => {
     Aos.init({
@@ -31,6 +34,14 @@ export default function Home() {
   
   <Nav/>
 <PopUp/>
+{/* <motion.div 
+drag
+ dragControls={controls}
+ dragListener={true}
+ dragConstraints={{left: 0, right: 200, bottom: 300, top:200}}
+ >
+ <p className='bg-red-900 text-white text-2xl'>Drag if you can</p>
+</motion.div> */}
 <main>
   <div className="Wrapper">
     <Intro/>

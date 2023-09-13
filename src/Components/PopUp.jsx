@@ -31,9 +31,7 @@ export default function PopUp (){
 <a href="mailto:Uthmanabdullahi2020@gmail.com?subject=Let%20do%20something%20together&body="
 className=''
 >
-<div className={` bg-[url("/whatsapp-line.png")] hover:bg-[url("/whatsapp-lineh.png")] w-6 h-6 gird place-content-center`}>
-                  </div>
-                  </a>
+<div className={` bg-[url("/whatsapp-line.png")] hover:bg-[url("/whatsapp-lineh.png")] w-6 h-6 gird place-content-center`}></div></a>
 
 <a href="https://api.whatsapp.com/send?phone=2349135619423&text=Hi%20Abdullahi!" 
 target='blank' rel="noopener noreferrer"
