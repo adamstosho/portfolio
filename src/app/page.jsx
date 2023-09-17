@@ -52,7 +52,9 @@ drag
   <Contact/>
   <footer className='w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10'>
   <Socios/>
-
+  <div>
+    
+  </div>
     <p
      className='hover:text-primary1 text-[13px] cursor-pointer'> <a href="https://github.com/intelligence247" target='_blank' rel="noopener noreferrer"npm>Designed & Built by Usman Abdullahi</a></p>
   </footer>
