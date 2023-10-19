@@ -34,14 +34,17 @@ export default function Home() {
   
   <Nav/>
 <PopUp/>
+{/* <div className='w-full fixed h-screen '> */}
 {/* <motion.div 
+className='w-full fixed h-screen'
 drag
- dragControls={controls}
+//  dragControls={controls}
  dragListener={true}
- dragConstraints={{left: 0, right: 200, bottom: 300, top:200}}
+ dragConstraints={{left: 20, right: 0, bottom: 0, top:200,}}
  >
- <p className='bg-red-900 text-white text-2xl'>Drag if you can</p>
+ <p className='bg fixed bg-primary1 bg-opacity-90 text-white text-xl w-20 h-20 rounded-full flex justify-center items-center'>Drag me</p>
 </motion.div> */}
+{/* </div> */}
 <main>
   <div className="Wrapper">
     <Intro/>

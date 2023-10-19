@@ -15,7 +15,6 @@ const Eachproject = ({
     text_pos,
     img,
     live,
-    live2,
     github,
     top,
 }) => {
@@ -24,7 +23,7 @@ const Eachproject = ({
             <div className={styles.projectImg} 
           data-aos='fade-right'
             >
-                <a href={live2} target='_blank' rel="noopener noreferrer" className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
+                <a href={live} target='_blank' rel="noopener noreferrer" className='w-full lg:h-full h-[15rem] lg:mt-0 mt-4'>
                 <Image 
                 src={img}
                 width={400}
@@ -54,11 +53,11 @@ const Eachproject = ({
                     <p>{lang5}</p>
                 </div>
                 <div className={`clickales flex gap-4 ${end}`}>
-                    <a href={live}>
+                    <a href={live} target='_blank'>
                     <div className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-8 h-8 gird place-content-center bg-cover`}>
                   </div>
                     </a>
-                    <a href={github}>
+                    <a href={github} target='_blank'>
                     <div className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-8 h-8 gird place-content-center bg-cover`}>
                   </div>
                     </a>

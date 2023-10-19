@@ -3,14 +3,19 @@ import React from 'react'
 import styles from "../styles/Intro.module.css"
 import Aos from 'aos'
 import 'aos/dist/aos.css';
+import Typist from 'react-typist';
 const Intro = () => {
 
   return (
     <div className={styles.introW}>
         <p data-aos='flip-right'>Hi, my name is</p>
-        <h1 className={styles.name} 
-        data-aos='flip-right'
-        >Usman Abdullahi.</h1>
+        <Typist
+        cursor={false}
+        element={''}
+        hideWhenDoneDelay={true}
+         ms={5000}>  <h1 className={styles.name} 
+        // data-aos='flip-right'
+        >Usman <Typist.Backspace count={0} delay={600}/> Abdullahi.</h1></Typist>
         <h2
         data-aos='flip-left'
         >I build things for the web</h2>
