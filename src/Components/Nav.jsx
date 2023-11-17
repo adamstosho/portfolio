@@ -89,7 +89,7 @@ onClick={()=>setToggle(!toggle)}
 </div>
 
 
-<div className={`${styles.overlay} ${toggle && styles.activeOverlay}`}
+<div className={`${styles.overlay} ${toggle && styles.activeOverlay} bg-primary_bg2/20 backdrop-blur-xl z-10`}
 onClick={()=> setToggle(!toggle)}
 ></div>
    </div>

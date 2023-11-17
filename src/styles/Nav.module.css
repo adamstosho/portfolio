@@ -18,7 +18,7 @@ div.hide{
     @apply flex-grow-[1]
   }
   .navW .navR{
-      @apply flex lg:space-x-12 space-x-0 lg:space-y-0 space-y-8 lg:flex-row flex-col items-center justify-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 lg:h-max h-screen lg:w-max w-[70%] 
+      @apply flex lg:space-x-12 space-x-0 lg:space-y-0 space-y-8 lg:flex-row flex-col items-center justify-center lg:relative absolute top-0 lg:left-0 left-[30%] lg:bg-transparent bg-primary_bg2 lg:px-0 px-10 lg:pt-0 lg:h-max h-screen lg:w-max w-[70%] z-20
   }
   .navW .active{
     @apply lg:left-0 left-full 
@@ -45,7 +45,7 @@ div.hide{
   }
 
  .navHarmburger{
-    @apply lg:hidden block relative right-4 flex flex-col  space-y-2  items-end z-10 
+    @apply lg:hidden relative right-4 flex flex-col  space-y-2  items-end z-30
   }
 
   .navHarmburger p{
@@ -84,8 +84,8 @@ div.hide{
 } 
 
 .overlay{
-  @apply fixed lg:hidden h-screen w-full bg-primary_bg2 top-0 left-0 shadow-black shadow-lg backdrop-blur-[5px] -z-10 opacity-40 block 
-
+  @apply fixed lg:hidden h-screen w-full top-0 left-0 shadow-black shadow-lg z-10 block 
+  
 }
 
 .activeOverlay{
