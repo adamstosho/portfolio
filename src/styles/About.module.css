@@ -8,10 +8,10 @@
     @apply col-span-2 flex justify-center items-start 
 }
 #aboutW .aboutR .imgwrapper{
-    @apply border-2 border-primary1 md:w-80 lg:w-80 lg:h-96 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-[90%] 
+    @apply border-2 border-primary1 md:w-80 lg:w-80 lg:h-96 relative rounded-md left-0 top-0 transition-all duration-300 ease-linear w-72
 }
 #aboutW .aboutR .imgwrapper img{
-    @apply lg:w-80 lg:h-96 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
+    @apply lg:w-80 lg:h-96 w-72 relative bottom-3 right-3 rounded-md transition-all duration-300 ease-linear border-primary1 border-2
 }
 
  #aboutW .aboutR .imgwrapper:hover img{ 
