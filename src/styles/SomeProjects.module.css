@@ -16,7 +16,7 @@
 
 .somprojectW p.learnMore,
 .otherProjectW p.showMore{
-    @apply bg-primary1 relative w-[7rem] h-[2.5rem] rounded-md grid place-items-center mt-14 cursor-pointer
+    @apply bg-primary1 relative w-[7rem] h-[2.5rem] rounded-md place-items-center mt-14 cursor-pointer
 }
 
 /* .somprojectW .learnMore::after
@@ -37,4 +37,15 @@
 
 .EachOtherProjects:hover h1{
     @apply text-primary1
+}
+
+.views{
+    @apply hover:text-primary1 flex space-x-2 items-center
+}
+.views p{
+    @apply bg-[url('/eye2.png')]
+
+}
+.views:hover p{
+    @apply bg-[url('/eye.png')]
 }

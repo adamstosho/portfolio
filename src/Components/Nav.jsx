@@ -47,6 +47,7 @@ const data =[
     navigator:'#contact'
 
   },
+
  
  
 ]

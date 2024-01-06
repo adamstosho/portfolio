@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 *{
     font-family: 'SF Mono', monospace;
     font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace; 
