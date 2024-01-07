@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { postData } from "../Api_handling/GetPostAPI";
 import { API_KEY, base_url } from "../Api_handling/API_KEY";
+import { Circles } from "react-loader-spinner";
 
 const Contact = () => {
   const [success, setSuccess] = useState("");
@@ -19,37 +20,20 @@ const Contact = () => {
     message: "",
   });
 
-  // const handleSubmits = () => {
-  //   success === "success"
-  //     ?
-  //     : success == "error"
-  //     ? toast.success(errM, {
-  //         position: "top-right",
-  //         autoClose: 5000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: "dark",
-  //       })
-  //     : "";
-  // };
-
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };
   console.log(details);
- 
+
   const handleSubmits = async (e) => {
     e.preventDefault();
     const InputsFilled =
-    details.firstname.length >= 3 &&
-    details.lastname.length >= 3 &&
-    details.message.length !== 0 &&
-    details.email.length != 0;
-  console.log(InputsFilled);
-  setShow(!InputsFilled)
+      details.firstname.length >= 3 &&
+      details.lastname.length >= 3 &&
+      details.message.length !== 0 &&
+      details.email.length != 0;
+    console.log(InputsFilled);
+    setShow(!InputsFilled);
     if (InputsFilled) {
       try {
         setLoading(true);
@@ -105,10 +89,12 @@ const Contact = () => {
         <form
           action=""
           method="post"
-          className="contactForm flex flex-col items-center space-y-6"
+          className="contactForm flex flex-col items-center gap-6"
           onSubmit={handleSubmits}
         >
-          <h1>Drop a message</h1>
+          <h1 className="text-[1.5rem] font-bold text-var_color">
+            Drop a message
+          </h1>
           <div className={`${styles.eachInput}`}>
             <input
               required
@@ -170,16 +156,28 @@ const Contact = () => {
           </div>
           <p
             className={`${
-              show
-                ? "w-full text-rose-500 lg:text-sm text-xs"
-                : "hidden"
+              show ? "w-full text-rose-500 lg:text-sm text-xs" : "hidden"
             }`}
           >
             All inputs are required
           </p>
           <button data-aos="fade-up" onClick={handleSubmits}>
             <p className={`${styles.sayHello} ${styles.send}`}>
-              <span>Submit</span>
+              <span>
+                {loading ? (
+                  <Circles
+                    height="20"
+                    width="20"
+                    color="#64ffda"
+                    ariaLabel="circles-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  />
+                ) : (
+                  "Submit"
+                )}
+              </span>
             </p>
             <ToastContainer
               position="top-right"
@@ -194,7 +192,10 @@ const Contact = () => {
             />
           </button>
         </form>
-        <p className="lg:w-[100%] text-center" data-aos="flip-up">
+        <p
+          className="lg:w-[100%] text-center flex justify-center items-start pt-20"
+          data-aos="flip-up"
+        >
           {
             "I am excited about the potential of working together to create stunning web experiences that not only meet but exceed expectations. If you would be interested in exploring a collaboration or discussing potential projects, I would be thrilled to set up a time to chat. Please let me know if you would like to schedule a call or if there's any other way I can provide additional information. Thank you🥰😍"
           }

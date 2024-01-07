@@ -3,7 +3,7 @@
   @apply flex flex-col items-center mt-20 gap-6;
 }
 .contactW p.sayHello {
-  @apply bg-primary1 relative w-[7rem] h-[2.5rem] rounded-md grid place-items-center mt-14 cursor-pointer;
+  @apply bg-primary1 relative w-[7rem] h-[2.5rem] rounded-md grid place-items-center cursor-pointer;
 }
 
 /* .contactW p.sayHello::after {
