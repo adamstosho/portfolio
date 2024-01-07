@@ -10,6 +10,8 @@ const Contact = () => {
   const [success, setSuccess] = useState("");
   const [errM, setErrm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
   const [details, setDetails] = useState({
     firstname: "",
     lastname: "",
@@ -38,15 +40,16 @@ const Contact = () => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };
   console.log(details);
-  const InputsFilled =
+ 
+  const handleSubmits = async (e) => {
+    e.preventDefault();
+    const InputsFilled =
     details.firstname.length >= 3 &&
     details.lastname.length >= 3 &&
     details.message.length !== 0 &&
     details.email.length != 0;
   console.log(InputsFilled);
-
-  const handleSubmits = async (e) => {
-    e.preventDefault();
+  setShow(!InputsFilled)
     if (InputsFilled) {
       try {
         setLoading(true);
@@ -63,7 +66,7 @@ const Contact = () => {
         setSuccess(response.status);
         setErrm(response.message);
         setLoading(false);
-        toast.success(errM, {
+        toast.success("Message sent successfully", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -77,6 +80,16 @@ const Contact = () => {
       } catch (err) {
         setErrm(err.message);
         setLoading(false);
+        toast.success("Check your connection!🧐", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
         console.log(errM);
       }
     }
@@ -157,15 +170,17 @@ const Contact = () => {
           </div>
           <p
             className={`${
-              InputsFilled
-                ? "hidden"
-                : "w-full text-rose-500 lg:text-sm text-xs"
+              show
+                ? "w-full text-rose-500 lg:text-sm text-xs"
+                : "hidden"
             }`}
           >
             All inputs are required
           </p>
           <button data-aos="fade-up" onClick={handleSubmits}>
-            <p className={`${styles.sayHello} ${styles.send}`}></p>
+            <p className={`${styles.sayHello} ${styles.send}`}>
+              <span>Submit</span>
+            </p>
             <ToastContainer
               position="top-right"
               autoClose={5000}
