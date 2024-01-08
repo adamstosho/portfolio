@@ -90,6 +90,9 @@ const Eachproject = ({
             <Link className={styles.views} onClick={() => handleID(projectId)} href={`/ProjectDetails`}>
             <p className="w-6 h-6 bg-center bg-cover"></p>  View
             </Link>
+            <p>
+              
+            </p>
           </div>
         </div>
       </div>

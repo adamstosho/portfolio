@@ -34,6 +34,16 @@ const Contact = () => {
       details.email.length != 0;
     console.log(InputsFilled);
     setShow(!InputsFilled);
+    InputsFilled ? "": toast.warn("All inputs are required", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
     if (InputsFilled) {
       try {
         setLoading(true);
@@ -64,7 +74,7 @@ const Contact = () => {
       } catch (err) {
         setErrm(err.message);
         setLoading(false);
-        toast.success("Check your connection!🧐", {
+        toast.error("Check your connection!🧐", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -154,14 +164,8 @@ const Contact = () => {
               Enter your message
             </label>
           </div>
-          <p
-            className={`${
-              show ? "w-full text-rose-500 lg:text-sm text-xs" : "hidden"
-            }`}
-          >
-            All inputs are required
-          </p>
-          <button data-aos="fade-up" onClick={handleSubmits}>
+        
+          <button data-aos="fade-up" onClick={handleSubmits} className={`opacity-90`}>
             <p className={`${styles.sayHello} ${styles.send}`}>
               <span>
                 {loading ? (
@@ -219,3 +223,4 @@ export default Contact;
 {
   /* <p className='lg:w-[60%] text-center'> I&rsquo;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&lsquo;ll try my best to get back to you!</p> */
 }
+
