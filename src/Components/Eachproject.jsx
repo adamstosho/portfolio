@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styles from "../styles/SomeProjects.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCommentDots } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
+
 const Eachproject = ({
   name,
   description,
@@ -19,11 +22,16 @@ const Eachproject = ({
   github,
   top,
   projectId,
+  commentDirection,
 }) => {
   const handleID = (projectID) => {
     localStorage.setItem("selectedID", projectID);
   };
+  const handleComment = () => {
+
+  }
   return (
+    <div className={`w-full flex flex-col scale-[1] ${commentDirection}`}>
     <div
       className={`projectW flex justify-between w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 lg:h-[26rem]  h-auto lg:items-center lg:p-4 p-0 rounded-lg ${flex_Dir}`}
     >
@@ -45,10 +53,10 @@ const Eachproject = ({
       </div>
 
       <div
-        className="lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:px-8 lg:py-0 p-0"
+        className="lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:py-0 p-0"
         data-aos="flip-left"
       >
-        <div className="projectTitle">
+        <div className="projectTitle lg:px-8">
           <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>
             Feautured Project
           </p>
@@ -76,7 +84,12 @@ const Eachproject = ({
             <p>{lang4}</p>
             <p>{lang5}</p>
           </div>
-          <div className={`clickales flex gap-4 ${end}`}>
+          <div className={` flex gap-4 ${end}`}>
+            <button className="flex gap-6" onClick={handleComment}>
+              <FaCommentDots size={28} />
+            </button>
+            <span className="flex-1"></span>
+
             <a href={live} target="_blank">
               <div
                 className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-8 h-8 gird place-content-center bg-cover`}
@@ -87,16 +100,29 @@ const Eachproject = ({
                 className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-8 h-8 gird place-content-center bg-cover`}
               ></div>
             </a>
-            <Link className={styles.views} onClick={() => handleID(projectId)} href={`/ProjectDetails`}>
-            <p className="w-6 h-6 bg-center bg-cover"></p>  View
+            <Link
+              className={styles.views}
+              onClick={() => handleID(projectId)}
+              href={`/ProjectDetails`}
+            >
+              <p className="w-6 h-6 bg-center bg-cover "></p>
+              {/* <IoEyeOutline /> */}
+              View
             </Link>
-            <p>
-              
-            </p>
           </div>
         </div>
+
       </div>
     </div>
+    
+    <div className="comment lg:w-[45%] pl-4">
+      
+      <p>View all 700 comments</p>
+
+      <input type="text" placeholder="Add a comment..." />
+    </div>
+    </div>
+
   );
 };
 

@@ -51,7 +51,7 @@ const SomeProjects = () => {
                 lang3={a.frameworks[2]?.title}
                 lang4={a.frameworks[3]?.title}
                 lang5={a.frameworks[4]?.title}
-                end={"justify-end"}
+                end={"justify-start"}
                 flex_Dir={
                   i % 2 == 0
                     ? "lg:flex-row flex-col-reverse"
@@ -61,6 +61,7 @@ const SomeProjects = () => {
                 github={a.github_url}
                 top={"top-[25%]"}
                 projectId={a.id}
+                commentDirection={i%2==0? "items-end":''}
               />
             ))
           : (
