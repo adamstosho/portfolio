@@ -8,7 +8,6 @@ import { API_KEY, Image_base_url, base_url } from "../Api_handling/API_KEY";
 import { Circles } from "react-loader-spinner";
 import Modal from "react-modal";
 import CommentModal from "./CommentModal";
-// import { Sonsie_One } from "next/font/google";
 
 const SomeProjects = () => {
   const [apiData, setApiData] = useState([]);
@@ -115,30 +114,52 @@ const SomeProjects = () => {
           contentLabel="Project Details"
           style={{
             overlay: {
-              position: 'fixed',
+              position: "fixed",
               top: 0,
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(17, 34, 64, 0.3);'
+              backgroundColor: "rgba(17, 34, 64, 0.5)",
+              backdropFilter: "blur(4px)",
+              zIndex: "10",
             },
             content: {
-              position: 'absolute',
-              top: '40px',
-              left: '40px',
-              right: '40px',
-              bottom: '40px',
-              border: '1px solid #ccc',
-              background: '#fff',
-              overflow: 'auto',
-              WebkitOverflowScrolling: 'touch',
-              borderRadius: '4px',
-              outline: 'none',
-              padding: '20px'
-            }
+              position: "absolute",
+              top: "40px",
+              left: "40px",
+              right: "40px",
+              bottom: "40px",
+              border: "1px solid #64ffda",
+              backgroundColor: "rgba(17, 34, 64, 1)",
+              // overflow: 'hidden',
+              // WebkitOverflowScrolling: 'touch',
+              borderRadius: "4px",
+              outline: "none",
+              padding: "0px",
+            },
           }}
         >
           {selectedProject && (
+            <div className="h-full">
+              <CommentModal
+               imgs={`${
+                selectedProject.image !== null
+                  ? Image_base_url + selectedProject.image
+                  : "/rolex.png"
+              }`}
+                projectId={selectedProject.id}
+                description={selectedProject.description}
+                name={selectedProject.title}
+                live={selectedProject.live_url}
+              github={selectedProject.github_url}
+              />
+              <button onClick={closeModal} className="fixed text-var_color hover:text-primary1 top-1 z-30 right-4 text-3xl font-bold">
+                x
+              </button>
+            </div>
+          )}
+        </Modal>
+        {/* {selectedProject && (
             <CommentModal
               img={`${
                 selectedProject.image !== null
@@ -151,10 +172,11 @@ const SomeProjects = () => {
               lang4={selectedProject.frameworks[3]?.title}
               lang5={selectedProject.frameworks[4]?.title}
               projectId={selectedProject.id}
+              description={selectedProject.description}
+              name={selectedProject.title}
 
             />
-          )}
-        </Modal>
+          )} */}
       </div>
       {/* <p className={styles.learnMore}></p> */}
     </div>

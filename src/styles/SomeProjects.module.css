@@ -51,3 +51,6 @@
 
 
 /* Modal css */
+.ReactModal__Overlay{
+  @apply bg-red-500
+}
