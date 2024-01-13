@@ -6,27 +6,39 @@ import "../styles/SomeProjects.module.css";
 import { API_KEY } from "@/Api_handling/API_KEY";
 import { fetchDataByUrl } from "@/Api_handling/GetPostAPI";
 
-const CommentModal = ({
-  name,
-  description,
-  imgs,
-  live,
-  github,
-  projectId,
-}) => {
-const [apiData, setApiData] = useState(null);
-const [message, setMessage] = useState(null);
-setMessage
+const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
+  const [apiData, setApiData] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  const [userComment, setuserComment] = useState({
+    name: "",
+    email: "",
+    comment: "",
+  });
+
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
   };
-  const handleComment = () => {};
+  const handleChange = (e) => {
+    setuserComment({ ...userComment, [e.target.id]: e.target.value });
+  };
+  console.log(userComment)
+  const handleComment = () => {
+    const formData = new FormData();
+    formData.append("api_token", API_KEY);
+    formData.append("project_id", projectId); // integer
+    formData.append("name", "John");
+    formData.append("email", "john@gmail.com");
+    formData.append("comment", "user-comment");
+    formData.append("star", 4);
+    const url =
+      "https://riganapi.pythonanywhere.com/api/v2/comments/add_comment/";
+  };
 
-  const GetComment = () => {
-  }
-  console.log("Projesdjna", projectId)
+  const GetComment = () => {};
+  console.log("Projesdjna", projectId);
   useEffect(() => {
-    const url  = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
+    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
     const fetchDataForPage1 = async () => {
       try {
         const result = await fetchDataByUrl(url);
@@ -36,10 +48,10 @@ setMessage
         console.log(error);
       }
     };
-    console.log("comment", apiData)
 
     fetchDataForPage1();
   }, []);
+
   return (
     // <div
     //   className={`w-full h-full flex flex-col bg-primary_bg bg-[url("/arrowdown3.png")] overflow-x-hidden`}
@@ -58,13 +70,13 @@ setMessage
             __html: description,
           }}
         ></div>
-         <Image
-              src={imgs}
-              width={400}
-              height={300}
-              alt={"Project view"}
-              className=""
-            />
+        <Image
+          src={imgs}
+          width={400}
+          height={300}
+          alt={"Project view"}
+          className=""
+        />
       </div>
       <div
         className="lg:w-[50%] lg:border-l-[1px] border-l-blur_texts w-full relative lg:h-full flex flex-col justify-between lg:py-0 p-0 lg:pl-8"
@@ -80,17 +92,18 @@ setMessage
         </div>
 
         <div className="displayComments h-[60%]">
-          {apiData == !null?(
+          {apiData == !null ? (
             <div className="eachComment">
-            <div className="name"></div>
-          </div>
-          ):(
+              <div className="name"></div>
+            </div>
+          ) : (
             <div className="h-full flex justify-center items-center flex-col gap-0">
-              <h1 className="font-bold lg:text-xl text-var_color">No comments yet.</h1>
+              <h1 className="font-bold lg:text-xl text-var_color">
+                No comments yet.
+              </h1>
               <p className="text-blur_texts">Start the conversations!.</p>
             </div>
-          ) 
-          }
+          )}
           <div className="eachComment">
             <div className="name"></div>
           </div>
@@ -116,7 +129,6 @@ setMessage
               href={`/ProjectDetails`}
             >
               <p className="w-6 h-6 bg-center bg-cover "></p>
-              {/* <IoEyeOutline /> */}
               View
             </Link>
           </div>
@@ -124,6 +136,26 @@ setMessage
         <div className="flex justify-between items-center border-t-[1px] border-blur_texts pt-2 px-2  ">
           <input
             type="text"
+            id="name"
+            onChange={handleChange}
+            value={userComment.name}
+
+            className="outline-none border-none bg-transparent"
+            placeholder="Add a comment..."
+          />
+          <input
+            type="email"
+            id="email"
+            value={userComment.email}
+            onChange={handleChange}
+            className="outline-none border-none bg-transparent"
+            placeholder="Add a comment..."
+          />
+          <input
+            type="text"
+            id="comment"
+            value={userComment.comment}
+            onChange={handleChange}
             className="outline-none border-none bg-transparent"
             placeholder="Add a comment..."
           />
