@@ -26,8 +26,6 @@ const ProjectDetailsComponent = () => {
 
     fetchDataForPage1();
   }, []);
-  console.log(apiData);
-  console.log(message);
   return (
     <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (

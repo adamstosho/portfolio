@@ -5,7 +5,10 @@ import Link from "next/link";
 import { FaCommentDots } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 
+
 const Eachproject = ({
+  onClick,
+  project,
   name,
   description,
   lang1,
@@ -23,11 +26,23 @@ const Eachproject = ({
   top,
   projectId,
   commentDirection,
+
 }) => {
-  const handleID = (projectID) => {
-    localStorage.setItem("selectedID", projectID);
+ 
+ 
+  const handleID = () => {
+    localStorage.setItem("selectedID", projectId);
   };
-  const handleComment = () => {
+  const handleComment =  async () => {
+    console.log(projectId)
+    // process.env.API_KEY
+    // const formData = new FormData();
+    
+    // try {
+    //   const res  = await 'https://riganapi.pythonanywhere.com/api/v2/comments/add_comments';
+    // } catch (error) {
+    //   console.log(error)
+    // }
 
   }
   return (
@@ -51,7 +66,7 @@ const Eachproject = ({
           />
         </a>
       </div>
-
+      {/* <input type="text" onChange={} /> */}
       <div
         className="lg:w-[45%] w-full relative lg:h-full h-auto flex flex-col justify-between lg:py-0 p-0"
         data-aos="flip-left"
@@ -85,7 +100,7 @@ const Eachproject = ({
             <p>{lang5}</p>
           </div>
           <div className={` flex gap-4 ${end}`}>
-            <button className="flex gap-6" onClick={handleComment}>
+            <button className="flex gap-6" onClick={()=>onClick(project)}>
               <FaCommentDots size={28} />
             </button>
             <span className="flex-1"></span>
@@ -102,7 +117,7 @@ const Eachproject = ({
             </a>
             <Link
               className={styles.views}
-              onClick={() => handleID(projectId)}
+              onClick={handleID}
               href={`/ProjectDetails`}
             >
               <p className="w-6 h-6 bg-center bg-cover "></p>
@@ -120,6 +135,7 @@ const Eachproject = ({
       <p>View all 700 comments</p>
 
       <input type="text" placeholder="Add a comment..." />
+      <button onClick={handleComment}>Comment</button>
     </div>
     </div>
 

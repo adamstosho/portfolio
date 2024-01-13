@@ -22,7 +22,6 @@ import {
 } from "framer-motion";
 // import { fetchDataByUrl } from "@/Api_handling/GetPostAPI";
 // import { API_KEY } from "@/Api_handling/API_KEY";
-import Link from "next/link";
 import OtherProject from "../Components/OtherProject";
 
 export default function Home({ project }) {
@@ -38,6 +37,7 @@ export default function Home({ project }) {
   }, []);
 
   return (
+
     <div className="body">
       <Nav />
       <PopUp />
@@ -54,11 +54,12 @@ drag
       {/* </div> */}
       <main>
         <div className="Wrapper">
+        
           <Intro />
           <About />
           <Expertise />
-          <SomeProjects/>
-          <OtherProject/>
+          <SomeProjects />
+          <OtherProject />
           <Contact />
           <footer className="w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10">
             <Socios />

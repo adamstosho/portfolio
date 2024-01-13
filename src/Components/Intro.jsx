@@ -26,7 +26,6 @@ const Intro = () => {
     fetchDataForPage1();
   }, []);
   
-  console.log(apiData)
   return (
     <div>
       {message === 'success'?(

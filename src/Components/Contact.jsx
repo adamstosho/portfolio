@@ -23,7 +23,6 @@ const Contact = () => {
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };
-  console.log(details);
 
   const handleSubmits = async (e) => {
     e.preventDefault();
@@ -32,7 +31,6 @@ const Contact = () => {
       details.lastname.length >= 3 &&
       details.message.length !== 0 &&
       details.email.length != 0;
-    console.log(InputsFilled);
     setShow(!InputsFilled);
     InputsFilled ? "": toast.warn("All inputs are required", {
       position: "top-right",

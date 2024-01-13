@@ -15,8 +15,8 @@ const EachOtherProjects = ({
   aos,
   projectId,
 }) => {
-  const handleID = (projectID) => {
-    localStorage.setItem("selectedID", projectID);
+  const handleID = () => {
+    localStorage.setItem("selectedID", projectId);
   };
 
   return (
@@ -32,7 +32,7 @@ const EachOtherProjects = ({
         <div className={`clickales flex gap-4`}>
           <Link
             className={styles.views}
-            onClick={() => handleID(projectId)}
+            onClick={handleID}
             href={`/ProjectDetails`}
           >
             <p className="w-6 h-6 bg-center bg-cover"></p> View
