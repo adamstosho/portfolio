@@ -23,7 +23,6 @@ import {
 // import { fetchDataByUrl } from "@/Api_handling/GetPostAPI";
 // import { API_KEY } from "@/Api_handling/API_KEY";
 import OtherProject from "../Components/OtherProject";
-import CommentModal from "@/Components/CommentModal";
 
 export default function Home({ project }) {
   const controls = useDragControls();
@@ -56,7 +55,6 @@ drag
       <main>
         <div className="Wrapper">
         
-        <CommentModal/>
           <Intro />
           <About />
           <Expertise />

@@ -32,25 +32,24 @@ const Contact = () => {
       details.message.length !== 0 &&
       details.email.length != 0;
     setShow(!InputsFilled);
-    InputsFilled ? "": toast.warn("All inputs are required", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    InputsFilled
+      ? ""
+      : toast.warn("All inputs are required", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
     if (InputsFilled) {
       try {
         setLoading(true);
         const url = `${base_url}/messages/add_message/`;
         const formData = new FormData();
-        formData.append(
-          "api_token",
-          "qt49h84v5hiw0cbagvpm6jaejf9wpn92m162vxtut3swa2p9pc64t99du6fh"
-        );
+        formData.append("api_token", API_KEY);
         formData.append("name", `${details.firstname} ${details.lastname}`);
         formData.append("email", details.email);
         formData.append("message", details.message);
@@ -162,8 +161,12 @@ const Contact = () => {
               Enter your message
             </label>
           </div>
-        
-          <button data-aos="fade-up" onClick={handleSubmits} className={`opacity-90`}>
+
+          <button
+            data-aos="fade-up"
+            onClick={handleSubmits}
+            className={`opacity-90`}
+          >
             <p className={`${styles.sayHello} ${styles.send}`}>
               <span>
                 {loading ? (
@@ -221,4 +224,3 @@ export default Contact;
 {
   /* <p className='lg:w-[60%] text-center'> I&rsquo;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&lsquo;ll try my best to get back to you!</p> */
 }
-
