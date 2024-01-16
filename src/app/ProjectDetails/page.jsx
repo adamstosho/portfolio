@@ -1,17 +1,27 @@
 "use client";
+import EachComment from "@/Components/Comment/EachComment";
 import { API_KEY, base_url } from "../../Api_handling/API_KEY";
 import { fetchDataByUrl } from "../../Api_handling/GetPostAPI";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
+import { ToastContainer } from "react-toastify";
 const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState("");
+  const [CommentapiData, setCommentApiData] = useState(null);
+  const [Loading, setLo] = useState(null);
 
+  
+const [userComment, setuserComment] = useState({
+  name:'',
+  email:'',
+  comment: '',
+
+});
   useEffect(() => {
     const selectedID = localStorage.getItem("selectedID");
     const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${selectedID}`;
-
     const fetchDataForPage1 = async () => {
       try {
         const result = await fetchDataByUrl(url);
@@ -26,6 +36,76 @@ const ProjectDetailsComponent = () => {
 
     fetchDataForPage1();
   }, []);
+
+
+  const handleComment = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append("api_token", API_KEY);
+    formData.append("project_id", selectedID); // integer
+    formData.append("name", userComment.name);
+    formData.append("email", userComment.email);
+    formData.append("comment", userComment.comment);
+    formData.append("star", 4);
+    const url =
+      "https://riganapi.pythonanywhere.com/api/v2/comments/add_comment/";
+
+    const InputsFilled =
+      userComment.name.length >= 3 &&
+      userComment.email.length >= 3 &&
+      userComment.comment.length !== 0;
+    InputsFilled
+      ? ""
+      : toast.warn("All inputs are required", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+    if (InputsFilled) {
+      try {
+        // setLoading(false)
+        const response = await postData(url, formData);
+        // setSuccess(response.status);
+        // setErrm(response.message);
+        // setLoading(false);
+        toast.success("Comment sent successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        setuserComment({ name: "", email: "", comment: "" });
+      } catch (err) {
+        setLoading(false);
+        toast.error("Check your connection!🧐", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
+  };
+  
+  const handleChange = (e) => {
+    setuserComment({ ...userComment, [e.target.id]: e.target.value });
+  };
+  
   return (
     <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
@@ -71,6 +151,57 @@ const ProjectDetailsComponent = () => {
            
           </div>
           </section>
+          <section className="commentSection">
+            {/* <EachComment/> */}
+            <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
+          <div className="inputTop flex  items-center justify-around">
+          <input
+            required
+            type="text"
+            id="name"
+            onChange={handleChange}
+            value={userComment.name}
+            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+            placeholder="Enter name"
+          />
+          <input
+            required
+            type="email"
+            id="email"
+            value={userComment.email}
+            onChange={handleChange}
+            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+            placeholder="Enter your email"
+          />
+          </div>
+          <div className="inputbottom flex  items-center gap-6">
+
+          <textarea
+            required
+            type="text"
+            id="comment"
+            value={userComment.comment}
+            onChange={handleChange}
+            className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+            placeholder="Add a comment..."
+          />
+          <button onClick={handleComment}>
+            Comment
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
+          </button>
+          </div>
+        </div>
+          </section>
         </div>
       ) : message === "Failed to fetch" ? (
         <div>
@@ -107,6 +238,7 @@ const ProjectDetailsComponent = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };

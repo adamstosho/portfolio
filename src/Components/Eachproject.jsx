@@ -130,13 +130,13 @@ const Eachproject = ({
       </div>
     </div>
     
-    <div className="comment lg:w-[45%] pl-4">
+    {/* <div className="comment lg:w-[45%] pl-4">
       
       <p>View all 700 comments</p>
 
       <input type="text" placeholder="Add a comment..." />
       <button onClick={handleComment}>Comment</button>
-    </div>
+    </div> */}
     </div>
 
   );

@@ -1,0 +1,30 @@
+.displayComments {
+  @apply overflow-y-auto;
+}
+
+.displayComments::-webkit-scrollbar {
+  @apply lg:w-[2px] w-0 bg-primary_bg2;
+}
+.displayComments::-webkit-scrollbar-thumb {
+  @apply bg-var_color rounded-full;
+}
+.displayComments * {
+  @apply lg:text-sm text-xs;
+}
+
+.eachComment .img {
+  min-height: 3rem;
+  min-width: 3rem;
+  @apply lg:text-3xl text-xl;
+}
+.eachComment input{
+  @apply text-xs
+}
+@media (max-width: 645px) {
+  .eachComment .img {
+    min-height: 2rem;
+    min-width: 2rem;
+  }
+}
+
+
