@@ -8,15 +8,12 @@ import { API_KEY, Image_base_url, base_url } from "../Api_handling/API_KEY";
 import { Circles } from "react-loader-spinner";
 import Modal from "react-modal";
 import CommentModal from "../Components/Comment/CommentModal";
-import EachComment from "./Comment/EachComment";
 
 const SomeProjects = () => {
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [CommentMessage, setCommentMessage] = useState([]);
-  const [Loading, setLoading] = useState(false);
   const openModal = (selectedProject) => {
     setModalIsOpen(true);
     setSelectedProject(selectedProject);
@@ -42,29 +39,7 @@ const SomeProjects = () => {
     fetchDataForPage1();
   }, []);
 
-  const GetComment = () => {
-    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${6}&api_token=${API_KEY}`;
-    const fetchDataForPage1 = async () => {
-      setLoading(true)
-      try {
-        const result = await fetchDataByUrl(url);
-        result.data !== undefined ? setCommentMessage(result.data) : setCommentMessage("");
-        setCommentMessage(result.status);
-        setLoading(false)
-  
-      } catch (error) {
-        setLoading(false)
-        console.log(error);
-      }
-    };
-  fetchDataForPage1();
 
-  };
-  useEffect(() => {
-    GetComment();
-  }, []);
-  console.log(CommentMessage)
-  console.log(CommentMessage, 'Commentmessage is here')
 
   return (
     <div className={styles.somprojectW} id="work">
@@ -87,7 +62,7 @@ const SomeProjects = () => {
               }`}
               name={a.title}
               description={a.description}
-              abs_pos={i % 2 !== 1 ? "right-[2rem]" : ""}
+              abs_pos={i % 2 !== 1 ? "right-8" : "left-8"}
               text_pos={"text-left"}
               lang1={a.frameworks[0]?.title}
               lang2={a.frameworks[1]?.title}
@@ -190,15 +165,7 @@ const SomeProjects = () => {
               </div>
             )}
           </Modal>
-          {/* {selectedProject && (
-            <section className="smallScreenCommentSection lg:hidden block h-[85vh] bottom-0 right-0 bg-primary_bg w-screen fixed">
-              <div onClick={closeModal} className="Coverlay h-[15vh] top-0 right-0 bg-primary_bg/30 backdrop-blur-sm w-screen fixed"></div>
-              <EachComment
-              apiData={CommentMessage}
-              Loading={Loading}
-              />
-            </section>
-          )} */}
+         
         </section>
       </div>
     </div>

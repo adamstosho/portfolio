@@ -10,15 +10,13 @@ const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState("");
   const [CommentapiData, setCommentApiData] = useState(null);
-  const [Loading, setLo] = useState(null);
+  const [Loading, setLoading] = useState(false);
 
-  
-const [userComment, setuserComment] = useState({
-  name:'',
-  email:'',
-  comment: '',
-
-});
+  const [userComment, setuserComment] = useState({
+    name: "",
+    email: "",
+    comment: "",
+  });
   useEffect(() => {
     const selectedID = localStorage.getItem("selectedID");
     const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${selectedID}`;
@@ -36,7 +34,6 @@ const [userComment, setuserComment] = useState({
 
     fetchDataForPage1();
   }, []);
-
 
   const handleComment = async (e) => {
     e.preventDefault();
@@ -101,11 +98,11 @@ const [userComment, setuserComment] = useState({
       }
     }
   };
-  
+
   const handleChange = (e) => {
     setuserComment({ ...userComment, [e.target.id]: e.target.value });
   };
-  
+
   return (
     <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
@@ -127,80 +124,80 @@ const [userComment, setuserComment] = useState({
                 dangerouslySetInnerHTML={{
                   __html: apiData.description,
                 }}
-              >
-              </div>
+              ></div>
             </section>
           </div>
           <section className="iframesection flex flex-col gap-5">
-          <iframe
-            className="w-[90vw] h-[90vh] rounded-xl border-[0.1px] border-primary1 bg-white"
-            src={apiData.live_url}
-            frameborder="0"
-          ></iframe>
+            <iframe
+              className="lg:w-[90vw] lg:h-[90vh] h-screen lg:max-w-[1024px] max-w-[645px] w-screen rounded-xl border-[0.1px] border-primary1 bg-white"
+              src={apiData.live_url}
+              frameborder="0"
+              width="100%"
+              // style={{maxWidth:"600px"}}
+              
+            ></iframe>
             <div className={`clickales flex gap-4 justify-end`}>
-            <a href={apiData.live_url} target="_blank">
-              <div
-                className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-8 h-8 grid place-content-center bg-cover`}
-              ></div>
-            </a>
-            <a href={apiData.github_url} target="_blank">
-              <div
-                className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-8 h-8 grid place-content-center bg-cover`}
-              ></div>
-            </a>
-           
-          </div>
+              <a href={apiData.live_url} target="_blank">
+                <div
+                  className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-8 h-8 grid place-content-center bg-cover`}
+                ></div>
+              </a>
+              <a href={apiData.github_url} target="_blank">
+                <div
+                  className={`bg-[url(/github-line.png)] hover:bg-[url(/github-lineh.png)] w-8 h-8 grid place-content-center bg-cover`}
+                ></div>
+              </a>
+            </div>
           </section>
           <section className="commentSection">
             {/* <EachComment/> */}
             <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
-          <div className="inputTop flex  items-center justify-around">
-          <input
-            required
-            type="text"
-            id="name"
-            onChange={handleChange}
-            value={userComment.name}
-            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Enter name"
-          />
-          <input
-            required
-            type="email"
-            id="email"
-            value={userComment.email}
-            onChange={handleChange}
-            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Enter your email"
-          />
-          </div>
-          <div className="inputbottom flex  items-center gap-6">
-
-          <textarea
-            required
-            type="text"
-            id="comment"
-            value={userComment.comment}
-            onChange={handleChange}
-            className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Add a comment..."
-          />
-          <button onClick={handleComment}>
-            Comment
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
-          </button>
-          </div>
-        </div>
+              <div className="inputTop flex  items-center justify-around">
+                <input
+                  required
+                  type="text"
+                  id="name"
+                  onChange={handleChange}
+                  value={userComment.name}
+                  className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+                  placeholder="Enter name"
+                />
+                <input
+                  required
+                  type="email"
+                  id="email"
+                  value={userComment.email}
+                  onChange={handleChange}
+                  className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div className="inputbottom flex  items-center gap-6">
+                <textarea
+                  required
+                  type="text"
+                  id="comment"
+                  value={userComment.comment}
+                  onChange={handleChange}
+                  className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+                  placeholder="Add a comment..."
+                />
+                <button onClick={handleComment}>
+                  Post
+                  <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                  />
+                </button>
+              </div>
+            </div>
           </section>
         </div>
       ) : message === "Failed to fetch" ? (
@@ -238,7 +235,6 @@ const [userComment, setuserComment] = useState({
           </div>
         </div>
       )}
-
     </div>
   );
 };

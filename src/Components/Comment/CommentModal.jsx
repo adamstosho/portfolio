@@ -12,11 +12,29 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
   const [apiData, setApiData] = useState(null);
   const [message, setMessage] = useState(null);
   const [Loading, setLoading] = useState(false);
+  const [Loading2, setLoading2] = useState(false);
+
   const [userComment, setuserComment] = useState({
     name: "",
     email: "",
     comment: "",
   });
+  useEffect(() => {
+    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
+    const fetchDataForPage1 = async () => {
+      setLoading2(true)
+      try {
+        const result = await fetchDataByUrl(url);
+        result.data !== undefined ? setApiData(result.data) : setApiData("");
+        setMessage(result.status);
+        setLoading2(false)
+      } catch (error) {
+        setLoading2(false)
+        console.log(error);
+      }
+    };
+  fetchDataForPage1();
+  }, []);
 
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
@@ -88,38 +106,15 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
     }
   };
 
-  const GetComment = () => {
-    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
-    const fetchDataForPage1 = async () => {
-      setLoading(true)
-      try {
-        const result = await fetchDataByUrl(url);
-        result.data !== undefined ? setApiData(result.data) : setApiData("");
-        setMessage(result.status);
-        setLoading(false)
-      } catch (error) {
-        setLoading(false)
-        console.log(error);
-      }
-    };
-  fetchDataForPage1();
 
-  };
-
-  useEffect(() => {
-    GetComment();
-  }, []);
-console.log(Loading)
   return (
-    // <div
-    //   className={`w-full h-full flex flex-col bg-primary_bg bg-[url("/arrowdown3.png")] overflow-x-hidden`}
-    // >
+    
     <div
       className={`projectW flex w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 h-full lg:items-center lg:p-4 p-0 rounded-lg bg-primary_bg bg-[url("/arrowdown3.png")]`}
     >
       <div
         className={`${styles.projectImg} relative h-full w-[50%] lg:flex hidden justify-center items-center bg-[url(https://riganapi.pythonanywhere.com${imgs})] bg-cover bg-center bg-no-repeat lg:px-6 h-full`}
-        // data-aos="fade-right"
+        data-aos="fade-right"
       >
         <div
           className={`description absolute z-10 w-[90%] bg-primary_bg2 backdrop-blur-lg text-[15px] p-4 rounded-lg `}
@@ -138,7 +133,7 @@ console.log(Loading)
       </div>
       <div
         className="lg:w-[50%] lg:px-0 px-4 w-full lg:border-l-[1px] border-l-blur_texts relative lg:h-full flex flex-col justify-between lg:py-0 p-0 lg:pl-8"
-        // data-aos="flip-left"
+        data-aos="flip-left"
       >
         <div className="projectTitle border-b-[1px] border-blur_texts lg:block hidden">
           <p className={`text-primary1 text-[13px]`}>Feautured Project</p>
@@ -148,11 +143,11 @@ console.log(Loading)
             {name}
           </h1>
         </div>
-        <header className="text-center border-b-[1px] mb-4 border-var_color w-full">Comments</header>
+        <header className="text-center border-b-[1px] mb-4 border-var_color w-full ">Comments</header>
 
    <EachComment
    apiData={apiData}
-   Loading={Loading}
+   Loading={Loading2}
    />
         <div className="flex lg:flex-row justify-between items-center flex-col py-2.5 border-t-[1px] border-blur_texts">
           <p>0 stars</p>
@@ -210,7 +205,7 @@ console.log(Loading)
             placeholder="Add a comment..."
           />
           <button onClick={handleComment}>
-            Comment
+            Post
             <ToastContainer
               position="top-right"
               autoClose={5000}
