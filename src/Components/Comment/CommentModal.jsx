@@ -19,22 +19,7 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
     email: "",
     comment: "",
   });
-  useEffect(() => {
-    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
-    const fetchDataForPage1 = async () => {
-      setLoading2(true)
-      try {
-        const result = await fetchDataByUrl(url);
-        result.data !== undefined ? setApiData(result.data) : setApiData("");
-        setMessage(result.status);
-        setLoading2(false)
-      } catch (error) {
-        setLoading2(false)
-        console.log(error);
-      }
-    };
-  fetchDataForPage1();
-  }, []);
+
 
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
@@ -74,11 +59,7 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
         });
     if (InputsFilled) {
       try {
-        // setLoading(false)
         const response = await postData(url, formData);
-        // setSuccess(response.status);
-        // setErrm(response.message);
-        // setLoading(false);
         toast.success("Comment sent successfully", {
           position: "top-right",
           autoClose: 5000,
@@ -90,8 +71,8 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
           theme: "dark",
         });
         setuserComment({ name: "", email: "", comment: "" });
+        setApiData((apiData)=> [response.data,...apiData])
       } catch (err) {
-        // setLoading(false);
         toast.error("Check your connection!🧐", {
           position: "top-right",
           autoClose: 5000,
@@ -106,6 +87,22 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
     }
   };
 
+  useEffect(() => {
+    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
+    const fetchDataForPage1 = async () => {
+      setLoading2(true)
+      try {
+        const result = await fetchDataByUrl(url);
+        result.data !== undefined ? setApiData(result.data) : setApiData("");
+        setMessage(result.status);
+        setLoading2(false)
+      } catch (error) {
+        setLoading2(false)
+        console.log(error);
+      }
+    };
+  fetchDataForPage1();
+  }, []);
 
   return (
     
