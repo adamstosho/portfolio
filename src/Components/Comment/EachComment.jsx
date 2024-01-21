@@ -6,8 +6,9 @@ const EachComment = ({ apiData, Loading }) => {
   return (
     <div className={`${styles.displayComments}  w-full`}>
       {apiData !== null && apiData.length >= 1 && !Loading ? (
-        apiData.map((a) => (
+        apiData.map((a, i) => (
           <div
+          key={i}
             className={`${styles.eachComment} flex items-start gap-2 border-b-[1px] border-b-blur_texts py-2 mb-2`}
           >
             <div

@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
 
 const ProjectDetailsComponent = () => {
-
   const [apiData, setApiData] = useState([]);
   const [comments, setComments] = useState([]);
   const [message, setMessage] = useState("");
@@ -22,9 +21,10 @@ const ProjectDetailsComponent = () => {
     email: "",
     comment: "",
   });
-  const selectedID = localStorage.getItem("selectedID");
 
   useEffect(() => {
+    const selectedID = localStorage.getItem("selectedID");
+
     const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${selectedID}`;
     const fetchDataForPage1 = async () => {
       try {
@@ -43,6 +43,7 @@ const ProjectDetailsComponent = () => {
   const handleComment = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const selectedID = localStorage.getItem("selectedID");
 
     const formData = new FormData();
     formData.append("api_token", API_KEY);
@@ -87,7 +88,7 @@ const ProjectDetailsComponent = () => {
         setComments(response.data, ...comments);
       } catch (err) {
         setLoading(false);
-        console.log(err)
+        console.log(err);
         toast.error("Check your connection!🧐", {
           position: "top-right",
           autoClose: 5000,
@@ -107,6 +108,8 @@ const ProjectDetailsComponent = () => {
   };
 
   useEffect(() => {
+    const selectedID = localStorage.getItem("selectedID");
+
     const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${selectedID}&api_token=${API_KEY}`;
     const fetchDataForPage1 = async () => {
       setLoading2(true);
@@ -122,7 +125,7 @@ const ProjectDetailsComponent = () => {
     };
     fetchDataForPage1();
   }, []);
-    
+
   return (
     <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
