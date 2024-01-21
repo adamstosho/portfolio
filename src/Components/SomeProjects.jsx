@@ -39,8 +39,6 @@ const SomeProjects = () => {
     fetchDataForPage1();
   }, []);
 
-
-
   return (
     <div className={styles.somprojectW} id="work">
       <Headings
@@ -125,6 +123,7 @@ const SomeProjects = () => {
                 backgroundColor: "rgba(17, 34, 64, 0.5)",
                 backdropFilter: "blur(4px)",
                 zIndex: "10",
+                overflowX: "hidden",
               },
               content: {
                 position: "absolute",
@@ -137,13 +136,14 @@ const SomeProjects = () => {
                 // overflow: 'hidden',
                 // WebkitOverflowScrolling: 'touch',
                 borderRadius: "4px",
+                overflowX: "hidden",
                 outline: "none",
                 padding: "0px",
               },
             }}
           >
             {selectedProject && (
-              <div className="h-full">
+              <div className="h-full overflow-x-hidden">
                 <CommentModal
                   imgs={`${
                     selectedProject.image !== null
@@ -165,7 +165,6 @@ const SomeProjects = () => {
               </div>
             )}
           </Modal>
-         
         </section>
       </div>
     </div>

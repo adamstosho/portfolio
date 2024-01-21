@@ -100,7 +100,7 @@ const Contact = () => {
           onSubmit={handleSubmits}
         >
           <h1 className="text-[1.5rem] font-bold text-var_color">
-            Drop a message
+            Drop a Message
           </h1>
           <div className={`${styles.eachInput}`}>
             <input

@@ -4,9 +4,11 @@ import Link from "next/link";
 import { API_KEY } from "@/Api_handling/API_KEY";
 import { fetchDataByUrl, postData } from "@/Api_handling/GetPostAPI";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Circles } from "react-loader-spinner";
 import styles from "../../styles/Comment.module.css";
 import EachComment from "./EachComment";
+
 
 const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
   const [apiData, setApiData] = useState(null);
@@ -19,7 +21,6 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
     email: "",
     comment: "",
   });
-
 
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
@@ -71,7 +72,7 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
           theme: "dark",
         });
         setuserComment({ name: "", email: "", comment: "" });
-        setApiData((apiData)=> [response.data,...apiData])
+        setApiData((apiData) => [response.data, ...apiData]);
       } catch (err) {
         toast.error("Check your connection!🧐", {
           position: "top-right",
@@ -90,24 +91,23 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
   useEffect(() => {
     const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${projectId}&api_token=${API_KEY}`;
     const fetchDataForPage1 = async () => {
-      setLoading2(true)
+      setLoading2(true);
       try {
         const result = await fetchDataByUrl(url);
         result.data !== undefined ? setApiData(result.data) : setApiData("");
         setMessage(result.status);
-        setLoading2(false)
+        setLoading2(false);
       } catch (error) {
-        setLoading2(false)
+        setLoading2(false);
         console.log(error);
       }
     };
-  fetchDataForPage1();
+    fetchDataForPage1();
   }, []);
 
   return (
-    
     <div
-      className={`projectW flex w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 h-full lg:items-center lg:p-4 p-0 rounded-lg bg-primary_bg bg-[url("/arrowdown3.png")]`}
+      className={`projectW flex w-full lg:gap-10 lg:space-y-0 space-y-4 gap-0 h-full lg:items-center lg:p-4 p-0 rounded-lg bg-primary_bg bg-[url("/arrowdown3.png")] overflow-hidden`}
     >
       <div
         className={`${styles.projectImg} relative h-full w-[50%] lg:flex hidden justify-center items-center bg-[url(https://riganapi.pythonanywhere.com${imgs})] bg-cover bg-center bg-no-repeat lg:px-6 h-full`}
@@ -140,15 +140,16 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
             {name}
           </h1>
         </div>
-        <header className="text-center border-b-[1px] mb-4 border-var_color w-full ">Comments</header>
+        <header className="text-center border-b-[1px] mb-4 border-var_color w-full ">
+          Comments
+        </header>
 
-   <EachComment
-   apiData={apiData}
-   Loading={Loading2}
-   />
+        <EachComment apiData={apiData} Loading={Loading2} />
         <div className="flex lg:flex-row justify-between items-center flex-col py-2.5 border-t-[1px] border-blur_texts">
           <p>0 stars</p>
-          <div className={` lg:flex hidden justify-center items-center  lg:gap-4`}>
+          <div
+            className={` lg:flex hidden justify-center items-center  lg:gap-4`}
+          >
             <a href={live} target="_blank">
               <div
                 className={`bg-[url(/live1.png)] hover:bg-[url(/live2.png)] w-6 h-6 gird place-content-center bg-cover`}
@@ -171,50 +172,49 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
         </div>
         <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
           <div className="inputTop flex lg:flex-row flex-col lg:gap-0 gap-2 items-center justify-around">
-          <input
-            required
-            type="text"
-            id="name"
-            onChange={handleChange}
-            value={userComment.name}
-            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Enter name"
-          />
-          <input
-            required
-            type="email"
-            id="email"
-            value={userComment.email}
-            onChange={handleChange}
-            className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Enter your email"
-          />
+            <input
+              required
+              type="text"
+              id="name"
+              onChange={handleChange}
+              value={userComment.name}
+              className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+              placeholder="Enter name"
+            />
+            <input
+              required
+              type="email"
+              id="email"
+              value={userComment.email}
+              onChange={handleChange}
+              className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+              placeholder="Enter your email"
+            />
           </div>
           <div className="inputbottom flex lg:flex-row flex-col   items-center lg:gap-6 gap-2">
-
-          <textarea
-            required
-            type="text"
-            id="comment"
-            value={userComment.comment}
-            onChange={handleChange}
-            className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-            placeholder="Add a comment..."
-          />
-          <button onClick={handleComment}>
-            Post
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
+            <textarea
+              required
+              type="text"
+              id="comment"
+              value={userComment.comment}
+              onChange={handleChange}
+              className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+              placeholder="Add a comment..."
             />
-          </button>
+            <button onClick={handleComment}>
+              Post
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
+            </button>
           </div>
         </div>
       </div>

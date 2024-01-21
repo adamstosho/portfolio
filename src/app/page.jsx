@@ -20,8 +20,6 @@ import {
   useScroll,
   useDragControls,
 } from "framer-motion";
-// import { fetchDataByUrl } from "@/Api_handling/GetPostAPI";
-// import { API_KEY } from "@/Api_handling/API_KEY";
 import OtherProject from "../Components/OtherProject";
 
 export default function Home({ project }) {
@@ -37,24 +35,12 @@ export default function Home({ project }) {
   }, []);
 
   return (
-
     <div className="body">
       <Nav />
       <PopUp />
-      {/* <div className='w-full fixed h-screen '> */}
-      {/* <motion.div 
-className='w-full fixed h-screen'
-drag
-//  dragControls={controls}
- dragListener={true}
- dragConstraints={{left: 20, right: 0, bottom: 0, top:200,}}
- >
- <p className='bg fixed bg-primary1 bg-opacity-90 text-white text-xl w-20 h-20 rounded-full flex justify-center items-center'>Drag me</p>
-</motion.div> */}
-      {/* </div> */}
+
       <main>
         <div className="Wrapper">
-        
           <Intro />
           <About />
           <Expertise />

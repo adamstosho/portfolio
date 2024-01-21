@@ -4,7 +4,7 @@ import { Circles } from "react-loader-spinner";
 
 const EachComment = ({ apiData, Loading }) => {
   return (
-    <div className={`${styles.displayComments} h-[60%]  w-full`}>
+    <div className={`${styles.displayComments}  w-full`}>
       {apiData !== null && apiData.length >= 1 && !Loading ? (
         apiData.map((a) => (
           <div

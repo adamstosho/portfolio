@@ -1,31 +1,36 @@
 "use client";
 import EachComment from "@/Components/Comment/EachComment";
 import { API_KEY, base_url } from "../../Api_handling/API_KEY";
-import { fetchDataByUrl } from "../../Api_handling/GetPostAPI";
+import { fetchDataByUrl, postData } from "../../Api_handling/GetPostAPI";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
-import { ToastContainer } from "react-toastify";
-const ProjectDetailsComponent = () => {
-  const [apiData, setApiData] = useState([]);
-  const [message, setMessage] = useState("");
-  const [CommentapiData, setCommentApiData] = useState(null);
-  const [Loading, setLoading] = useState(false);
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Headings from "@/Components/Headings";
 
+const ProjectDetailsComponent = () => {
+
+  const [apiData, setApiData] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [message, setMessage] = useState("");
+  const [message2, setMessage2] = useState("");
+  const [Loading, setLoading] = useState(false);
+  const [Loading2, setLoading2] = useState(false);
   const [userComment, setuserComment] = useState({
     name: "",
     email: "",
     comment: "",
   });
+  const selectedID = localStorage.getItem("selectedID");
+
   useEffect(() => {
-    const selectedID = localStorage.getItem("selectedID");
     const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${selectedID}`;
     const fetchDataForPage1 = async () => {
       try {
         const result = await fetchDataByUrl(url);
         result.data !== undefined ? setApiData(result.data) : setApiData("");
         setMessage(result.status);
-        console.log(result.data.length);
       } catch (error) {
         setMessage(error.message);
         console.log(error);
@@ -45,7 +50,7 @@ const ProjectDetailsComponent = () => {
     formData.append("name", userComment.name);
     formData.append("email", userComment.email);
     formData.append("comment", userComment.comment);
-    formData.append("star", 4);
+    formData.append("star", 5);
     const url =
       "https://riganapi.pythonanywhere.com/api/v2/comments/add_comment/";
 
@@ -67,11 +72,7 @@ const ProjectDetailsComponent = () => {
         });
     if (InputsFilled) {
       try {
-        // setLoading(false)
         const response = await postData(url, formData);
-        // setSuccess(response.status);
-        // setErrm(response.message);
-        // setLoading(false);
         toast.success("Comment sent successfully", {
           position: "top-right",
           autoClose: 5000,
@@ -83,8 +84,10 @@ const ProjectDetailsComponent = () => {
           theme: "dark",
         });
         setuserComment({ name: "", email: "", comment: "" });
+        setComments(response.data, ...comments);
       } catch (err) {
         setLoading(false);
+        console.log(err)
         toast.error("Check your connection!🧐", {
           position: "top-right",
           autoClose: 5000,
@@ -103,6 +106,23 @@ const ProjectDetailsComponent = () => {
     setuserComment({ ...userComment, [e.target.id]: e.target.value });
   };
 
+  useEffect(() => {
+    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${selectedID}&api_token=${API_KEY}`;
+    const fetchDataForPage1 = async () => {
+      setLoading2(true);
+      try {
+        const result = await fetchDataByUrl(url);
+        result.data !== undefined ? setComments(result.data) : setComments("");
+        setMessage2(result.status);
+        setLoading2(false);
+      } catch (error) {
+        setLoading2(false);
+        console.log(error);
+      }
+    };
+    fetchDataForPage1();
+  }, []);
+    
   return (
     <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
@@ -112,7 +132,7 @@ const ProjectDetailsComponent = () => {
             <h3>Used Technology</h3>
             <section className="grid grid-cols-2 justify-center items-center">
               <ul className="grid grid-cols-2 gap-y-2 w-3/4">
-                {apiData?.frameworks.map((f, i) => (
+                {apiData.frameworks.map((f, i) => (
                   <li key={i}>
                     <span className="text-primary1 font-bold text-xl">▹</span>{" "}
                     {f.title}
@@ -134,7 +154,6 @@ const ProjectDetailsComponent = () => {
               frameborder="0"
               width="100%"
               // style={{maxWidth:"600px"}}
-              
             ></iframe>
             <div className={`clickales flex gap-4 justify-end`}>
               <a href={apiData.live_url} target="_blank">
@@ -149,8 +168,12 @@ const ProjectDetailsComponent = () => {
               </a>
             </div>
           </section>
-          <section className="commentSection">
-            {/* <EachComment/> */}
+          <section className="commentSection w-3/5">
+            {/* <h1 className="text-3xl">Comment Section</h1> */}
+            <Headings text={`Comment section`} />
+            <div className="overflow-y-auto h-[25rem] scroll-m-0">
+              <EachComment apiData={comments} Loading={Loading2} />
+            </div>
             <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
               <div className="inputTop flex  items-center justify-around">
                 <input
@@ -172,7 +195,7 @@ const ProjectDetailsComponent = () => {
                   placeholder="Enter your email"
                 />
               </div>
-              <div className="inputbottom flex  items-center gap-6">
+              <div className="inputbottom flex items-center gap-6">
                 <textarea
                   required
                   type="text"
@@ -185,7 +208,7 @@ const ProjectDetailsComponent = () => {
                 <button onClick={handleComment}>
                   Post
                   <ToastContainer
-                    position="top-right"
+                    position="right-top"
                     autoClose={5000}
                     hideProgressBar={false}
                     newestOnTop={false}
