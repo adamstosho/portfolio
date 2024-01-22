@@ -1,7 +1,7 @@
 "use client";
 import EachComment from "@/Components/Comment/EachComment";
-import { API_KEY, base_url } from "../Api_handling/API_KEY";
-import { fetchDataByUrl, postData } from "../Api_handling/GetPostAPI";
+import { API_KEY, base_url } from "../../Api_handling/API_KEY";
+import { fetchDataByUrl, postData } from "../../Api_handling/GetPostAPI";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";

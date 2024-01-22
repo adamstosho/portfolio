@@ -17,8 +17,17 @@
   min-width: 3rem;
   @apply lg:text-3xl text-xl;
 }
-.eachComment input{
-  @apply text-xs
+.eachComment input {
+  @apply text-xs;
+}
+.views {
+  @apply hover:text-primary1 flex  space-x-2 items-center;
+}
+.views p {
+  @apply bg-[url('/eye2.png')];
+}
+.views:hover p {
+  @apply bg-[url('/eye.png')];
 }
 @media (max-width: 645px) {
   .eachComment .img {
@@ -26,5 +35,3 @@
     min-width: 2rem;
   }
 }
-
-

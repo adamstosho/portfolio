@@ -13,7 +13,7 @@ const TimeAgo = ({ date }) => {
       if (secondsDiff < 60) {
         setTimeAgo(`${secondsDiff}s`);
       } else if (secondsDiff < 3600) {
-        setTimeAgo(`${Math.floor(secondsDiff / 60)}min`);
+        setTimeAgo(`${Math.floor(secondsDiff / 60)}ming`);
       } else if (secondsDiff < 86400) {
         setTimeAgo(`${Math.floor(secondsDiff / 3600)}h`);
       } else if (secondsDiff < 604800) {

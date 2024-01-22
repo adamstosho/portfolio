@@ -121,7 +121,6 @@ const Eachproject = ({
               href={`/ProjectDetails`}
             >
               <p className="w-6 h-6 bg-center bg-cover "></p>
-              {/* <IoEyeOutline /> */}
               View
             </Link>
           </div>
