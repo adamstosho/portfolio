@@ -8,6 +8,7 @@ import { Circles } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
+import styles from "./page.module.css"
 
 const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
@@ -85,7 +86,8 @@ const ProjectDetailsComponent = () => {
           theme: "dark",
         });
         setuserComment({ name: "", email: "", comment: "" });
-        setComments(response.data, ...comments);
+        setComments((comments)=>[response.data, ...comments]);
+
       } catch (err) {
         setLoading(false);
         console.log(err);
@@ -109,7 +111,6 @@ const ProjectDetailsComponent = () => {
 
   useEffect(() => {
     const selectedID = localStorage.getItem("selectedID");
-
     const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${selectedID}&api_token=${API_KEY}`;
     const fetchDataForPage1 = async () => {
       setLoading2(true);
@@ -126,15 +127,16 @@ const ProjectDetailsComponent = () => {
     fetchDataForPage1();
   }, []);
 
+console.log(comments)
   return (
-    <div className='h-screen w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
+    <div className='w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
-        <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 py-6 px-20'>
-          <h1 className="text-primary1 text-4xl font-bold">{apiData.title}</h1>
+        <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 py-6 lg:px-20 px-4'>
+          <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">{apiData.title}</h1>
           <div className="w-full">
             <h3>Used Technology</h3>
-            <section className="grid grid-cols-2 justify-center items-center">
-              <ul className="grid grid-cols-2 gap-y-2 w-3/4">
+            <section className="lg:grid grid-cols-2 justify-center items-center">
+              <ul className="lg:grid grid-cols-2 gap-y-2 lg:w-3/4 w-full">
                 {apiData.frameworks.map((f, i) => (
                   <li key={i}>
                     <span className="text-primary1 font-bold text-xl">▹</span>{" "}
@@ -142,7 +144,7 @@ const ProjectDetailsComponent = () => {
                   </li>
                 ))}
               </ul>
-              <div
+              <div className="lg:text-start text-center py-8"
                 contentEditable="false"
                 dangerouslySetInnerHTML={{
                   __html: apiData.description,
@@ -171,14 +173,13 @@ const ProjectDetailsComponent = () => {
               </a>
             </div>
           </section>
-          <section className="commentSection w-3/5">
-            {/* <h1 className="text-3xl">Comment Section</h1> */}
-            <Headings text={`Comment section`} />
-            <div className="overflow-y-auto h-[25rem] scroll-m-0">
+          <section className="commentSection lg:w-3/5 w-full">
+            <Headings width={'w-20'} text={`Comment section`} />
+            <div className={`${styles.viewPageComment} overflow-y-auto h-[15rem] flex justify-center ${comments.length >= 1? "items-start": 'items-center'} scroll-m-0`}>
               <EachComment apiData={comments} Loading={Loading2} />
             </div>
             <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
-              <div className="inputTop flex  items-center justify-around">
+              <div className="inputTop flex lg:flex-row gap-4 flex-col  items-center justify-around">
                 <input
                   required
                   type="text"

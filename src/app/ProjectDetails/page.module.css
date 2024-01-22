@@ -1,0 +1,9 @@
+.viewPageComment{
+    @apply px-4
+}
+.viewPageComment::-webkit-scrollbar {
+    @apply lg:w-[2px] w-0 bg-primary_bg2;
+  }
+  .viewPageComment::-webkit-scrollbar-thumb {
+    @apply bg-var_color rounded-full;
+  }
