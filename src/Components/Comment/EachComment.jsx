@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/Comment.module.css";
 import { Blocks, Circles } from "react-loader-spinner";
+import TimeAgo from "../TimeAgo";
 
 const EachComment = ({ apiData, Loading }) => {
   const [active, setActive] = React.useState(false)
@@ -29,7 +30,7 @@ const EachComment = ({ apiData, Loading }) => {
                   </strong>{" "}
                 </div>
                 <div className="reply flex gap-4 lg:gap-8 pt-1">
-                  <p>{a.date.slice(0, 4)}</p>
+                  <p><TimeAgo date={a.date}/></p>
                   <p onClick={()=> {setActive(!active)}} className={`${a.reply ==="" || a.reply.length <=0 ?"hidden": "flex"} hover:underline cursor-pointer `}>{!active?"View":"Close"}-Reply</p>
                 </div>
               </div>
@@ -51,7 +52,7 @@ const EachComment = ({ apiData, Loading }) => {
                   </strong>{" "}
                 </div>
                 <div className="reply flex gap-4 lg:gap-8 pt-1">
-                  <p>{a.date.slice(0, 4)}</p>
+                  <p><TimeAgo date={a.date}/> </p>
                   <p></p>
                 </div>
               </div>
