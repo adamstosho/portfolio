@@ -13,20 +13,20 @@ const TimeAgo = ({ date }) => {
       if (secondsDiff < 60) {
         setTimeAgo(`${secondsDiff}s`);
       } else if (secondsDiff < 3600) {
-        setTimeAgo(`${Math.floor(secondsDiff / 60)}ming`);
+        setTimeAgo(`${Math.floor(secondsDiff / 60)}min`);
       } else if (secondsDiff < 86400) {
         setTimeAgo(`${Math.floor(secondsDiff / 3600)}h`);
       } else if (secondsDiff < 604800) {
-        setTimeAgo(`${Math.floor(secondsDiff / 86400)}m`);
+        setTimeAgo(`${Math.floor(secondsDiff / 86400)}days`);
       } else {
-        setTimeAgo(`${Math.floor(secondsDiff / 604800)}w`);
+        setTimeAgo(`${Math.floor(secondsDiff / 604800)}wk`);
       }
     };
 
     calculateTimeAgo(); // Calculate on mount
 
     // Update the time every minute
-    const interval = setInterval(calculateTimeAgo, 60000);
+    const interval = setInterval(calculateTimeAgo, 1000);
 
     return () => clearInterval(interval);
   }, [date]);
