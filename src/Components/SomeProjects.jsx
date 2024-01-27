@@ -54,9 +54,10 @@ const SomeProjects = () => {
               key={i}
               onClick={openModal}
               project={a}
-              // img={`${Image_base_url + a.image !== null ? a.image : "/rolex.png"}`}
               img={`${
-                a.image !== null ? Image_base_url + a.image : "/rolex.png"
+                a.image !== null
+                  ? Image_base_url + a.image
+                  : "/defaultprojectimg.webp"
               }`}
               name={a.title}
               description={a.description}
@@ -78,6 +79,11 @@ const SomeProjects = () => {
               top={"top-[25%]"}
               projectId={a.id}
               commentDirection={i % 2 == 0 ? "items-end" : ""}
+              bgimg={`bg-[url('${
+                a.image !== null
+                  ? Image_base_url + a.image
+                  : "/defaultprojectimg.webp"
+              }')]`}
             />
           ))
         ) : (

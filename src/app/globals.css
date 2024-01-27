@@ -2,33 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "SF Mono", monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 
-*{
-    font-family: 'SF Mono', monospace;
-    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace; 
-
-    @apply p-0 m-0 box-border text-blur_texts transition-all ease-linear duration-300 scroll-smooth
+  @apply p-0 m-0 box-border text-blur_texts transition-all ease-linear duration-300 scroll-smooth;
 }
-*::selection{
-    @apply bg-blur_texts text-var_color bg-opacity-30
-    }
-.body{
-    @apply min-h-[100vh] w-full bg-repeat bg-primary_bg overflow-x-clip
+*::selection {
+  @apply bg-blur_texts text-var_color bg-opacity-30;
 }
-body::-webkit-scrollbar{
-    @apply lg:w-[6px] bg-primary_bg2 
+.body {
+  @apply min-h-[100vh] w-full bg-repeat bg-primary_bg overflow-x-clip;
 }
-body::-webkit-scrollbar-thumb{
-    @apply bg-blur_texts rounded-full 
+body::-webkit-scrollbar {
+  @apply lg:w-[6px] bg-primary_bg2;
 }
-main{
-    /* background-image: linear-gradient(115deg, rgba(17, 34, 64, 0.5),rgba(17, 34, 64, 0.6), url("/arrowdown2.png")); */
-    @apply overflow-auto w-full bg-[url("/arrowdown3.png")] bg-fixed
+body::-webkit-scrollbar-thumb {
+  @apply bg-blur_texts rounded-full;
+}
+main {
+  /* background-image: linear-gradient(115deg, rgba(17, 34, 64, 0.5),rgba(17, 34, 64, 0.6), url("/arrowdown2.png")); */
+  @apply overflow-auto w-full bg-[url("/arrowdown3.png")] bg-fixed;
 }
 
-.Wrapper{
-    @apply lg:w-[75%] w-full lg:px-0 px-5 h-auto m-auto 
+.Wrapper {
+  @apply lg:w-[75%] w-full lg:px-0 px-5 h-auto m-auto;
 }
 
 /* http://bit.ly/Intel-Abdul */
-

@@ -54,7 +54,7 @@ const Socios = () => {
         },
         {
           link: apiData.facebook,
-          ima1: `bg-[url("/facebook-fill.png")]`,
+          ima1: `bg-[url("/facebook-fill.svg")]`,
           ima2: `hover:bg-[url("/facebook-fill2.png")]`,
           alter: "Facebook icon",
         },
@@ -77,7 +77,7 @@ const Socios = () => {
                     <div
                       className={` ${so.ima1} ${so.ima2} ${
                         so.link.length < 1 ? "hidden" : ""
-                      } w-6 h-6 gird place-content-center`}
+                      } w-6 h-6 grid place-content-center bg-no-repeat bg-cover`}
                     ></div>
                   </a>
                 ))

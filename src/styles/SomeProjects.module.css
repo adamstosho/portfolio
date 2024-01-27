@@ -3,14 +3,14 @@
 }
 .projectImg {
   /* filter: brightness(60%); */
-  @apply lg:w-[55%] lg:h-[25rem] h-auto w-full grid place-items-center brightness-75 hover:brightness-100;
+  @apply lg:w-[55%] lg:h-[25rem]  h-auto w-full lg:grid hidden place-items-center brightness-75 hover:brightness-100;
 }
 /* .projectImg{
     filter: brightness(60%)
 
 } */
 .projectImg img {
-  @apply w-full h-full border-[3px] rounded-lg border-primary_bg2 relative;
+  @apply w-full lg:h-[27rem]  border-[3px] rounded-lg border-primary_bg2;
 }
 
 .somprojectW p.learnMore,

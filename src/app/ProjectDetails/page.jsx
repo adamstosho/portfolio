@@ -134,8 +134,8 @@ console.log(comments)
         <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 py-6 lg:px-20 px-4'>
           <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">{apiData.title}</h1>
           <div className="w-full">
-            <h3>Used Technology</h3>
-            <section className="lg:grid grid-cols-2 justify-center items-center">
+            <h3 className="text-2xl font-bold">Used Technology:</h3>
+            <section className="lg:grid grid-cols-2  items-start">
               <ul className="lg:grid grid-cols-2 gap-y-2 lg:w-3/4 w-full">
                 {apiData.frameworks.map((f, i) => (
                   <li key={i}>
