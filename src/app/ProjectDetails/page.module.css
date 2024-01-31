@@ -7,3 +7,34 @@
   .viewPageComment::-webkit-scrollbar-thumb {
     @apply bg-var_color rounded-full;
   }
+
+  /* Input style */
+  
+.eachInput {
+  @apply relative border-blur_texts h-max flex justify-center items-center w-full;
+}
+
+.eachInput input,
+.eachInput textarea {
+  @apply bg-transparent border-[1.5px] focus:border-primary1 border-blur_texts h-12 rounded-lg w-full pl-3 text-var_color;
+}
+.eachInput textarea {
+  @apply h-24 py-2 text-var_color;
+}
+.eachInput input:focus,
+.eachInput textarea:focus {
+  @apply border-primary1 outline-none text-primary1;
+}
+.eachInput input:focus + label,
+.eachInput textarea:focus + label,
+.eachInput input:not(:placeholder-shown) + label,
+.eachInput textarea:not(:placeholder-shown) + label {
+  @apply -translate-y-6 text-primary1 text-sm translate-x-4 px-1 bg-primary_bg;
+}
+.eachInput textarea:focus + label,
+.eachInput textarea:not(:placeholder-shown) + label {
+  @apply -translate-y-12;
+}
+.eachInput label {
+  @apply absolute left-3;
+}

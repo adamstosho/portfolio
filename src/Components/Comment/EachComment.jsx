@@ -31,7 +31,7 @@ const EachComment = ({ apiData, Loading }) => {
                 </div>
                 <div className="reply flex gap-4 lg:gap-8 pt-1">
                   <p><TimeAgo date={a.date}/></p>
-                  <p onClick={()=> {setActive(!active)}} className={`${a.reply ==="" || a.reply.length <=0 ?"hidden": "flex"} hover:underline cursor-pointer `}>{!active?"View":"Close"}-Reply</p>
+                  <p onClick={()=> {setActive(!active)}} className={`${a.reply ==="" || a.reply.length <=0 ?"hidden": "flex"} hover:underline cursor-pointer `}>{!active?"View":"Hide"}-Reply</p>
                 </div>
               </div>
             </div>

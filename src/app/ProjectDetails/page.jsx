@@ -8,7 +8,7 @@ import { Circles } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
-import styles from "./page.module.css"
+import styles from "./page.module.css";
 
 const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
@@ -86,8 +86,7 @@ const ProjectDetailsComponent = () => {
           theme: "dark",
         });
         setuserComment({ name: "", email: "", comment: "" });
-        setComments((comments)=>[response.data, ...comments]);
-
+        setComments((comments) => [response.data, ...comments]);
       } catch (err) {
         setLoading(false);
         console.log(err);
@@ -127,12 +126,14 @@ const ProjectDetailsComponent = () => {
     fetchDataForPage1();
   }, []);
 
-console.log(comments)
+  console.log(comments);
   return (
     <div className='w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
         <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 py-6 lg:px-20 px-4'>
-          <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">{apiData.title}</h1>
+          <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">
+            {apiData.title}
+          </h1>
           <div className="w-full">
             <h3 className="text-2xl font-bold">Used Technology:</h3>
             <section className="lg:grid grid-cols-2  items-start">
@@ -144,7 +145,8 @@ console.log(comments)
                   </li>
                 ))}
               </ul>
-              <div className="lg:text-start text-center py-8"
+              <div
+                className="lg:text-start text-center py-8"
                 contentEditable="false"
                 dangerouslySetInnerHTML={{
                   __html: apiData.description,
@@ -174,41 +176,81 @@ console.log(comments)
             </div>
           </section>
           <section className="commentSection lg:w-3/5 w-full">
-            <Headings width={'w-20'} text={`Comment section`} />
-            <div className={`${styles.viewPageComment} overflow-y-auto h-[15rem] flex justify-center ${comments.length >= 1? "items-start": 'items-center'} scroll-m-0`}>
+            <Headings width={"w-20"} text={`Comment section`} />
+            <div
+              className={`${
+                styles.viewPageComment
+              } overflow-y-auto h-[15rem] flex justify-center ${
+                comments.length >= 1 ? "items-start" : "items-center"
+              } scroll-m-0`}
+            >
               <EachComment apiData={comments} Loading={Loading2} />
             </div>
             <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
               <div className="inputTop flex lg:flex-row gap-4 flex-col  items-center justify-around">
-                <input
+                {/* <input
                   required
                   type="text"
                   id="name"
-                  onChange={handleChange}
-                  value={userComment.name}
+                 
                   className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
                   placeholder="Enter name"
-                />
-                <input
-                  required
-                  type="email"
-                  id="email"
-                  value={userComment.email}
-                  onChange={handleChange}
-                  className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-                  placeholder="Enter your email"
-                />
+                /> */}
+                <div className={`${styles.eachInput}`}>
+                  <input
+                    required
+                    type="text"
+                    id="name"
+                    onChange={handleChange}
+                    value={userComment.name}
+                    className=""
+                    placeholder=""
+                    name="last name"
+                  />
+                  <label htmlFor="name" className="">
+                    Name
+                  </label>
+                </div>
+                
+                <div className={`${styles.eachInput}`}>
+                  <input
+                    required
+                    type="email"
+                    id="email"
+                    value={userComment.email}
+                    onChange={handleChange}
+                    className=""
+                    placeholder=""
+                    name="last name"
+                  />
+                  <label htmlFor="name" className="">
+                    Email
+                  </label>
+                </div>
               </div>
               <div className="inputbottom flex items-center gap-6">
-                <textarea
+                {/* <textarea
                   required
-                  type="text"
-                  id="comment"
-                  value={userComment.comment}
+                 
                   onChange={handleChange}
                   className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
                   placeholder="Add a comment..."
-                />
+                /> */}
+                <div className={`${styles.eachInput}`}>
+            <textarea
+              className="resize-none"
+              required
+              type="text"
+              id="comment"
+              value={userComment.comment}
+              onChange={handleChange}
+              name=""
+              placeholder=""
+            ></textarea>
+            <label htmlFor="name" className="">
+              Enter your message
+            </label>
+          </div>
                 <button onClick={handleComment}>
                   Post
                   <ToastContainer

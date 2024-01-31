@@ -64,7 +64,7 @@ const Eachproject = ({
         </div>
         {/* <input type="text" onChange={} /> */}
         <div
-          className={`lg:w-[45%] h-full lg:bg-none ${bgimg}`}
+          className={`lg:w-[45%] h-full bg-cover bg-no-repeat bg-center lg:bg-none ${bgimg}`}
           data-aos="flip-left"
         >
           <div

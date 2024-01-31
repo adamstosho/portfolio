@@ -79,11 +79,11 @@ const SomeProjects = () => {
               top={"top-[25%]"}
               projectId={a.id}
               commentDirection={i % 2 == 0 ? "items-end" : ""}
-              bgimg={`bg-[url('${
-                a.image !== null
+              bgimg={`bg-[url(${
+                a.image == null
                   ? Image_base_url + a.image
-                  : "/defaultprojectimg.webp"
-              }')]`}
+                  : "/getlinked.jpg"
+              })]`}
             />
           ))
         ) : (

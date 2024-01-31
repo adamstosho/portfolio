@@ -26,7 +26,7 @@ const TimeAgo = ({ date }) => {
     calculateTimeAgo(); // Calculate on mount
 
     // Update the time every seconds
-    const interval = setInterval(calculateTimeAgo, 1000);
+    const interval = setInterval(calculateTimeAgo, 10000);
 
     return () => clearInterval(interval);
   }, [date]);
