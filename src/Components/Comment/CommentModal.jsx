@@ -9,7 +9,6 @@ import { Circles } from "react-loader-spinner";
 import styles from "../../styles/Comment.module.css";
 import EachComment from "./EachComment";
 
-
 const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
   const [apiData, setApiData] = useState(null);
   const [message, setMessage] = useState(null);
@@ -140,12 +139,12 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
             {name}
           </h1>
         </div>
-        <header className="text-center border-b-[1px] mb-4 border-var_color w-full ">
+        <header className="text-center border-b-[1px] h-8 mb-4 border-var_color w-full flex justify-center items-center">
           Comments
         </header>
 
         <EachComment apiData={apiData} Loading={Loading2} />
-        <div className="flex lg:flex-row justify-between items-center flex-col py-2.5 border-t-[1px] border-blur_texts">
+        <div className="flex lg:flex-row flex-col justify-between items-center h-10  py-2.5 border-t-[1px] border-blur_texts">
           <p>0 stars</p>
           <div
             className={` lg:flex hidden justify-center items-center  lg:gap-4`}

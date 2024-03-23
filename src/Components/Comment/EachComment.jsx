@@ -7,7 +7,7 @@ const EachComment = ({ apiData, Loading }) => {
   const [active, setActive] = React.useState(false)
 
   return (
-    <div className={`${styles.displayComments}  w-full`}>
+    <div className={`${styles.displayComments}  overflow-y-auto h-[80vh]  w-full`}>
       {apiData !== null && apiData.length >= 1 && !Loading ? (
         apiData.map((a, i) => (
           <div className="border-b-[1px] border-b-blur_texts py-2 mb-2" key={i}>
@@ -72,11 +72,11 @@ const EachComment = ({ apiData, Loading }) => {
           />
         </div>
       ) : (
-        <div className="h-full flex justify-center items-center flex-col gap-0">
-          <h1 className="font-bold lg:text-xl text-var_color">
+        <div className=" h-full flex justify-center items-center flex-col gap-0">
+          <h1 className="nott font-bold text-var_color">
             No comments yet.
           </h1>
-          <p className="text-blur_texts">Start the conversations!.</p>
+          <p className="text-blur_texts">Start the conversation!</p>
         </div>
       )}
       <div className="eachComment">

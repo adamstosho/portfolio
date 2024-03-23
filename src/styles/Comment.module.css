@@ -1,7 +1,3 @@
-.displayComments {
-  @apply overflow-y-auto;
-}
-
 .displayComments::-webkit-scrollbar {
   @apply lg:w-[2px] w-0 bg-primary_bg2;
 }
@@ -11,7 +7,6 @@
 .displayComments * {
   @apply lg:text-sm text-xs;
 }
-
 .eachComment .img {
   min-height: 3rem;
   min-width: 3rem;
