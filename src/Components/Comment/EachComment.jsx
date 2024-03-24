@@ -2,12 +2,13 @@ import React from "react";
 import styles from "../../styles/Comment.module.css";
 import { Blocks, Circles } from "react-loader-spinner";
 import TimeAgo from "../TimeAgo";
+import Rating from "../Rating";
 
-const EachComment = ({ apiData, Loading }) => {
+const EachComment = ({ apiData, Loading,height }) => {
   const [active, setActive] = React.useState(false)
 
   return (
-    <div className={`${styles.displayComments}  overflow-y-auto h-[80vh]  w-full`}>
+    <div className={`${styles.displayComments}  overflow-y-auto ${height}  w-full`}>
       {apiData !== null && apiData.length >= 1 && !Loading ? (
         apiData.map((a, i) => (
           <div className="border-b-[1px] border-b-blur_texts py-2 mb-2" key={i}>
@@ -32,6 +33,7 @@ const EachComment = ({ apiData, Loading }) => {
                 <div className="reply flex gap-4 lg:gap-8 pt-1">
                   <p><TimeAgo date={a.date}/></p>
                   <p onClick={()=> {setActive(!active)}} className={`${a.reply ==="" || a.reply.length <=0 ?"hidden": "flex"} hover:underline cursor-pointer `}>{!active?"View":"Hide"}-Reply</p>
+                  <Rating initialRating={a.star} />
                 </div>
               </div>
             </div>

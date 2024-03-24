@@ -8,19 +8,23 @@ import "react-toastify/dist/ReactToastify.css";
 import { Circles } from "react-loader-spinner";
 import styles from "../../styles/Comment.module.css";
 import EachComment from "./EachComment";
+import Rating from "../Rating";
 
 const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
   const [apiData, setApiData] = useState(null);
   const [message, setMessage] = useState(null);
   const [Loading, setLoading] = useState(false);
   const [Loading2, setLoading2] = useState(false);
-
+  const [userRating, setUserRating] = useState(null);
   const [userComment, setuserComment] = useState({
     name: "",
     email: "",
     comment: "",
+    star: null,
   });
-
+  const handleRatingChange = (newRating) => {
+    setuserComment({ ...userComment, star: newRating });
+  };
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
   };
@@ -37,17 +41,17 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
     formData.append("name", userComment.name);
     formData.append("email", userComment.email);
     formData.append("comment", userComment.comment);
-    formData.append("star", 4);
+    formData.append("star", userComment.star);
     const url =
       "https://riganapi.pythonanywhere.com/api/v2/comments/add_comment/";
 
     const InputsFilled =
       userComment.name.length >= 3 &&
-      userComment.email.length >= 3 &&
+      userComment.star != null &&
       userComment.comment.length !== 0;
     InputsFilled
       ? ""
-      : toast.warn("All inputs are required", {
+      : toast.warn("Inputs and Rating required", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -143,11 +147,10 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
           Comments
         </header>
 
-        <EachComment apiData={apiData} Loading={Loading2} />
+        <EachComment apiData={apiData} Loading={Loading2} height={"h-[80vh]"} />
         <div className="flex lg:flex-row flex-col justify-between items-center h-10  py-2.5 border-t-[1px] border-blur_texts">
-          <p>0 stars</p>
           <div
-            className={` lg:flex hidden justify-center items-center  lg:gap-4`}
+            className={` lg:flex hidden justify-end w-full px-4 items-center  lg:gap-4`}
           >
             <a href={live} target="_blank">
               <div
@@ -169,35 +172,31 @@ const CommentModal = ({ name, description, imgs, live, github, projectId }) => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
-          <div className="inputTop flex lg:flex-row flex-col lg:gap-0 gap-2 items-center justify-around">
+        <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts p-2">
+          <div className="inputTop flex lg:gap-6 gap-2">
             <input
               required
               type="text"
               id="name"
               onChange={handleChange}
               value={userComment.name}
-              className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+              className="outline-[1px] focus:text-primary1 lg:h-10 h-8 lg:w-3/4 w-2/3 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
               placeholder="Enter name"
             />
-            <input
-              required
-              type="email"
-              id="email"
-              value={userComment.email}
-              onChange={handleChange}
-              className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-              placeholder="Enter your email"
+            <Rating
+              initialRating={userComment.star}
+              onRatingChange={handleRatingChange}
             />
           </div>
-          <div className="inputbottom flex lg:flex-row flex-col   items-center lg:gap-6 gap-2">
+
+          <div className="inputbottom flex  items-center lg:gap-6 gap-2">
             <textarea
               required
               type="text"
               id="comment"
               value={userComment.comment}
               onChange={handleChange}
-              className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
+              className="resize-none lg:w-3/4 w-2/3 outline-[1px] focus:text-primary1 h-12 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
               placeholder="Add a comment..."
             />
             <button onClick={handleComment}>

@@ -11,7 +11,7 @@
   /* Input style */
   
 .eachInput {
-  @apply relative border-blur_texts h-max flex justify-center items-center w-full;
+  @apply relative border-blur_texts h-max flex justify-center items-center w-3/4;
 }
 
 .eachInput input,
@@ -19,7 +19,7 @@
   @apply bg-transparent border-[1.5px] focus:border-primary1 border-blur_texts h-12 rounded-lg w-full pl-3 text-var_color;
 }
 .eachInput textarea {
-  @apply h-24 py-2 text-var_color;
+  @apply lg:h-24 h-16 py-2 text-var_color;
 }
 .eachInput input:focus,
 .eachInput textarea:focus {

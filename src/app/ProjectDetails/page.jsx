@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
 import styles from "./page.module.css";
+import Rating from "@/Components/Rating";
 
 const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
@@ -21,8 +22,11 @@ const ProjectDetailsComponent = () => {
     name: "",
     email: "",
     comment: "",
+    star: null,
   });
-
+  const handleRatingChange = (newRating) => {
+    setuserComment({ ...userComment, star: newRating });
+  };
   useEffect(() => {
     const selectedID = localStorage.getItem("selectedID");
 
@@ -52,17 +56,17 @@ const ProjectDetailsComponent = () => {
     formData.append("name", userComment.name);
     formData.append("email", userComment.email);
     formData.append("comment", userComment.comment);
-    formData.append("star", 5);
+    formData.append("star", userComment.star);
     const url =
       "https://riganapi.pythonanywhere.com/api/v2/comments/add_comment/";
 
     const InputsFilled =
       userComment.name.length >= 3 &&
-      userComment.email.length >= 3 &&
+      userComment.star != null &&
       userComment.comment.length !== 0;
     InputsFilled
       ? ""
-      : toast.warn("All inputs are required", {
+      : toast.warn("Inputs and Rating required", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -126,7 +130,7 @@ const ProjectDetailsComponent = () => {
     fetchDataForPage1();
   }, []);
 
-  console.log(comments);
+  console.log(userComment);
   return (
     <div className='w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       {message === "success" ? (
@@ -175,19 +179,23 @@ const ProjectDetailsComponent = () => {
               </a>
             </div>
           </section>
-          <section className="commentSection lg:w-3/5 w-full">
+          <section className="commentSection lg:w-3/5 w-full h-max flex flex-col">
             <Headings width={"w-20"} text={`Comment section`} />
             <div
               className={`${
                 styles.viewPageComment
-              } overflow-y-auto h-[15rem] flex justify-center ${
+              } h-[50vh] overflow-y-auto flex justify-center ${
                 comments.length >= 1 ? "items-start" : "items-center"
               } scroll-m-0`}
             >
-              <EachComment apiData={comments} Loading={Loading2} />
+              <EachComment
+                apiData={comments}
+                Loading={Loading2}
+                height={"h-[50vh]"}
+              />
             </div>
             <div className="flex flex-col gap-3 border-t-[1px] border-blur_texts pt-2 px-2  ">
-              <div className="inputTop flex lg:flex-row gap-4 flex-col  items-center justify-around">
+              <div className="inputTop flex lg:flex-row  items-center lg:gap-8 gap-2">
                 {/* <input
                   required
                   type="text"
@@ -196,6 +204,7 @@ const ProjectDetailsComponent = () => {
                   className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
                   placeholder="Enter name"
                 /> */}
+                
                 <div className={`${styles.eachInput}`}>
                   <input
                     required
@@ -211,46 +220,28 @@ const ProjectDetailsComponent = () => {
                     Name
                   </label>
                 </div>
+                <Rating
+                  initialRating={userComment.star}
+                  onRatingChange={handleRatingChange}
+                />
+              </div>
+              <div className="inputbottom flex items-center  lg:gap-8 gap-2">
                 
-                <div className={`${styles.eachInput}`}>
-                  <input
+                <div className={`${styles.eachInput} `}>
+                  <textarea
+                    className="resize-none"
                     required
-                    type="email"
-                    id="email"
-                    value={userComment.email}
+                    type="text"
+                    id="comment"
+                    value={userComment.comment}
                     onChange={handleChange}
-                    className=""
+                    name=""
                     placeholder=""
-                    name="last name"
-                  />
+                  ></textarea>
                   <label htmlFor="name" className="">
-                    Email
+                    Enter your message
                   </label>
                 </div>
-              </div>
-              <div className="inputbottom flex items-center gap-6">
-                {/* <textarea
-                  required
-                 
-                  onChange={handleChange}
-                  className="resize-none w-full outline-[1px] focus:text-primary1 h-11 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
-                  placeholder="Add a comment..."
-                /> */}
-                <div className={`${styles.eachInput}`}>
-            <textarea
-              className="resize-none"
-              required
-              type="text"
-              id="comment"
-              value={userComment.comment}
-              onChange={handleChange}
-              name=""
-              placeholder=""
-            ></textarea>
-            <label htmlFor="name" className="">
-              Enter your message
-            </label>
-          </div>
                 <button onClick={handleComment}>
                   Post
                   <ToastContainer

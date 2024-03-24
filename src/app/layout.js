@@ -9,10 +9,11 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const ss = "/logo3.png"
   return (
     <html lang="en">
       <head>
-       <link rel="icon" type="image/svg+xml" href="/logo3.png" />
+       <link rel="icon" type="image/svg+xml" href={ss}/>
        </head>
       <body className={inter.className}>{children}</body>
     </html>
