@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
 import styles from "./page.module.css";
 import Rating from "@/Components/Rating";
+import Nav from "@/Components/Nav";
 
 const ProjectDetailsComponent = () => {
   const [apiData, setApiData] = useState([]);
@@ -130,37 +131,51 @@ const ProjectDetailsComponent = () => {
     fetchDataForPage1();
   }, []);
 
-  console.log(userComment);
   return (
     <div className='w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
+      <Nav home={true} />
       {message === "success" ? (
-        <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 py-6 lg:px-20 px-4'>
+        <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 pb-6 pt-24 lg:px-20 px-4'>
           <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">
             {apiData.title}
           </h1>
+          {/* <a href="/" className="mt-10">
+            <img
+              src="/back.svg"
+              className="w-10 h-10 p-2 rounded-full  bg-primary1"
+              alt=""
+            />
+          </a> */}
+
           <div className="w-full">
-            <h3 className="text-2xl font-bold">Used Technology:</h3>
             <section className="lg:grid grid-cols-2  items-start">
-              <ul className="lg:grid grid-cols-2 gap-y-2 lg:w-3/4 w-full">
-                {apiData.frameworks.map((f, i) => (
-                  <li key={i}>
-                    <span className="text-primary1 font-bold text-xl">▹</span>{" "}
-                    {f.title}
-                  </li>
-                ))}
-              </ul>
-              <div
-                className="lg:text-start text-center py-8"
-                contentEditable="false"
-                dangerouslySetInnerHTML={{
-                  __html: apiData.description,
-                }}
-              ></div>
+              <div className="flex flex-col justify-center items-start lg:gap-4">
+                <h3 className="text-2xl font-bold">Used Technology:</h3>
+                <ul className="lg:grid grid-cols-2 gap-y-2 lg:w-3/4 w-full">
+                  {apiData.frameworks.map((f, i) => (
+                    <li key={i}>
+                      <span className="text-primary1 font-bold text-xl">▹</span>{" "}
+                      {f.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex flex-col justify-center items-start lg:gap-4">
+                <h3 className="text-2xl font-bold">Description:</h3>
+
+                <div
+                  className="lg:text-start text-center"
+                  contentEditable="false"
+                  dangerouslySetInnerHTML={{
+                    __html: apiData.description,
+                  }}
+                ></div>
+              </div>
             </section>
           </div>
-          <section className="iframesection flex flex-col gap-5">
+          <section className="iframesection flex flex-col lg:gap-5">
             <iframe
-              className="lg:w-[90vw] lg:h-[90vh] h-screen lg:max-w-[1024px] max-w-[645px] w-screen rounded-xl border-[0.1px] border-primary1 bg-white"
+              className="lg:w-[90vw] lg:block hidden lg:h-[90vh] h-screen lg:max-w-[1024px] max-w-[645px] w-screen rounded-xl border-[0.1px] border-primary1 bg-white"
               src={apiData.live_url}
               frameborder="0"
               width="100%"
@@ -204,7 +219,7 @@ const ProjectDetailsComponent = () => {
                   className="outline-[1px] focus:text-primary1 h-8 pl-2  border-var_color rounded-lg  border-[1px] focus:border-none bg-transparent"
                   placeholder="Enter name"
                 /> */}
-                
+
                 <div className={`${styles.eachInput}`}>
                   <input
                     required
@@ -226,7 +241,6 @@ const ProjectDetailsComponent = () => {
                 />
               </div>
               <div className="inputbottom flex items-center  lg:gap-8 gap-2">
-                
                 <div className={`${styles.eachInput} `}>
                   <textarea
                     className="resize-none"

@@ -1,7 +1,5 @@
 "use client";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Inter } from "next/font/google";
-import styles from "../styles/Home.module.css";
 import About from "../Components/About";
 import Socios from "../Components/Socios";
 import Contact from "../Components/Contact";
@@ -36,7 +34,7 @@ export default function Home({ project }) {
 
   return (
     <div className="body">
-      <Nav />
+      <Nav home={false} />
       <PopUp />
 
       <main>

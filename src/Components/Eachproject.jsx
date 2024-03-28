@@ -31,7 +31,6 @@ const Eachproject = ({
     localStorage.setItem("selectedID", projectId);
   };
   const handleComment = async () => {
-    console.log(projectId);
     // process.env.API_KEY
     // const formData = new FormData();
 
