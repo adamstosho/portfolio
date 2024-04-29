@@ -67,7 +67,7 @@ const Eachproject = ({
           data-aos="flip-left"
         >
           <div
-            className={`lg:p-0 p-4 lg:bg-transparent lg:backdrop-blur-none bg-primary1/20 backdrop-blur-sm w-full relative lg:h-full h-auto flex flex-col justify-between`}
+            className={`lg:p-0 p-4 lg:bg-transparent lg:backdrop-blur-none bg-primary1/10 rounded-lg backdrop-blur-sm w-full relative lg:h-full h-auto flex flex-col justify-between`}
           >
             <div className="projectTitle lg:px-8">
               <p className={`${text_pos} text-primary1 text-[13px] mb-2`}>

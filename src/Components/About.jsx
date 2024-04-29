@@ -4,9 +4,9 @@ import Headings from "./Headings";
 import Image from "next/image";
 import { API_KEY, Image_base_url, base_url } from "../Api_handling/API_KEY";
 import { fetchDataByUrl } from "../Api_handling/GetPostAPI";
+import Loading from "./Loading";
 
 const About = () => {
- 
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState("");
   const url = `${base_url}/author/get_profile/?api_token=${API_KEY}`;
@@ -80,7 +80,7 @@ const About = () => {
           </div>
         </div>
       ) : (
-        ""
+        <Loading />
       )}
     </div>
   );

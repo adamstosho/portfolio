@@ -92,7 +92,7 @@ const Contact = () => {
         <span className="text-primary1">04.</span> What&lsquo;s Next?
       </p>
       <h1 className="text-[2rem] font-bold text-var_color">Get In Touch</h1>
-      <section className="contactFormWrapper lg:grid grid-cols-2 gap-x-10 flex flex-col-reverse">
+      <section className="contactFormWrapper lg:grid grid-cols-2 lg:gap-x-10 gap-y-10 flex flex-col-reverse">
         <form
           action=""
           method="post"
@@ -198,7 +198,7 @@ const Contact = () => {
           </button>
         </form>
         <p
-          className="lg:w-[100%] text-center flex justify-center items-start pt-20"
+          className="lg:w-[100%] text-center flex justify-center items-start lg:pt-20"
           data-aos="flip-up"
         >
           {

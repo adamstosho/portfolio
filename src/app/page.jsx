@@ -19,11 +19,15 @@ import {
   useDragControls,
 } from "framer-motion";
 import OtherProject from "../Components/OtherProject";
+import { API_KEY, base_url } from "@/Api_handling/API_KEY";
+import { fetchDataByUrl } from "@/Api_handling/GetPostAPI";
+import Loading from "@/Components/Loading";
 
 export default function Home({ project }) {
   const controls = useDragControls();
   const [apiData, setApiData] = useState([]);
-
+  const [message, setMessage] = useState([]);
+  setMessage;
   useEffect(() => {
     Aos.init({
       disable: false,
@@ -32,36 +36,66 @@ export default function Home({ project }) {
     });
   }, []);
 
+  const url = `${base_url}/author/get_profile/?api_token=${API_KEY}`;
+
+  useEffect(() => {
+    const fetchDataForPage1 = async () => {
+      try {
+        const result = await fetchDataByUrl(url);
+        result.data !== undefined ? setApiData(result.data) : setApiData("");
+        setMessage(result.status);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchDataForPage1();
+  }, []);
+
+  console.log(apiData);
+  console.log(message)
+
   return (
     <div className="body">
       <Nav home={false} />
-      <PopUp />
+      {message === "success" ? (
+        <main>
+          <PopUp />
 
-      <main>
-        <div className="Wrapper">
-          <Intro />
-          <About />
-          <Expertise />
-          <SomeProjects />
-          <OtherProject />
-          <Contact />
-          <footer className="w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10">
-            <Socios />
-            <div></div>
-            <p className="hover:text-primary1 text-[13px] cursor-pointer">
-              {" "}
-              <a
-                href="https://github.com/intelligence247"
-                target="_blank"
-                rel="noopener noreferrer"
-                npm
-              >
-                Designed & Built by Usman Abdullahi
-              </a>
-            </p>
-          </footer>
+          <div className="Wrapper">
+            <Intro />
+            <About />
+            <Expertise />
+            <SomeProjects />
+            <OtherProject />
+            <Contact />
+            <footer className="w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10">
+              <Socios />
+              <div></div>
+              <p className="hover:text-primary1 text-[13px] cursor-pointer">
+                {" "}
+                <a
+                  href={apiData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  npm
+                >
+                  Designed & Built by {`${apiData.first_name} ${apiData.last_name}.`}
+
+                </a>
+              </p>
+            </footer>
+          </div>
+        </main>
+      ) : message == "Failed to fetch" ? (
+        <div>
+        <div className="h-screen w-full overflow-hidden flex justify-center items-center flex-col px-5 text-center">
+          Please check your network connection and try again
         </div>
-      </main>
+      </div>
+      ) : (
+      <Loading/>
+      )}
     </div>
   );
 }

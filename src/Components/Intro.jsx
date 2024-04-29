@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Intro.module.css";
-import Aos from "aos";
 import "aos/dist/aos.css";
 import { fetchDataByUrl } from "../Api_handling/GetPostAPI";
 import { API_KEY, base_url } from "../Api_handling/API_KEY";
@@ -25,7 +24,6 @@ const Intro = () => {
     fetchDataForPage1();
   }, []);
 
-  console.log(apiData);
   return (
     <div>
       {message === "success" ? (
