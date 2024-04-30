@@ -136,7 +136,15 @@ const ProjectDetailsComponent = () => {
       <Nav home={true} />
       {message === "success" ? (
         <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 pb-6 pt-24 lg:px-20 px-4'>
-          <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-center">
+          <Link className="w-full lg:my-4 mt-3" href="/">
+            <img
+              src="/back2.svg"
+              className="w-10 h-10 p-1 rounded-full  bg-primary_bg border-[1.5px] border-primary1"
+              alt=""
+            />
+          </Link>
+
+          <h1 className="text-primary1 lg:text-4xl text-2xl font-bold text-start w-full">
             {apiData.title}
           </h1>
           {/* <a href="/" className="mt-10">
@@ -148,8 +156,8 @@ const ProjectDetailsComponent = () => {
           </a> */}
 
           <div className="w-full">
-            <section className="lg:grid grid-cols-2  items-start">
-              <div className="flex flex-col justify-center items-start lg:gap-4">
+            <section className="lg:grid grid-cols-2 items-start flex flex-col lg:gap-0 gap-10">
+              <div className="flex flex-col justify-center items-start lg:gap-4 gap-2">
                 <h3 className="text-2xl font-bold">Used Technology:</h3>
                 <ul className="lg:grid grid-cols-2 gap-y-2 lg:w-3/4 w-full">
                   {apiData.frameworks.map((f, i) => (
@@ -199,7 +207,7 @@ const ProjectDetailsComponent = () => {
             <div
               className={`${
                 styles.viewPageComment
-              } h-[50vh] overflow-y-auto flex justify-center ${
+              } lg:h-[50vh] h-[40vh] overflow-y-auto flex justify-center ${
                 comments.length >= 1 ? "items-start" : "items-center"
               } scroll-m-0`}
             >
