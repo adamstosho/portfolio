@@ -8,7 +8,8 @@ const OtherProject = () => {
   const [lessMore, setLessMore] = useState(true);
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState("");
-  const url = `${base_url}/projects/get_projects/?api_token=${API_KEY}&per_page=9&sort_by=created`;
+  const [per_page, setPer_page] = useState(6);
+  const url = `${base_url}/projects/get_projects/?api_token=${API_KEY}&per_page=${per_page}&sort_by=-created`;
   useEffect(() => {
     const fetchDataForPage1 = async () => {
       try {
@@ -21,8 +22,7 @@ const OtherProject = () => {
     };
 
     fetchDataForPage1();
-  }, []);
-
+  }, [per_page]);
 
   // let sliced = lessMore ? otherProjectArr.slice(0, 3) : otherProjectArr;
   return (
@@ -67,11 +67,11 @@ const OtherProject = () => {
       </div>
       <p
         className={`${
-          lessMore
+          per_page <= 6
             ? `after:content-['Show_More']`
             : 'after:content-["Show_Less"]'
-        } ${styles.showMore} ${apiData.length <= 6 ? "hidden" : "block"}`}
-        onClick={() => setLessMore(!lessMore)}
+        } ${styles.showMore}`}
+        onClick={() => (per_page <= 6 ? setPer_page(20) : setPer_page(6))}
       ></p>
     </div>
   );

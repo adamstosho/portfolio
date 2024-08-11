@@ -23,7 +23,7 @@ const SomeProjects = () => {
     setSelectedProject(null);
     setModalIsOpen(false);
   };
-  const url = `${base_url}/projects/get_projects/?api_token=${API_KEY}&per_page=3&sort_by=created`;
+  const url = `${base_url}/projects/get_projects/?api_token=${API_KEY}&per_page=3&sort_by=-created`;
 
   useEffect(() => {
     const fetchDataForPage1 = async () => {

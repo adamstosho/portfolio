@@ -73,7 +73,8 @@ export default function Nav({ home }) {
           </div>
         ))}
         <a
-          href="https://drive.google.com/file/d/1XRF7svSaBitPMRY5ZadD5OQ_ZaRK1MAs/view?usp=sharing"
+          // href="https://drive.google.com/file/d/1XRF7svSaBitPMRY5ZadD5OQ_ZaRK1MAs/view?usp=sharing"
+          href="https://drive.google.com/file/d/1w490Wmf5SKGAW7NfTGfonCLVJymhQkvV/view"
           target="_blank"
           rel="noopener noreferrer"
         >
