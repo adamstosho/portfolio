@@ -74,7 +74,8 @@ export default function Nav({ home }) {
         ))}
         <a
           // href="https://drive.google.com/file/d/1XRF7svSaBitPMRY5ZadD5OQ_ZaRK1MAs/view?usp=sharing"
-          href="https://drive.google.com/file/d/1w490Wmf5SKGAW7NfTGfonCLVJymhQkvV/view"
+          // href="https://drive.google.com/file/d/1w490Wmf5SKGAW7NfTGfonCLVJymhQkvV/view"
+          href="https://drive.google.com/file/d/1OVBRKZeCZrSI402yDEpAdlhS1H83T6aa/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
         >
