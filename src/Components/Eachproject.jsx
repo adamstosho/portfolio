@@ -27,18 +27,6 @@ const Eachproject = ({
   commentDirection,
   bgimg,
 }) => {
-  const handleID = () => {
-    localStorage.setItem("selectedID", projectId);
-  };
-  const handleComment = async () => {
-    // process.env.API_KEY
-    // const formData = new FormData();
-    // try {
-    //   const res  = await 'https://riganapi.pythonanywhere.com/api/v2/comments/add_comments';
-    // } catch (error) {
-    //   console.log(error)
-    // }
-  };
   return (
     <div className={`w-full flex flex-col scale-[1] ${commentDirection}`}>
       <div
@@ -60,7 +48,6 @@ const Eachproject = ({
             />
           </a>
         </div>
-        {/* <input type="text" onChange={} /> */}
         <div
           className={`lg:w-[45%] h-full bg-cover bg-no-repeat bg-center lg:bg-none ${bgimg}`}
           data-aos="flip-left"
@@ -114,7 +101,6 @@ const Eachproject = ({
                 </a>
                 <Link
                   className={styles.views}
-                  onClick={handleID}
                   href={`/project-details/${projectId}`}
                 >
                   <p className="w-6 h-6 bg-center bg-cover "></p>
@@ -125,14 +111,6 @@ const Eachproject = ({
           </div>
         </div>
       </div>
-
-      {/* <div className="comment lg:w-[45%] pl-4">
-      
-      <p>View all 700 comments</p>
-
-      <input type="text" placeholder="Add a comment..." />
-      <button onClick={handleComment}>Comment</button>
-    </div> */}
     </div>
   );
 };

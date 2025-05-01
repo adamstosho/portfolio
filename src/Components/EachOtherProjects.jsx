@@ -15,10 +15,6 @@ const EachOtherProjects = ({
   aos,
   projectId,
 }) => {
-  const handleID = () => {
-    localStorage.setItem("selectedID", projectId);
-  };
-
   return (
     <div
       className={`${styles.EachOtherProjects} lg:w-[24vw] flex flex-col space-y-4 p-6 bg-primary_bg2 shadow-lg rounded-lg h-80 max-h-80 relative bottom-0 hover:bottom-2`}
@@ -30,11 +26,7 @@ const EachOtherProjects = ({
         </div>
 
         <div className={`clickales flex gap-4`}>
-          <Link
-            className={styles.views}
-            onClick={handleID}
-            href={`/project-details/${projectId}`}
-          >
+          <Link className={styles.views} href={`/project-details/${projectId}`}>
             <p className="w-6 h-6 bg-center bg-cover"></p> View
           </Link>
           <a href={live} target="_blank" rel="noopener noreferrer">

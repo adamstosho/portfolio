@@ -11,8 +11,6 @@ import Headings from "@/Components/Headings";
 import styles from "../page.module.css";
 import Rating from "@/Components/Rating";
 import Nav from "@/Components/Nav";
-import SocialRadialMenu from "@/Components/SocialMediaMenu";
-import { useRouter } from "next/router";
 import { useParams } from "next/navigation";
 
 const ProjectDetailsComponent = () => {
@@ -35,7 +33,6 @@ const ProjectDetailsComponent = () => {
     setuserComment({ ...userComment, star: newRating });
   };
   useEffect(() => {
-    const selectedID = localStorage.getItem("selectedID");
 
     const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${id}`;
     const fetchDataForPage1 = async () => {
@@ -55,11 +52,10 @@ const ProjectDetailsComponent = () => {
   const handleComment = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const selectedID = localStorage.getItem("selectedID");
 
     const formData = new FormData();
     formData.append("api_token", API_KEY);
-    formData.append("project_id", selectedID); // integer
+    formData.append("project_id", id); // integer
     formData.append("name", userComment.name);
     formData.append("email", userComment.email);
     formData.append("comment", userComment.comment);
@@ -120,8 +116,7 @@ const ProjectDetailsComponent = () => {
   };
 
   useEffect(() => {
-    const selectedID = localStorage.getItem("selectedID");
-    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${selectedID}&api_token=${API_KEY}`;
+    const url = `https://riganapi.pythonanywhere.com/api/v2/comments/get_comments/?project_id=${id}&api_token=${API_KEY}`;
     const fetchDataForPage1 = async () => {
       setLoading2(true);
       try {
