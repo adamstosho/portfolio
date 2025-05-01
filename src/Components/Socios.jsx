@@ -5,6 +5,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { API_KEY, base_url } from "../Api_handling/API_KEY";
 import { fetchDataByUrl } from "../Api_handling/GetPostAPI";
+import SocialRadialMenu from "./SocialMediaMenu";
 const Socios = () => {
   const [apiData, setApiData] = useState([]);
   const [message, setMessage] = useState("");
@@ -77,7 +78,7 @@ const Socios = () => {
                     <div
                       className={` ${so.ima1} ${so.ima2} ${
                         so.link.length < 1 ? "hidden" : ""
-                      } w-6 h-6 grid place-content-center bg-no-repeat bg-cover`}
+                      } md:grid hidden w-6 h-6 place-content-center bg-no-repeat bg-cover`}
                     ></div>
                   </a>
                 ))
@@ -94,6 +95,9 @@ const Socios = () => {
               <span>{apiData.email}</span>
             </a>
             <p></p>
+          </div>
+          <div className="lg:hidden fixed bottom-0 left-0 shadow-md shadow-primary_bg2 flex  justify-center items-center w-screen">
+            <SocialRadialMenu apiData={apiData} />
           </div>
         </div>
       ) : (

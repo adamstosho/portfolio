@@ -1,18 +1,24 @@
 "use client";
 import EachComment from "@/Components/Comment/EachComment";
-import { API_KEY, base_url } from "../../Api_handling/API_KEY";
-import { fetchDataByUrl, postData } from "../../Api_handling/GetPostAPI";
+import { API_KEY, base_url } from "../../../Api_handling/API_KEY";
+import { fetchDataByUrl, postData } from "../../../Api_handling/GetPostAPI";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Circles } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Headings from "@/Components/Headings";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import Rating from "@/Components/Rating";
 import Nav from "@/Components/Nav";
+import SocialRadialMenu from "@/Components/SocialMediaMenu";
+import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 
 const ProjectDetailsComponent = () => {
+  const params = useParams();
+  const id = params.id;
+
   const [apiData, setApiData] = useState([]);
   const [comments, setComments] = useState([]);
   const [message, setMessage] = useState("");
@@ -31,7 +37,7 @@ const ProjectDetailsComponent = () => {
   useEffect(() => {
     const selectedID = localStorage.getItem("selectedID");
 
-    const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${selectedID}`;
+    const url = `${base_url}projects/get_project/?api_token=${API_KEY}&project_id=${id}`;
     const fetchDataForPage1 = async () => {
       try {
         const result = await fetchDataByUrl(url);
@@ -134,9 +140,10 @@ const ProjectDetailsComponent = () => {
   return (
     <div className='w-full bg-primary_bg bg-[url("/arrowdown3.png")]'>
       <Nav home={true} />
+
       {message === "success" ? (
         <div className='h-auto w-full bg-primary_bg bg-[url("/arrowdown3.png")] flex flex-col items-center gap-8 pb-6 pt-24 lg:px-20 px-4'>
-          <Link className="w-full lg:my-4 mt-3" href="/">
+          <Link className="w-full bg-transparent lg:my-4 mt-3" href="/">
             <img
               src="/back2.svg"
               className="w-10 h-10 p-1 rounded-full  bg-primary_bg border-[1.5px] border-primary1"
@@ -169,7 +176,7 @@ const ProjectDetailsComponent = () => {
                 </ul>
               </div>
               <div className="flex flex-col justify-center items-start lg:gap-4">
-                <h3 className="text-2xl font-bold">Description:</h3>
+                <h3 className="text-2xl font-bold pb-4">Description:</h3>
 
                 <div
                   className="lg:text-start text-center"

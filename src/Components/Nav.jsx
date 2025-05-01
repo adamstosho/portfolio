@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
+import SocialRadialMenu from "./SocialMediaMenu";
 
 export default function Nav({ home }) {
   const [visible, setVisible] = useState(false);
@@ -45,7 +46,7 @@ export default function Nav({ home }) {
     },
   ];
   return (
-    <div className={`${styles.navW} ${visible ? styles.disappear : ""}`}>
+    <div className={`${styles.navW} ${visible ? styles.disappear : ""} `}>
       <a
         href="https://github.com/intelligence247"
         target="_blank"

@@ -23,13 +23,11 @@ const OtherProject = () => {
 
     fetchDataForPage1();
   }, [per_page]);
-
-  // let sliced = lessMore ? otherProjectArr.slice(0, 3) : otherProjectArr;
   return (
     <div
       className={`${
         lessMore ? "h-[90%]" : "h-[100%]"
-      } w-full flex-col justify-between space-y-8 items-center mt-20 ${
+      } w-full flex-col justify-between space-y-8 items-center mt-8 ${
         styles.otherProjectW
       } ${apiData.length <= 3 ? "hidden" : "flex"}`}
     >

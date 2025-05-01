@@ -25,7 +25,7 @@ const Eachproject = ({
   top,
   projectId,
   commentDirection,
-  bgimg
+  bgimg,
 }) => {
   const handleID = () => {
     localStorage.setItem("selectedID", projectId);
@@ -33,7 +33,6 @@ const Eachproject = ({
   const handleComment = async () => {
     // process.env.API_KEY
     // const formData = new FormData();
-
     // try {
     //   const res  = await 'https://riganapi.pythonanywhere.com/api/v2/comments/add_comments';
     // } catch (error) {
@@ -116,7 +115,7 @@ const Eachproject = ({
                 <Link
                   className={styles.views}
                   onClick={handleID}
-                  href={`/ProjectDetails`}
+                  href={`/project-details/${projectId}`}
                 >
                   <p className="w-6 h-6 bg-center bg-cover "></p>
                   View

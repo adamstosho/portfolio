@@ -52,9 +52,6 @@ export default function Home({ project }) {
     fetchDataForPage1();
   }, []);
 
-  console.log(apiData);
-  console.log(message)
-
   return (
     <div className="body">
       <Nav home={false} />
@@ -69,19 +66,17 @@ export default function Home({ project }) {
             <SomeProjects />
             <OtherProject />
             <Contact />
-            <footer className="w-full text-center mt-[8rem] mb-6 flex flex-col lg:gap-0  space-y-10">
+            <footer className="w-full text-center mb-6 flex flex-col lg:gap-0 space-y-10">
               <Socios />
-              <div></div>
-              <p className="hover:text-primary1 text-[13px] cursor-pointer">
-                {" "}
+              <p className="hover:text-primary1 text-[13px] cursor-pointer lg:pb-4 pb-20">
                 <a
                   href={apiData.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   npm
                 >
-                  Designed & Built by {`${apiData.first_name} ${apiData.last_name}.`}
-
+                  Designed & Built by{" "}
+                  {`${apiData.first_name} ${apiData.last_name}.`}
                 </a>
               </p>
             </footer>
@@ -89,12 +84,12 @@ export default function Home({ project }) {
         </main>
       ) : message == "Failed to fetch" ? (
         <div>
-        <div className="h-screen w-full overflow-hidden flex justify-center items-center flex-col px-5 text-center">
-          Please check your network connection and try again
+          <div className="h-screen w-full overflow-hidden flex justify-center items-center flex-col px-5 text-center">
+            Please check your network connection and try again
+          </div>
         </div>
-      </div>
       ) : (
-      <Loading/>
+        <Loading />
       )}
     </div>
   );

@@ -33,7 +33,7 @@ const EachOtherProjects = ({
           <Link
             className={styles.views}
             onClick={handleID}
-            href={`/ProjectDetails`}
+            href={`/project-details/${projectId}`}
           >
             <p className="w-6 h-6 bg-center bg-cover"></p> View
           </Link>
