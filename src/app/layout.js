@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const ss = "/logo3.png"
+  const ss = "/logo.jpg"
   return (
     <html lang="en">
       <head>

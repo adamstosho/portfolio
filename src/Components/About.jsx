@@ -70,7 +70,7 @@ const About = () => {
               <div className={styles.imgwrapper}>
                 <Image
                   data-aos="flip-up"
-                  src={apiData.Image ? Image_base_url + apiData.image : ""}
+                  src={apiData.image ? Image_base_url + apiData.image : ""}
                   width={300}
                   height={400}
                   alt="My Profile"

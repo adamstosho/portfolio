@@ -27,13 +27,11 @@ const Expertise = () => {
     fetchDataForPage1();
   }, []);
 
-
   return (
     <div className={styles.ExpertiseW} id="expertise">
       <Headings position={"center"} num={"02."} text={"Some of my skills"} />
       <h3 className="text-center">{`Here are a few technologies I’ve been working with recently:`}</h3>
       <div className="exp flex lg:gap-8 mt-10 gap-4 flex-wrap w-full justify-center">
-    
         {apiData.length !== 0 && message == "success" ? (
           apiData.data.map((a, i) => (
             <div data-aos={i % 2 === 0 ? "fade-right" : "fade-up"} key={i}>
@@ -46,29 +44,31 @@ const Expertise = () => {
               />
             </div>
           ))
+        ) : apiData.length < 1 ? (
+          <div className="h-20 w-full flex justify-center items-center">No Skill Available.</div>
         ) : (
           <div>
             <div className="lg:block hidden">
-            <Circles
-              height="80"
-              width="80"
-              color="#64ffda"
-              ariaLabel="circles-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
+              <Circles
+                height="80"
+                width="80"
+                color="#64ffda"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
             </div>
             <div className="lg:hidden block">
-            <Circles
-              height="50"
-              width="50"
-              color="#64ffda"
-              ariaLabel="circles-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
+              <Circles
+                height="50"
+                width="50"
+                color="#64ffda"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
             </div>
           </div>
         )}
