@@ -44,7 +44,7 @@ const OtherProject = () => {
       <div
         className={` ${styles.Otherprojects} grid lg:grid-cols-3 place-content-between gap-4`}
       >
-        {message === "success"
+        {message === "success" && apiData.length >= 1
           ? apiData
               .slice(3, apiData.length)
               .map((other, i) => (
