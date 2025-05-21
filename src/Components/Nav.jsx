@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 import SocialRadialMenu from "./SocialMediaMenu";
+import Image from "next/image";
 
 export default function Nav({ home }) {
   const [visible, setVisible] = useState(false);
@@ -48,12 +49,14 @@ export default function Nav({ home }) {
   return (
     <div className={`${styles.navW} ${visible ? styles.disappear : ""} `}>
       <a
-        href="https://github.com/intelligence247"
+        href="https://github.com/adamstosho"
         target="_blank"
         rel="noopener noreferrer"
         data-aos="zoom-in-down"
       >
-        <Logo />
+        <Image alt="my logo" width={60} height={60} src={"/logo.jpg"}
+
+         />
       </a>
 
       <span className={styles.grow}></span>
